@@ -111,7 +111,7 @@ set background=dark
 colorscheme solarized
 
 " Set the font
-set guifont=Inconsolata:h14
+set guifont=Inconsolata\ 14
 
 " -- PLUGIN OPTIONS -- "
 " Vundle setup {
@@ -123,8 +123,8 @@ set guifont=Inconsolata:h14
   Bundle 'majutsushi/tagbar'
   Bundle 'altercation/vim-colors-solarized'
   Bundle 'corntrace/bufexplorer'
+  Bundle 'Lokaltog/vim-powerline'
   Bundle 'scrooloose/nerdtree'
-  Bundle 'bling/vim-airline'
   Bundle 'Lokaltog/vim-easymotion'
   Bundle 'tristen/vim-sparkup'
   Bundle 'majustushi/tagbar'
@@ -166,37 +166,6 @@ set guifont=Inconsolata:h14
   " Hot Key eclim's LocateFile to ctrl+p
   map  <c-p> :LocateFile <CR>
 " } end Eclim setup
-
-" Vim-airline setup {
-  let g:airline_enable_tagbar=1
-  let g:tagbar_type_go = {
-      \ 'ctagstype' : 'go',
-      \ 'kinds'     : [
-          \ 'p:package',
-          \ 'i:imports:1',
-          \ 'c:constants',
-          \ 'v:variables',
-          \ 't:types',
-          \ 'n:interfaces',
-          \ 'w:fields',
-          \ 'e:embedded',
-          \ 'm:methods',
-          \ 'r:constructor',
-          \ 'f:functions'
-      \ ],
-      \ 'sro' : '.',
-      \ 'kind2scope' : {
-          \ 't' : 'ctype',
-          \ 'n' : 'ntype'
-      \ },
-      \ 'scope2kind' : {
-          \ 'ctype' : 't',
-          \ 'ntype' : 'n'
-      \ },
-      \ 'ctagsbin'  : 'gotags',
-      \ 'ctagsargs' : '-sort -silent'
-  \ }
-" } end Vim-airline setup
 
 " Tagbar setup {
   let g:tagbar_show_visibility = 1
