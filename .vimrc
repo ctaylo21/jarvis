@@ -96,6 +96,9 @@ set guioptions-=m
 " remove toolbar
 :set guioptions-=T
 
+" set what is allowed to be deleted by backspace (vim fix)
+set backspace=indent,eol,start
+
 " Remove right-hand scroll bar
 :set guioptions-=r
 
@@ -106,12 +109,20 @@ au BufNewFile,BufRead *.json set ft=javascript
 au BufNewFile,BufRead *.md set ft=mkd
 
 " -- FONT -- "
-" Solarized colorscheme
+"  vim color fix
+set t_Co=256
+
 set background=dark
-colorscheme solarized
+" colorscheme
+colorscheme jellybeans
+
+if has ('gui_running')
+else
+  let g:NERDTreeDirArrows=0
+endif
 
 " Set the font
-set guifont=Inconsolata\ 14
+set guifont=Inconsolata\ 12
 
 " -- PLUGIN OPTIONS -- "
 " Vundle setup {
@@ -129,8 +140,8 @@ set guifont=Inconsolata\ 14
   Bundle 'tristen/vim-sparkup'
   Bundle 'majustushi/tagbar'
   Bundle 'ervandew/supertab'
+  Bundle 'scrooloose/nerdcommenter'
 
-  filetype plugin indent on
 " } end vundle
 
 " NERDTree setup {
@@ -171,11 +182,38 @@ set guifont=Inconsolata\ 14
   let g:tagbar_show_visibility = 1
   let g:tagbar_expand = 1
   autocmd VimEnter * nested :TagbarOpen
+  let g:tagbar_type_go = {
+      \ 'ctagstype' : 'go',
+      \ 'kinds'     : [
+          \ 'p:package',
+          \ 'i:imports:1',
+          \ 'c:constants',
+          \ 'v:variables',
+          \ 't:types',
+          \ 'n:interfaces',
+          \ 'w:fields',
+          \ 'e:embedded',
+          \ 'm:methods',
+          \ 'r:constructor',
+          \ 'f:functions'
+      \ ],
+      \ 'sro' : '.',
+      \ 'kind2scope' : {
+          \ 't' : 'ctype',
+          \ 'n' : 'ntype'
+      \ },
+      \ 'scope2kind' : {
+          \ 'ctype' : 't',
+          \ 'ntype' : 'n'
+      \ },
+      \ 'ctagsbin'  : 'gotags',
+      \ 'ctagsargs' : '-sort -silent'
+  \ } 
 " } end Tagbar setup
 
-" ** USER COMMANDS AND SHORTCUTS ** "
+" -- USER COMMANDS AND SHORTCUTS -- "
 " Nerdtree shorcuts {
-  map NE :NERDTree
+  map <leader>ne :NERDTree<CR>
 
   " switch between tabs in nerdtree with ctrl + arrow
   map  <c-l> :tabn<cr>
@@ -183,12 +221,29 @@ set guifont=Inconsolata\ 14
   map  <c-n> :tabnew<cr>
 
   " Opens current file heiarchy in Nerdtree
-  map <leader>% :NERDTree % <CR>
+  map <leader>nf :NERDTreeFind<CR>
 " } end NERDTree
 
 " Tagbar shortcuts {
-  nmap <F8> :TagbarToggle<CR>
+  "Open Tagbar or jump to it if already open (useful for split windows)
+  nmap <F8> :TagbarOpen j<CR>
 " } end Tagbar shortcuts
 
 " Svn blame highlighted lines in visual mode (freaking awesome)
 vmap gl :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
+
+" -- MISC -- "
+"  Go support
+set rtp+=/usr/local/go/misc/vim
+autocmd BufRead,BufNewFile *.go set filetype=go
+autocmd BufRead,BufNewFile *.go set makeprg=go\ build\ %
+
+fun! BuildGo()
+  :silent Fmt
+  :silent !source ~/.goinit
+  silent make
+  let l = line(".")
+  let c = col(".")
+  call cursor(l, c)
+endfun
+autocmd BufWritePost *.go :call BuildGo()
