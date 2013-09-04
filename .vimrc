@@ -147,10 +147,6 @@ endif
   autocmd vimenter * NERDTree
 " } end NERDTree setup
 
-" PHPDoc setup {
-  noremap <leader>df :call PhpDoc()<CR>
-" } end phpdoc setup
-
 " SuperTab setup {
   let g:SuperTabDefaultCompletionTypeDiscovery = [
   \ "&completefunc:<c-x><c-u>",
@@ -231,6 +227,11 @@ endif
   "Open Tagbar or jump to it if already open (useful for split windows)
   nmap <F8> :TagbarOpen j<CR>
 " } end Tagbar shortcuts
+
+" PHPDoc shortcuts{
+  noremap <leader>df :call PhpDoc()<CR>
+" } end phpdoc shortcuts
+
 
 " Svn blame highlighted lines in visual mode (freaking awesome)
 vmap gl :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
