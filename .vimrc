@@ -35,7 +35,6 @@ nmap <silent> ,/ :nohlsearch<CR>
 
 " Hides buffers instead of closing them
 set hidden
-
 " using w!! lets you save file that requires sudo access after already opened
 cnoreabbrev <expr> w!!
                 \((getcmdtype() == ':' && getcmdline() == 'w!!')
@@ -122,7 +121,7 @@ else
 endif
 
 " Set the font
-set guifont=Inconsolata\ 12
+  set guifont=Inconsolata\ 12
 
 " -- PLUGIN OPTIONS -- "
 " Vundle setup {
@@ -141,12 +140,16 @@ set guifont=Inconsolata\ 12
   Bundle 'majustushi/tagbar'
   Bundle 'ervandew/supertab'
   Bundle 'scrooloose/nerdcommenter'
-
+  Bundle 'vexxor/phpdoc.vim'
 " } end vundle
 
 " NERDTree setup {
   autocmd vimenter * NERDTree
 " } end NERDTree setup
+
+" PHPDoc setup {
+  noremap <leader>df :call PhpDoc()<CR>
+" } end phpdoc setup
 
 " SuperTab setup {
   let g:SuperTabDefaultCompletionTypeDiscovery = [
