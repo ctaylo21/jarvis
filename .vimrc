@@ -35,6 +35,7 @@ nmap <silent> ,/ :nohlsearch<CR>
 
 " Hides buffers instead of closing them
 set hidden
+
 " using w!! lets you save file that requires sudo access after already opened
 cnoreabbrev <expr> w!!
                 \((getcmdtype() == ':' && getcmdline() == 'w!!')
@@ -116,6 +117,7 @@ set background=dark
 colorscheme jellybeans
 
 if has ('gui_running')
+  colorscheme panda
 else
   let g:NERDTreeDirArrows=0
 endif
@@ -141,11 +143,17 @@ endif
   Bundle 'ervandew/supertab'
   Bundle 'scrooloose/nerdcommenter'
   Bundle 'vexxor/phpdoc.vim'
+  Bundle 'yurifury/hexHighlight'
+  Bundle 'gerw/vim-HiLinkTrace'
 " } end vundle
 
 " NERDTree setup {
   autocmd vimenter * NERDTree
 " } end NERDTree setup
+
+" PHPDoc setup {
+  noremap <leader>df :call PhpDoc()<CR>
+" } end phpdoc setup
 
 " SuperTab setup {
   let g:SuperTabDefaultCompletionTypeDiscovery = [
@@ -159,22 +167,16 @@ endif
   " Set EasyMotion leader key to default
   let g:EasyMotion_leader_key = '<Leader>'
 
-
-  " Defaults for eclim file openings
-  let g:EclimCSearchSingleResult = "edit"
-  let g:EclimLocateFileDefaultAction = "edit"
-  let g:EclimCHierarchyDefaultAction = "edit"
 " } end EasyMotion setup
 
 " Eclim setup {
   " Disable preview window for eclim autocomplete
   set cot-=preview
 
-  " Just hit enter on an element to find it
-  nnoremap <silent> <buffer> <cr> :PhpSearchContext<cr>
-
-  " Hot Key eclim's LocateFile to ctrl+p
-  map  <c-p> :LocateFile <CR>
+  " Defaults for eclim file openings
+  let g:EclimCSearchSingleResult = "edit"
+  let g:EclimLocateFileDefaultAction = "edit"
+  let g:EclimCHierarchyDefaultAction = "edit"
 " } end Eclim setup
 
 " Tagbar setup {
@@ -223,15 +225,19 @@ endif
   map <leader>nf :NERDTreeFind<CR>
 " } end NERDTree
 
+" Eclim shorcuts {
+  " Just hit enter on an element to find it
+  nnoremap <silent> <buffer> <cr> :PhpSearchContext<cr>
+
+  " Hot Key eclim's LocateFile to ctrl+p
+  map  <c-p> :LocateFile <CR>
+
+" } end eclim
+
 " Tagbar shortcuts {
   "Open Tagbar or jump to it if already open (useful for split windows)
   nmap <F8> :TagbarOpen j<CR>
 " } end Tagbar shortcuts
-
-" PHPDoc shortcuts{
-  noremap <leader>df :call PhpDoc()<CR>
-" } end phpdoc shortcuts
-
 
 " Svn blame highlighted lines in visual mode (freaking awesome)
 vmap gl :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
@@ -251,3 +257,13 @@ fun! BuildGo()
   call cursor(l, c)
 endfun
 autocmd BufWritePost *.go :call BuildGo()
+
+" Backup stuff
+set backupdir=~/.vim/backup
+set directory=~/.vim/swap
+set undodir=~/.vim/undo
+
+set history=1000
+set undolevels=1000
+set backup
+
