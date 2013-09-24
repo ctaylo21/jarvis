@@ -1,6 +1,43 @@
-" -- BASIC -- "
-set nocompatible
+" ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+" Vundle Setup
+" ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Bundle list
+Bundle 'gmarik/vundle'
+
+" === Navigation plugins === "
+Bundle 'majutsushi/tagbar'
+Bundle 'corntrace/bufexplorer'
+Bundle 'kien/ctrlp.vim'
+
+" Requires patched font and symbols from powerline docs
+Bundle 'bling/vim-airline'
+Bundle 'scrooloose/nerdtree'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'tristen/vim-sparkup'
+Bundle 'majustushi/tagbar'
+Bundle 'ervandew/supertab'
+
+" === Commenting/Documentation === "
+" Basic commenting: <leader>cc = 1 line <leader>cs = muliple highlighted
+Bundle 'scrooloose/nerdcommenter'
+" <leader>df creates generic PHP Doc for function
+Bundle 'vexxor/phpdoc.vim'
+
+" === Color Scheme Design === "
+" <leader>F2 highlights hex colors in file
+Bundle 'yurifury/hexHighlight'
+" :HLT over item gives vim description
+Bundle 'gerw/vim-HiLinkTrace'
+
+" ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+" Basic Vim Settings
+" ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+set nocompatible
 
 " add line numbers
 set number
@@ -18,6 +55,7 @@ set cursorline
 noremap <Space> <PageDown>
 noremap - <PageUp>
 
+" For quick save/quit
 nnoremap ; :
 
 " Map up and down to behave more normally
@@ -36,16 +74,6 @@ nmap <silent> ,/ :nohlsearch<CR>
 " Hides buffers instead of closing them
 set hidden
 
-" using w!! lets you save file that requires sudo access after already opened
-cnoreabbrev <expr> w!!
-                \((getcmdtype() == ':' && getcmdline() == 'w!!')
-                \?('!sudo tee % >/dev/null'):('w!!'))
-
-" Javascipt syntax highlighting
-filetype plugin on
-au BufRead,BufNewFile *.js set filetype=javascript
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-
 " do not wrap long lines by default
 set nowrap
 
@@ -57,6 +85,7 @@ set tabstop=4
 
 " number of spaces to use for each step of auto indent
 set shiftwidth=2
+
 
 " use spaces instead of tabs
 set expandtab
@@ -90,6 +119,15 @@ set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn
 " always show the status bar
 set laststatus=1
 
+" Backup stuff
+set backupdir=~/.vim/backup
+set directory=~/.vim/swap
+set undodir=~/.vim/undo
+
+set history=1000
+set undolevels=1000
+set backup
+
 " remove menu bar
 set guioptions-=m 
 
@@ -108,162 +146,130 @@ au BufNewFile,BufRead *.json set ft=javascript
 " add markdown syntax highlighting
 au BufNewFile,BufRead *.md set ft=mkd
 
-" -- FONT -- "
+" ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+" Font 
+" ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 "  vim color fix
 set t_Co=256
-
 set background=dark
-" colorscheme
 colorscheme jellybeans
-
 if has ('gui_running')
-  colorscheme panda
+  colorscheme panda 
 else
   let g:NERDTreeDirArrows=0
 endif
 
-" Set the font
-  set guifont=Inconsolata\ 12
+set guifont=Inconsolata\ 12
 
-" -- PLUGIN OPTIONS -- "
-" Vundle setup {
-  set rtp+=~/.vim/bundle/vundle/
-  call vundle#rc()
+" ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+" Plugin Options 
+" ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+" NERDTree setup 
+autocmd vimenter * NERDTree
 
-  " Bundle list
-  Bundle 'gmarik/vundle'
-  Bundle 'majutsushi/tagbar'
-  Bundle 'altercation/vim-colors-solarized'
-  Bundle 'corntrace/bufexplorer'
-  Bundle 'Lokaltog/vim-powerline'
-  Bundle 'scrooloose/nerdtree'
-  Bundle 'Lokaltog/vim-easymotion'
-  Bundle 'tristen/vim-sparkup'
-  Bundle 'majustushi/tagbar'
-  Bundle 'ervandew/supertab'
-  Bundle 'scrooloose/nerdcommenter'
-  Bundle 'vexxor/phpdoc.vim'
-  Bundle 'yurifury/hexHighlight'
-  Bundle 'gerw/vim-HiLinkTrace'
-" } end vundle
+" Vim-airline setup
+let g:airline_powerline_fonts = 1
+let g:airline_theme='dark'
 
-" NERDTree setup {
-  autocmd vimenter * NERDTree
-" } end NERDTree setup
+" PHPDoc setup 
+noremap <leader>df :call PhpDoc()<CR>
+" Ctrlp 
+" Ignore files we don't want to index
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+let g:ctrlp_map = '<c-p>'
+" custom starting default search folder
+let g:ctrlp_cmd = 'CtrlP /empire/trunk'
+" Opens current file heiarchy in Nerdtree
+map <c-b> :CtrlPBuffer<CR>
 
-" PHPDoc setup {
-  noremap <leader>df :call PhpDoc()<CR>
-" } end phpdoc setup
+" SuperTab setup 
+let g:SuperTabDefaultCompletionTypeDiscovery = [
+\ "&completefunc:<c-x><c-u>",
+\ "&omnifunc:<c-x><c-o>",
+\ ]
+let g:SuperTabLongestHighlight = 1
 
-" SuperTab setup {
-  let g:SuperTabDefaultCompletionTypeDiscovery = [
-  \ "&completefunc:<c-x><c-u>",
-  \ "&omnifunc:<c-x><c-o>",
-  \ ]
-  let g:SuperTabLongestHighlight = 1
-  " } end SuperTab setup
+" EasyMotion setup 
+let g:EasyMotion_leader_key = '<Leader>'
 
-" EasyMotion setup {
-  " Set EasyMotion leader key to default
-  let g:EasyMotion_leader_key = '<Leader>'
+" Tagbar setup
+let g:tagbar_show_visibility = 1
+let g:tagbar_expand = 1
+autocmd VimEnter * nested :TagbarOpen
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+\ } 
 
-" } end EasyMotion setup
+" ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+" User Commands and Shorcuts 
+" ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+" Nerdtree shorcuts
+map <leader>ne :NERDTree<CR>
 
-" Eclim setup {
-  " Disable preview window for eclim autocomplete
-  set cot-=preview
+" switch between tabs in nerdtree with ctrl + arrow
+map  <c-l> :tabn<cr>
+map  <c-h> :tabp<cr>
+map  <c-n> :tabnew<cr>
 
-  " Defaults for eclim file openings
-  let g:EclimCSearchSingleResult = "edit"
-  let g:EclimLocateFileDefaultAction = "edit"
-  let g:EclimCHierarchyDefaultAction = "edit"
-" } end Eclim setup
+" Opens current file heiarchy in Nerdtree
+map <leader>nf :NERDTreeFind<CR>
 
-" Tagbar setup {
-  let g:tagbar_show_visibility = 1
-  let g:tagbar_expand = 1
-  autocmd VimEnter * nested :TagbarOpen
-  let g:tagbar_type_go = {
-      \ 'ctagstype' : 'go',
-      \ 'kinds'     : [
-          \ 'p:package',
-          \ 'i:imports:1',
-          \ 'c:constants',
-          \ 'v:variables',
-          \ 't:types',
-          \ 'n:interfaces',
-          \ 'w:fields',
-          \ 'e:embedded',
-          \ 'm:methods',
-          \ 'r:constructor',
-          \ 'f:functions'
-      \ ],
-      \ 'sro' : '.',
-      \ 'kind2scope' : {
-          \ 't' : 'ctype',
-          \ 'n' : 'ntype'
-      \ },
-      \ 'scope2kind' : {
-          \ 'ctype' : 't',
-          \ 'ntype' : 'n'
-      \ },
-      \ 'ctagsbin'  : 'gotags',
-      \ 'ctagsargs' : '-sort -silent'
-  \ } 
-" } end Tagbar setup
-
-" -- USER COMMANDS AND SHORTCUTS -- "
-" Nerdtree shorcuts {
-  map <leader>ne :NERDTree<CR>
-
-  " switch between tabs in nerdtree with ctrl + arrow
-  map  <c-l> :tabn<cr>
-  map  <c-h> :tabp<cr>
-  map  <c-n> :tabnew<cr>
-
-  " Opens current file heiarchy in Nerdtree
-  map <leader>nf :NERDTreeFind<CR>
-" } end NERDTree
-
-" Eclim shorcuts {
-  " Just hit enter on an element to find it
-  nnoremap <silent> <buffer> <cr> :PhpSearchContext<cr>
-
-  " Hot Key eclim's LocateFile to ctrl+p
-  map  <c-p> :LocateFile <CR>
-
-" } end eclim
-
-" Tagbar shortcuts {
-  "Open Tagbar or jump to it if already open (useful for split windows)
-  nmap <F8> :TagbarOpen j<CR>
-" } end Tagbar shortcuts
+" Tagbar shortcuts 
+"Open Tagbar or jump to it if already open (useful for split windows)
+nmap <F8> :TagbarOpen j<CR>
 
 " Svn blame highlighted lines in visual mode (freaking awesome)
 vmap gl :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
 
-" -- MISC -- "
+" ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+" Misc 
+" ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 "  Go support
-set rtp+=/usr/local/go/misc/vim
-autocmd BufRead,BufNewFile *.go set filetype=go
-autocmd BufRead,BufNewFile *.go set makeprg=go\ build\ %
+set rtp+=$GOROOT/misc/vim
+
+"autocmd BufRead,BufNewFile *.go set filetype=go
+"autocmd BufRead,BufNewFile *.go set makeprg=go\ build\ %
+
+fun! Gofix()
+    let regel=line(".")
+    %!$GOROOT/bin/gofmt
+    call cursor(regel, 1)
+endfunction
+
+autocmd Filetype go command! Fmt call Gofix()
 
 fun! BuildGo()
   :silent Fmt
-  :silent !source ~/.goinit
   silent make
   let l = line(".")
   let c = col(".")
   call cursor(l, c)
 endfun
-autocmd BufWritePost *.go :call BuildGo()
-
-" Backup stuff
-set backupdir=~/.vim/backup
-set directory=~/.vim/swap
-set undodir=~/.vim/undo
-
-set history=1000
-set undolevels=1000
-set backup
+"autocmd BufWritePost *.go :call BuildGo()
 
