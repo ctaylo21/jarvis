@@ -21,6 +21,7 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tristen/vim-sparkup'
 Bundle 'majustushi/tagbar'
 Bundle 'ervandew/supertab'
+Bundle 'scrooloose/syntastic'
 
 " === Commenting/Documentation === "
 " Basic commenting: <leader>cc = 1 line <leader>cs = muliple highlighted
@@ -153,27 +154,33 @@ au BufNewFile,BufRead *.md set ft=mkd
 "  vim color fix
 set t_Co=256
 set background=dark
-colorscheme jellybeans
+colorscheme solarized
 if has ('gui_running')
-  colorscheme panda 
+  " colorscheme panda 
 else
   let g:NERDTreeDirArrows=0
+  let g:solarized_termcolors=256 
 endif
 
 set guifont=Inconsolata\ 12
-
 " ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 " Plugin Options 
 " ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 " NERDTree setup 
 autocmd vimenter * NERDTree
 
+"Syntastic Options
+let g:syntastic_php_checkers = ['php']
+
 " Vim-airline setup
 let g:airline_powerline_fonts = 1
-let g:airline_theme='dark'
+let g:airline_theme='solarized'
+let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#eclim#enabled = 1
 
 " PHPDoc setup 
 noremap <leader>df :call PhpDoc()<CR>
+
 " Ctrlp 
 " Ignore files we don't want to index
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
@@ -240,18 +247,25 @@ map  <c-n> :tabnew<cr>
 " Opens current file heiarchy in Nerdtree
 map <leader>nf :NERDTreeFind<CR>
 
+" Open definition under cursor in new vertical split (ctags)
+map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+
 " Tagbar shortcuts 
 "Open Tagbar or jump to it if already open (useful for split windows)
 nmap <F8> :TagbarOpen j<CR>
 
-" Svn blame highlighted lines in visual mode (freaking awesome)
-vmap gl :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
-
 " ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 " Misc 
 " ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+"
+" Svn blame highlighted lines in visual mode (freaking awesome)
+vmap gl :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
+
 "  Go support
 set rtp+=$GOROOT/misc/vim
+
+" Allows you to save files you opened without write permissions
+cmap w!! w !sudo tee %
 
 "autocmd BufRead,BufNewFile *.go set filetype=go
 "autocmd BufRead,BufNewFile *.go set makeprg=go\ build\ %
