@@ -5,6 +5,14 @@ This .vimrc was developed with a few other engineers at my company to contain so
 
 <img src="http://i.imgur.com/QkN0bpN.png" title="Gvim Screenshot"/></a>
 
+### Installation
+Simply clone this repo and symlink or copy the .vimrc to <code>~/.vimrc</code>. You can do the same with the .vimrc.local but that file is more for you to be able to customize your Vim setup. You can see from the local file above how to include font/colorscheme options as well as a few other things. 
+
+If you have never used Vundle before you can install it by running
+<code>$ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle</code>
+
+Once you have the .vimrc, Vundle, and the additional dependences (see below) set up you can run <code>:BundleInstall</code> to install all the included bundles and you should be ready to go!
+
 ###Plugins
 <i>Note: (leader) representes your leader key, defaulted to "," in this .vimrc</i>
 <ol>
@@ -75,7 +83,7 @@ This .vimrc was developed with a few other engineers at my company to contain so
 <li> Patched fonts for Vim Airline - For the fancy symbols to appear (and they do look good) you will need a patched font. Here are the instructions from the vim-airline github page:
 <pre><p>For the nice looking powerline symbols to appear, you will need to install a patched font. Instructions can be 
 found in the official powerline <a href="https://powerline.readthedocs.org/en/latest/fontpatching.html">documentation</a>. Prepatched fonts can be found in the <a href="https://github.com/Lokaltog/powerline-fonts">powerline-fonts</a> repository.</p></pre>
-</li>
+My favorite font is Insconsolata.</li>
 <li> A nice colorscheme - While everyone has a personal preference I recommend <a href="http://ethanschoonover.com/solarized">solarized</a>, an extremely popular colorscheme that comes in both light and dark.  </li>
 <img src="http://ethanschoonover.com/solarized/img/solarized-vim.png" alt="solarized vim">
 
