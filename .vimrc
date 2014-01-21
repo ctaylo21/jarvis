@@ -21,6 +21,8 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'ervandew/supertab'
 Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'altercation/vim-colors-solarized'
+
 
 " Config for vim airline
 set laststatus=2                  " -- Show airline even when only one split is open
