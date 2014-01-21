@@ -74,7 +74,7 @@ This .vimrc was developed with a few other engineers at my company to contain so
 <pre><p>For the nice looking powerline symbols to appear, you will need to install a patched font. Instructions can be 
 found in the official powerline <a href="https://powerline.readthedocs.org/en/latest/fontpatching.html">documentation</a>. Prepatched fonts can be found in the <a href="https://github.com/Lokaltog/powerline-fonts">powerline-fonts</a> repository.</p></pre>
 </li>
-<li> A nice colorscheme - While everyone has a personal preference I recommend <a href="http://ethanschoonover.com/solarized">solarized</a>, an extremly popular colorscheme that comes in both light and dark.  </li>
+<li> A nice colorscheme - While everyone has a personal preference I recommend <a href="http://ethanschoonover.com/solarized">solarized</a>, an extremely popular colorscheme that comes in both light and dark.  </li>
 <img src="http://ethanschoonover.com/solarized/img/solarized-vim.png" alt="solarized vim">
 
 </ol>
