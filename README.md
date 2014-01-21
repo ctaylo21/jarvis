@@ -3,8 +3,7 @@ Overview
 
 This .vimrc was developed with a few other engineers at my company to contain some of the plugins and shorcuts that we've found while using Vim.
 
-Plugins
-------------
+###Plugins
 <i>Note: (leader) representes your leader key, defaulted to "," in this .vimrc</i>
 <ol>
 <li><b><a href="https://github.com/gmarik/vundle">Vundle</a></b> – A fantastic package manager for Vim.</li>
@@ -59,4 +58,23 @@ Plugins
     <span class="nt">&lt;/table&gt;</span>
 </pre></div>
 </li>
+</ol>
+
+###Dependencies
+<ol>
+  <li><a href="http://ctags.sourceforge.net/">Ctags</a> - As mentioned above, ctags is required for a few of the plugins. After you have it installed, if you have a project located at  <code>~/code/project1</code> you can run this command: <code>ctags -R -f ~/.vim/mytags/project1 ~/code/project1</code> to have ctags recursively generate a tags file for your project located at <code>~/code/project1</code> and then place that tags file in <code>~/.vim/mytags/project1</code>. It's not required to do this but storing tag files in folders named after the project they represent is a nice way of keeping things organized. The final step is to run <code>:set tags=~/.vim/mytags/project1</code> inside of Vim. 
+  Here are a few things you can do with a tags file set up:
+    <ul>
+      <li> <code>(leader)]</code> - Vim's built in function jumping command. Simply place your cursor over a function definition and this command will take you where that function was defined (opening up a new file if necessary). </li>
+      <li> Autocomplete with SuperTab - As mentioned above, SuperTab allows you to take advantage of Vim's built in auto-completion and a tags file allows it to know about functions and classes in your entire project.</li>
+       <li> Tagbar uses ctags to generate an overview of the current file so you can get an idea of the functions/variables that exists. This is especially helpful for large files. </li>
+    <ul>
+  </li>
+<li> Patched fonts for Vim Airline - For the fancy symbols to appear (and they do look good) you will need a patched font. Here are the instructions from the vim-airline github page:
+<pre><p>For the nice looking powerline symbols to appear, you will need to install a patched font. Instructions can be 
+found in the official powerline <a href="https://powerline.readthedocs.org/en/latest/fontpatching.html">documentation</a>. Prepatched fonts can be found in the <a href="https://github.com/Lokaltog/powerline-fonts">powerline-fonts</a> repository.</p></pre>
+</li>
+<li> A nice colorscheme - While everyone has a personal preference I recommend <a href="http://ethanschoonover.com/solarized">solarized</a>, an extremly popular colorscheme that comes in both light and dark.  </li>
+<img src="http://ethanschoonover.com/solarized/img/solarized-vim.png" alt="solarized vim">
+
 </ol>
