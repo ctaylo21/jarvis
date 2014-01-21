@@ -7,7 +7,7 @@ Plugins
 ------------
 <i>Note: (leader) representes your leader key, defaulted to "," in this .vimrc</i>
 <ol>
-<li><b><a href="https://github.com/gmarik/vundle"Vundle</a></b> – A fantastic package manager for Vim.</li>
+<li><b><a href="https://github.com/gmarik/vundle">Vundle</a></b> – A fantastic package manager for Vim.</li>
 <li><b><a href="https://github.com/scrooloose/nerdtree">Nerdtree</a></b>  – The best file explorer for Vim. You can set bookmarks and open files in new tabs or splits.  
   <ul>
     <li> <code>(leader)f</code> - Jumps to current file's location in NerdTree. Useful for browsing in the same folder quickly without navigating through file structure</li>
