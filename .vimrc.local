@@ -1,0 +1,43 @@
+" font/colorscheme options "
+set background=dark
+set t_Co=256
+if (has('gui_running'))
+    colorscheme solarized
+    let g:airline_theme = 'solarized'   " -- Airline color theme
+else
+    colorscheme jellybeans
+    let g:airline_theme = 'jellybeans'
+endif
+
+if has("gui_running")
+  if has("gui_gtk2")
+    set guifont=InconsolataForPowerline\ 11
+  elseif has("gui_macvim")
+    set guifont=Inconsolata\ Regular:h14
+  elseif has("gui_win32")
+    set guifont=Consolas:h11:cANSI
+  endif
+endif
+
+" Custom colors for vim easymotion
+hi link EasyMotionTarget ErrorMsg  
+hi link EasyMotionShade Comment
+
+" Keep list of open files in buffer at top
+let g:airline#extensions#tabline#enabled = 1
+
+"  Go support
+set rtp+=$GOROOT/misc/vim
+
+" Allows you to save files you opened without write permissions
+cmap w!! w !sudo tee %
+
+" Define default location for ctrlp to begin searching
+let g:ctrlp_cmd = 'CtrlP ~/code/empire/trunk'
+
+" For quick save/quit
+nnoremap ; :
+
+" Remap space to page down and - to page up
+noremap <Space> <PageDown>
+noremap - <PageUp>
