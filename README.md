@@ -81,10 +81,15 @@ Once you have the .vimrc, Vundle, and the additional dependences (see below) set
     <ul>
   </li>
 <li> Patched fonts for Vim Airline - For the fancy symbols to appear (and they do look good) you will need a patched font. Here are the instructions from the vim-airline github page:
-<pre><p>For the nice looking powerline symbols to appear, you will need to install a patched font. Instructions can be 
-found in the official powerline <a href="https://powerline.readthedocs.org/en/latest/fontpatching.html">documentation</a>. Prepatched fonts can be found in the <a href="https://github.com/Lokaltog/powerline-fonts">powerline-fonts</a> repository.</p></pre>
+<pre><p>For the nice looking powerline symbols to appear, you will need to install a patched font. 
+Instructions can be found in the official powerline <a href="https://powerline.readthedocs.org/en/latest/fontpatching.html">documentation</a>. Prepatched fonts can be 
+found in the <a href="https://github.com/Lokaltog/powerline-fonts">powerline-fonts</a> repository.</p></pre>
 My favorite font is Insconsolata.</li>
-<li> A nice colorscheme - While everyone has a personal preference I recommend <a href="http://ethanschoonover.com/solarized">solarized</a>, an extremely popular colorscheme that comes in both light and dark.  </li>
+<li> Colorscheme - While everyone has a personal preference I recommend <a href="http://ethanschoonover.com/solarized">solarized</a>, an extremely popular colorscheme that comes in both light and dark. <b>It comes with this vim setup</b> so if you like it and you use the graphical version of Vim then you don't need do do anything. If you use regular Vim or want an alternative colorscheme I've also included <a href="https://github.com/tomasr/molokai">molokai</a> and <a href="https://github.com/nanotech/jellybeans.vim">jellybeans</a>. You can also choose to use a built-in colorscheme. You can check those out by typing <code>:colorscheme (tab)</code>
+You can view a larege selection of Vim colorschemes <a href="https://code.google.com/p/vimcolorschemetest/">here</a>.
+</li>
 <img src="http://ethanschoonover.com/solarized/img/solarized-vim.png" alt="solarized vim">
+<img style="float:left" src="http://i.imgur.com/Z1w74uf.png" title="molokai vim"/>
+<img style="float:left" src="http://i.imgur.com/kMgqhtQ.png" title="jellybeans vim"/>
 
 </ol>
