@@ -3,6 +3,8 @@ Overview
 
 This .vimrc was developed with a few other engineers at my company to contain some of the plugins and shorcuts that we've found while using Vim.
 
+<img src="http://i.imgur.com/QkN0bpN.png" title="Gvim Screenshot"/></a>
+
 ###Plugins
 <i>Note: (leader) representes your leader key, defaulted to "," in this .vimrc</i>
 <ol>
