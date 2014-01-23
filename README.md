@@ -1,7 +1,7 @@
-Overview
+Jarvis
 ============
 
-This .vimrc was developed with a few other engineers at my company to contain some of the plugins and shorcuts that we've found while using Vim. The hope is that this installation will get you up-and-running quickly without needing much vim knowledge in advance.
+This .vimrc was developed by a few other engineers at Next Jump and features some of the best plugins and shorcuts that we've found while using Vim. The hope is that this installation will get you up-and-running quickly without needing much vim knowledge in advance.
 
 <img src="http://i.imgur.com/QkN0bpN.png" title="Gvim Screenshot"/></a>
 
