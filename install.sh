@@ -4,6 +4,11 @@ INSTALLDIR=$PWD
 echo "JARVIS: Greetings. Preparing to power up and begin diagnostics."
 
 createLinks () {
+    if [ ! -f ~/.vim ]; then
+        echo "Jarvis: Linking files."
+        ln -sfn $INSTALLDIR/jarvis ~/.vim
+    fi
+
     if [ ! -f ~/.vimrc ]; then
         ln -sfn $INSTALLDIR/jarvis/vimrc ~/.vimrc
     fi
