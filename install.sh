@@ -71,4 +71,4 @@ fi
 
 echo "JARVIS: System update complete. Currently running at 100% power. Enjoy."
 
-vim +BundleInstall +qall 2>/dev/null 
+vim +BundleInstall +qall
