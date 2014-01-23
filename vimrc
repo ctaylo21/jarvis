@@ -11,7 +11,6 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Installed plugins
-Bundle 'majutsushi/tagbar'
 Bundle 'corntrace/bufexplorer'
 Bundle 'bling/vim-airline'
 Bundle 'kien/ctrlp.vim'
@@ -42,15 +41,18 @@ endfunction
 autocmd VimEnter * call StartUpNerdtree()
 
 "Tagbar Options
+"latest version is only compatible with vim >= 701
+if v:version > 700
+    Bundle 'majutsushi/tagbar'
+    " Same as nerdtree, only open if no file was specified
+    function! StartUpTagbar()
+        if 0 == argc()
+           TagbarOpen
+        end
+    endfunction
 
-" Same as nerdtree, only open if no file was specified
-function! StartUpTagbar()
-    if 0 == argc()
-       TagbarOpen
-    end
-endfunction
-
-autocmd VimEnter * call StartUpTagbar()
+    autocmd VimEnter * call StartUpTagbar()
+endif
 
 "Syntastic Options
 let g:syntastic_php_checkers=['php', 'phpcs', 'phpmd']
