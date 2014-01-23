@@ -4,11 +4,6 @@ INSTALLDIR=$PWD
 echo "JARVIS: Greetings. Preparing to power up and begin diagnostics."
 
 createLinks () {
-    if [ ! -f ~/.vim ]; then
-        echo "JARVIS: Linking files."
-        ln -sfn $INSTALLDIR/jarvis ~/.vim
-    fi
-    
     if [ ! -f ~/.vimrc ]; then
         ln -sfn $INSTALLDIR/jarvis/vimrc ~/.vimrc
     fi
@@ -41,15 +36,14 @@ else
     createLinks
 fi
 
-if [ ! -d "bundle" ]; then
-    echo "JARVIS: Creating bundle and backup directories."
-    mkdir bundle
+if [ ! -d "tmp/backup" ]; then
+    echo "JARVIS: Creating Backup directories."
     mkdir -p tmp/backup tmp/swap tmp/undo
 fi
 
 if [ ! -d "bundle/vundle" ]; then
     echo "JARVIS: Installing Vundle"
-    git clone https://github.com/gmarik/vundle.git bundle/vundle
+    git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 fi
 
 echo "JARVIS: System update complete. Currently running at 100% power. Enjoy."
