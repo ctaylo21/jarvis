@@ -49,9 +49,19 @@ else
     createLinks
 fi
 
+if [ ! -d "bundle" ]; then
+    echo "JARVIS: Creating bundle directory."
+    mkdir bundle
+fi
+
 if [ ! -d "tmp/backup" ]; then
-    echo "JARVIS: Creating Backup directories."
+    echo "JARVIS: Creating backup directories."
     mkdir -p tmp/backup tmp/swap tmp/undo
+fi
+
+if [ ! -d "color" ]; then
+    echo "JARVIS: Creating color directory."
+    mkdir color
 fi
 
 if [ ! -d "bundle/vundle" ]; then
@@ -61,5 +71,4 @@ fi
 
 echo "JARVIS: System update complete. Currently running at 100% power. Enjoy."
 
-vim +BundleInstall +qall 2>/dev/null
-
+vim +BundleInstall +qall 2>/dev/null 
