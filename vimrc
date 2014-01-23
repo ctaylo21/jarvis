@@ -22,6 +22,8 @@ Bundle 'ervandew/supertab'
 Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'nanotech/jellybeans.vim'
+Bundle 'tomasr/molokai'
 
 
 " Config for vim airline
