@@ -201,6 +201,6 @@ endfunction
 autocmd Filetype go command! Fmt call Gofix()
 
 " Borrowed from Square and theier Maximum-awesome repo https://github.com/square/maximum-awesome/ 
-if filereadable(expand("vimrc.custom"))
-  source vimrc.custom
+if filereadable(expand("~/.vim/vimrc.custom"))
+  source ~/.vim/vimrc.custom
 endif
