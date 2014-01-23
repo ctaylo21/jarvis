@@ -48,7 +48,7 @@ fi
 
 if [ ! -d "bundle/vundle" ]; then
     echo "JARVIS: Installing Vundle"
-    git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+    git clone https://github.com/gmarik/vundle.git bundle/vundle
 fi
 
 echo "JARVIS: System update complete. Currently running at 100% power. Enjoy."
