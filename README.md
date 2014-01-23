@@ -6,12 +6,11 @@ This .vimrc was developed by a few other engineers at Next Jump and features som
 <img src="http://i.imgur.com/QkN0bpN.png" title="Gvim Screenshot"/></a>
 
 ### Installation
-Simply clone this repo and symlink or copy the .vimrc to <code>~/.vimrc</code>. You can do the same with the .vimrc.local but that file is more for you to be able to customize your Vim setup. You can see from the local file above how to include font/colorscheme options as well as a few other things. 
+Simply type this into your CLI
 
-If you have never used Vundle before, you can install it by running
-<code>$ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle</code>
+<code>curl -L https://raw.github.com/ctaylo21/jarvis/master/install.sh | sh </code>
 
-Once you have the .vimrc, Vundle, and the additional dependences (see below) set up, you can run <code>:BundleInstall</code> within vim to install all the included bundles. Then you should be ready to go!
+<b>Warning</b>: This will move your .vim directory to .vim.bkp.
 
 ###Plugins
 <i>Note: (leader) representes your leader key, defaulted to "," in this .vimrc</i>
@@ -88,8 +87,8 @@ My favorite font is Insconsolata.</li>
 <li> Colorscheme - While everyone has a personal preference I recommend <a href="http://ethanschoonover.com/solarized">solarized</a>, an extremely popular colorscheme that comes in both light and dark. <b>It comes with this vim setup</b> so if you like it and you use the graphical version of Vim then you don't need do do anything. If you use regular Vim or want an alternative colorscheme I've also included <a href="https://github.com/tomasr/molokai">molokai</a> and <a href="https://github.com/nanotech/jellybeans.vim">jellybeans</a>. You can also choose to use a built-in colorscheme. You can check those out by typing <code>:colorscheme (tab)</code>
 You can view a larege selection of Vim colorschemes <a href="https://code.google.com/p/vimcolorschemetest/">here</a>.
 </li>
-<img src="http://ethanschoonover.com/solarized/img/solarized-vim.png" alt="solarized vim">
-<img style="float:left" src="http://i.imgur.com/Z1w74uf.png" title="molokai vim"/>
-<img style="float:left" src="http://i.imgur.com/kMgqhtQ.png" title="jellybeans vim"/>
+<img src="http://ethanschoonover.com/solarized/img/solarized-vim.png" alt="solarized vim"0>
+<img style="float:left" src="http://i.imgur.com/Z1w74uf.png" title="molokai vim" style='width:50%'/>
+<img style="float:left" src="http://i.imgur.com/kMgqhtQ.png" title="jellybeans vim" style='width:50%'/>
 
 </ol>
