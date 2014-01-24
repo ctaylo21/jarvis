@@ -10,30 +10,30 @@ The Vim lovers at Next Jump have come together and built a .vimrc that is compri
 <img src="http://i.imgur.com/howSiB6.jpg" title="Learning curve" style='width:100%'/>
 </p>
 
-&nbsp;&nbsp;&nbsp;&nbsp;I have since become an avid user of Vim and have spent countless hours customizing my own configuration file. I believe that mastering the tools you work with every day while coding is an important part of being a good engineer. It surprises me how often people simply take the vanilla settings of a text editor or IDE and never attempt to modify them. I was discussing this with a few engineers during a <a href="http://devpoets.com">Dev Poets Society</a> meeting and we began to talk about our own Vim setups and it was surprising how many awesome plugins and shortcuts we discussed that I never knew about. So we decided to join our collective minds to come up with our first company-wide .vimrc. It has some of the good stuff that almost every Vimmer should have: Nerdtree, Ctrlp, Syntastic, Tagbar, and BufExplorer. It also has some lesser known plugins and a collection of settings, customizations, and shortcuts that have proved beneficial our productivity.
+&nbsp;&nbsp;&nbsp;&nbsp;I have since become an avid user of Vim and have spent countless hours customizing my own configuration file. I believe that mastering the tools you work with every day while coding is an important part of being a good engineer. It surprises me how often people simply take the vanilla settings of a text editor or IDE and never attempt to modify them. I was discussing this with a few engineers during a <a href="http://devpoets.com">Dev Poets Society</a> meeting and we began to talk about our own Vim setups and it was surprising how many awesome plugins and shortcuts we discussed that I never knew about. So we decided to join our collective minds to come up with our first company-wide .vimrc. It has some of the good stuff that almost every Vimmer should have: Nerdtree, Ctrlp, Syntastic, Tagbar, and BufExplorer. It also has some lesser known plugins and a collection of settings, customizations, and shortcuts that have proved beneficial to our productivity.
 
 ###Features
 &nbsp;&nbsp;&nbsp;&nbsp; One of the best ways to measure the effectiveness of an editor is how you can use it to handle common tasks and problems that arise while programming. The docs have very thorough documentation of the setup but if you are new to Vim here are some highlights of how this setup can help improve your productivity (please note that here we have mapped the <code>,</code> key as the leader):
 
 <ol>
   <li>
-  Dealing with multiple files</u> - Programming frequently involves switching back and forth between a group of files. With Jarvis, you can type <code>,be</code> to open <b>BufExplorer and see a list of recently used files or <code>,b</code> and begin typing the name of the file to have CtrlP fuzzy-find the file in your buffer.
+  Dealing with multiple files</u> - Programming frequently involves switching back and forth between a group of files. With Jarvis, you can type <code>,be</code> to open <b>BufExplorer</b> and see a list of recently used files or <code>,b</code> and begin typing the name of the file to have <b>CtrlP</b> fuzzy-find the file in your buffer.
   </li>
   <li>
-    <u>Finding a file</u> - Typing <code>(ctrl)p</code> (for sublime users) or <code>,t</code> opens up CtrlP and lets you search your current project for a file name. Want to browse the directory of the file you are working on? <code>,f</code> jumps to the location of the current file in NerdTree, a tree explorer plugin. 
+    <u>Finding a file</u> - Typing <code>(ctrl)p</code> (for sublime users) or <code>,t</code> opens up <b>CtrlP</b> and lets you search your current project for a file name. Want to browse the directory of the file you are working on? <code>,f</code> jumps to the location of the current file in <b>NerdTree</b>, a tree explorer plugin. 
     </li>
   </li>
   <li>
-    <u>Syntax checking</u> - With the Syntastic plugin you get real-time syntax checking in a ton of different languages.
+    <u>Syntax checking</u> - With the <b>Syntastic</b> plugin you get real-time syntax checking in a ton of different languages.
   </li>
   <li>
-    <u>Auto-complete</u> - With SuperTab and PHPComplete you can type <code>$this->(tab)</code> or <code>self::(tab)</code> to generate a list of possible completions. This is a huge timesaver and also works with variable names.
+    <u>Auto-complete</u> - With <b>SuperTab</b> and <b>PHPComplete</b> you can type <code>$this->(tab)</code> or <code>self::(tab)</code> to generate a list of possible completions. This is a huge timesaver and also works with variable names.
   </li>
   <li>
     <u>Function jumping</u> - Want to jump to the spot a function was defined from a call in your current file? With ctags you can use Vim's built in <code>(ctrl)]</code> with your cursor on the function to jump to the function definition (even if it's in a new file).
   </li>
   <li>
-    Writing HTML - Web developers often run into the tedious task of typing out large blocks of HTML. Sparkup allows you to type an abbreviated version and type <code>(ctrl)e</code> to generate the valid HTML. For example: <code>table > tr*2 > td.name + td*3</code> expands to:
+    Writing HTML - Web developers often run into the tedious task of typing out large blocks of HTML. <b>Sparkup</b> allows you to type an abbreviated version and type <code>(ctrl)e</code> to generate the valid HTML. For example: <code>table > tr*2 > td.name + td*3</code> expands to:
     
     <pre>    &lt;table&gt;
         &lt;tr&gt;
@@ -53,4 +53,7 @@ The Vim lovers at Next Jump have come together and built a .vimrc that is compri
   </li>
 </ol>
 
+For a full set of docs please check out the git repo and please don't hesitate to fork and send pull requests for improvements or report any issues. 
 
+Happy Vimming!
+Next Jump
