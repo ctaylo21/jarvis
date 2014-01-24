@@ -1,9 +1,10 @@
 Jarvis
 ============
 
-This .vimrc was developed by a few other engineers at Next Jump and features some of the best plugins and shorcuts that we've found while using Vim. The hope is that this installation will get you up-and-running quickly without needing much vim knowledge in advance.
+This .vimrc was developed by a few engineers at Next Jump and features some of the best plugins and shorcuts that we've found while using Vim. The hope is that this installation will get you up-and-running quickly without needing much vim knowledge in advance.
 
 <img src="http://i.imgur.com/QkN0bpN.png" title="Gvim Screenshot"/></a>
+Beautiful, isn't it?
 
 ### Installation
 Simply type this into your CLI
@@ -11,6 +12,34 @@ Simply type this into your CLI
 <code>curl -L https://raw.github.com/ctaylo21/jarvis/master/install.sh | sh </code>
 
 <b>Warning</b>: This will move your .vim directory to .vim.bkp.
+
+<b>This will install a copy of jarvis in you current directory</b> so be aware of that when you run the above code. After it backs up the ~/.vim directory it will create a symlink from ~/.vim to where you installed jarvis.
+
+After this script runs you should be ready to go aside from the dependencies listed below. Any custom changes can be put in a file called vimrc.local inside of your jarvis directory. If the file doesn't exists when you run the above script it will copy the vimrc.custom file to vimrc.local so you can get started with a few custom options like font and colorscheme. Feel free to make any changes you want here as they won't be overwritten when you do a git pull.
+
+###Dependencies
+<ol>
+  <li><a href="http://ctags.sourceforge.net/">Ctags</a> - Ctags is required for a few of the plugins. After you have it installed, if you have a project located at  <code>~/code/project1</code> you can run this command: <code>ctags -R -f ~/.vim/mytags/project1 ~/code/project1</code> to have ctags recursively generate a tags file for your project located at <code>~/code/project1</code> and then place that tags file in <code>~/.vim/mytags/project1</code>. It's not required to do this but storing tag files in folders named after the project they represent is a nice way of keeping things organized. The final step is to run <code>:set tags=~/.vim/mytags/project1</code> inside of Vim. 
+  Here are a few things you can do with a tags file set up:
+    <ul>
+      <li> <code>(leader)]</code> - Vim's built in function jumping command. Simply place your cursor over a function definition and this command will take you to where that function was defined (opening up a new file if necessary). </li>
+      <li> Autocomplete with SuperTab - SuperTab allows you to take advantage of Vim's built in auto-completion and a tags file allows it to know about functions and classes in your entire project.</li>
+       <li> Tagbar uses ctags to generate an overview of the current file so you can get an idea of the functions/variables that exists. This is especially helpful for large files. </li>
+    <ul>
+  </li>
+<li> Patched fonts for Vim Airline - For the fancy symbols to appear (and they do look good) you will need a patched font. Here are the instructions from the vim-airline github page:
+<pre><p>For the nice looking powerline symbols to appear, you will need to install a patched font. 
+Instructions can be found in the official powerline <a href="https://powerline.readthedocs.org/en/latest/fontpatching.html">documentation</a>. Prepatched fonts can be 
+found in the <a href="https://github.com/Lokaltog/powerline-fonts">powerline-fonts</a> repository.</p></pre>
+My favorite font is Insconsolata.</li>
+<li> Colorscheme - <a href="http://ethanschoonover.com/solarized">Solarized</a> is included and is an extremely popular colorscheme that comes in both light and dark.  I've also included <a href="https://github.com/tomasr/molokai">molokai</a> and <a href="https://github.com/nanotech/jellybeans.vim">jellybeans</a>. You can also choose to use a built-in colorscheme. You can check those out by typing <code>:colorscheme (tab)</code>
+You can view a large selection of Vim colorschemes <a href="https://code.google.com/p/vimcolorschemetest/">here</a>.
+</li>
+<img src="http://ethanschoonover.com/solarized/img/solarized-vim.png" alt="solarized vim"0>
+<img style="float:left" src="http://i.imgur.com/Z1w74uf.png" title="molokai vim" style='width:48%'/>
+<img style="float:left" src="http://i.imgur.com/kMgqhtQ.png" title="jellybeans vim" style='width:48%'/>
+
+</ol>
 
 ###Plugins
 <i>Note: (leader) representes your leader key, defaulted to "," in this .vimrc</i>
@@ -69,26 +98,7 @@ Simply type this into your CLI
 </li>
 </ol>
 
-###Dependencies
-<ol>
-  <li><a href="http://ctags.sourceforge.net/">Ctags</a> - As mentioned above, ctags is required for a few of the plugins. After you have it installed, if you have a project located at  <code>~/code/project1</code> you can run this command: <code>ctags -R -f ~/.vim/mytags/project1 ~/code/project1</code> to have ctags recursively generate a tags file for your project located at <code>~/code/project1</code> and then place that tags file in <code>~/.vim/mytags/project1</code>. It's not required to do this but storing tag files in folders named after the project they represent is a nice way of keeping things organized. The final step is to run <code>:set tags=~/.vim/mytags/project1</code> inside of Vim. 
-  Here are a few things you can do with a tags file set up:
-    <ul>
-      <li> <code>(leader)]</code> - Vim's built in function jumping command. Simply place your cursor over a function definition and this command will take you to where that function was defined (opening up a new file if necessary). </li>
-      <li> Autocomplete with SuperTab - As mentioned above, SuperTab allows you to take advantage of Vim's built in auto-completion and a tags file allows it to know about functions and classes in your entire project.</li>
-       <li> Tagbar uses ctags to generate an overview of the current file so you can get an idea of the functions/variables that exists. This is especially helpful for large files. </li>
-    <ul>
-  </li>
-<li> Patched fonts for Vim Airline - For the fancy symbols to appear (and they do look good) you will need a patched font. Here are the instructions from the vim-airline github page:
-<pre><p>For the nice looking powerline symbols to appear, you will need to install a patched font. 
-Instructions can be found in the official powerline <a href="https://powerline.readthedocs.org/en/latest/fontpatching.html">documentation</a>. Prepatched fonts can be 
-found in the <a href="https://github.com/Lokaltog/powerline-fonts">powerline-fonts</a> repository.</p></pre>
-My favorite font is Insconsolata.</li>
-<li> Colorscheme - While everyone has a personal preference I recommend <a href="http://ethanschoonover.com/solarized">solarized</a>, an extremely popular colorscheme that comes in both light and dark. <b>It comes with this vim setup</b> so if you like it and you use the graphical version of Vim then you don't need do do anything. If you use regular Vim or want an alternative colorscheme I've also included <a href="https://github.com/tomasr/molokai">molokai</a> and <a href="https://github.com/nanotech/jellybeans.vim">jellybeans</a>. You can also choose to use a built-in colorscheme. You can check those out by typing <code>:colorscheme (tab)</code>
-You can view a larege selection of Vim colorschemes <a href="https://code.google.com/p/vimcolorschemetest/">here</a>.
-</li>
-<img src="http://ethanschoonover.com/solarized/img/solarized-vim.png" alt="solarized vim"0>
-<img style="float:left" src="http://i.imgur.com/Z1w74uf.png" title="molokai vim" style='width:50%'/>
-<img style="float:left" src="http://i.imgur.com/kMgqhtQ.png" title="jellybeans vim" style='width:50%'/>
+Please don't hesitate to fork and send pull requests for improvements or report any issues.
 
-</ol>
+Happy Vimming! 
+Next Jump
