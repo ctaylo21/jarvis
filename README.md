@@ -32,8 +32,8 @@ After this script runs you should be ready to go aside from the dependencies lis
 Instructions can be found in the official powerline <a href="https://powerline.readthedocs.org/en/latest/fontpatching.html">documentation</a>. Prepatched fonts can be 
 found in the <a href="https://github.com/Lokaltog/powerline-fonts">powerline-fonts</a> repository.</p></pre>
 My favorite font is Insconsolata.</li>
-<li> Colorscheme - <a href="http://ethanschoonover.com/solarized">Solarized</a> is included and is an extremely popular colorscheme that comes in both light and dark.  I've also included <a href="https://github.com/tomasr/molokai">molokai</a> and <a href="https://github.com/nanotech/jellybeans.vim">jellybeans</a>. You can also choose to use a built-in colorscheme. You can check those out by typing <code>:colorscheme (tab)</code>
-You can view a large selection of Vim colorschemes <a href="https://code.google.com/p/vimcolorschemetest/">here</a>.
+<li> Colorscheme - This setup comes with <a href="http://ethanschoonover.com/solarized">solarized</a>, an extremely popular colorscheme that comes in both light and dark.  I've also included <a href="https://github.com/tomasr/molokai">molokai</a> and <a href="https://github.com/nanotech/jellybeans.vim">jellybeans</a>. You can also choose to use a built-in colorscheme. You can check those out by typing <code>:colorscheme (tab)</code>.
+You can view a large selection of Vim colorschemes <a href="https://code.google.com/p/vimcolorschemetest/">here</a>. Here are screenshots of the included colorschemes:
 </li>
 <img src="http://ethanschoonover.com/solarized/img/solarized-vim.png" alt="solarized vim"0>
 <img style="float:left" src="http://i.imgur.com/Z1w74uf.png" title="molokai vim" style='width:48%'/>
