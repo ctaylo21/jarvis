@@ -69,6 +69,11 @@ if [ ! -d "bundle/vundle" ]; then
     git clone https://github.com/gmarik/vundle.git bundle/vundle
 fi
 
+if [ ! -f "vimrc.local" ]; then
+    echo "JARVIS: No local file detected. Copying base vimrc.custom to vimrc.local. Make any custom changes here."
+    cp vimrc.custom vimrc.local
+fi
+
 echo "JARVIS: System update complete. Currently running at 100% power. Enjoy."
 
 vim +BundleInstall +qall
