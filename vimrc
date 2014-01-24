@@ -216,7 +216,9 @@ set directory=~/.vim/tmp/swap//   " swap files
 set backup
 set noswapfile
 
-" Borrowed from Square and theier Maximum-awesome repo https://github.com/square/maximum-awesome/ 
-if filereadable(expand("~/.vim/vimrc.custom"))
-  source ~/.vim/vimrc.custom
+" Make any custom changes here. If this file doesn't exists, the 
+" base vimrc.custom is copied here to give you some font options
+" If it already exists when you do a git pull it won't be overwritten
+if filereadable(expand("~/.vim/vimrc.local"))
+  source ~/.vim/vimrc.local
 endif
