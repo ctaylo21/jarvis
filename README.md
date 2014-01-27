@@ -25,8 +25,7 @@ found in the <a href="https://github.com/Lokaltog/powerline-fonts">powerline-fon
 You can view a large selection of Vim colorschemes <a href="https://code.google.com/p/vimcolorschemetest/">here</a>. 
 Here are some screenshots of the included colorschemes:
 </li>
-<a href="http://imgur.com/KcPikVN"><img src="http://i.imgur.com/KcPikVN.png" title="Hosted by imgur.com"/></a>
-
+<img src="http://i.imgur.com/KcPikVN.png" title="Hosted by imgur.com"/>
 </ol>
 
 ### Installation
