@@ -6,17 +6,6 @@ This .vimrc was developed by a few engineers at Next Jump and features some of t
 <img src="http://i.imgur.com/QkN0bpN.png" title="Gvim Screenshot"/></a>
 Beautiful, isn't it?
 
-### Installation
-Simply type this into your CLI
-
-<code>curl -L https://raw.github.com/ctaylo21/jarvis/master/install.sh | sh </code>
-
-<b>Warning</b>: This will move your .vim directory to .vim.bkp.
-
-<b>This will install a copy of jarvis in you current directory</b> so be aware of that when you run the above code. After it backs up the ~/.vim directory it will create a symlink from ~/.vim to where you installed jarvis.
-
-After this script runs you should be ready to go aside from the dependencies listed below. Any custom changes can be put in a file called vimrc.local inside of your jarvis directory. If the file doesn't exists when you run the above script it will copy the vimrc.custom file to vimrc.local so you can get started with a few custom options like font and colorscheme. Feel free to make any changes you want here as they won't be overwritten when you do a git pull.
-
 ###Dependencies
 <ol>
   <li><a href="http://ctags.sourceforge.net/">Ctags</a> - Ctags is required for a few of the plugins. After you have it installed, if you have a project located at  <code>~/code/project1</code> you can run this command: <code>ctags -R -f ~/.vim/mytags/project1 ~/code/project1</code> to have ctags recursively generate a tags file for your project located at <code>~/code/project1</code> and then place that tags file in <code>~/.vim/mytags/project1</code>. It's not required to do this but storing tag files in folders named after the project they represent is a nice way of keeping things organized. The final step is to run <code>:set tags=~/.vim/mytags/project1</code> inside of Vim. 
@@ -31,15 +20,25 @@ After this script runs you should be ready to go aside from the dependencies lis
 <pre><p>For the nice looking powerline symbols to appear, you will need to install a patched font. 
 Instructions can be found in the official powerline <a href="https://powerline.readthedocs.org/en/latest/fontpatching.html">documentation</a>. Prepatched fonts can be 
 found in the <a href="https://github.com/Lokaltog/powerline-fonts">powerline-fonts</a> repository.</p></pre>
-My favorite font is Insconsolata.</li>
-<li> Colorscheme - This setup comes with <a href="http://ethanschoonover.com/solarized">solarized</a>, an extremely popular colorscheme that comes in both light and dark.  I've also included <a href="https://github.com/tomasr/molokai">molokai</a> and <a href="https://github.com/nanotech/jellybeans.vim">jellybeans</a>. You can also choose to use a built-in colorscheme. You can check those out by typing <code>:colorscheme (tab)</code>.
-You can view a large selection of Vim colorschemes <a href="https://code.google.com/p/vimcolorschemetest/">here</a>. Here are screenshots of the included colorschemes:
 </li>
-<img src="http://ethanschoonover.com/solarized/img/solarized-vim.png" alt="solarized vim"0>
-<img style="float:left" src="http://i.imgur.com/Z1w74uf.png" title="molokai vim" style='width:48%'/>
-<img style="float:left" src="http://i.imgur.com/kMgqhtQ.png" title="jellybeans vim" style='width:48%'/>
+<li> Colorscheme - This setup comes with <a href="http://ethanschoonover.com/solarized">solarized</a>, an extremely popular colorscheme that comes in both light and dark. We've also included <a href="https://github.com/tomasr/molokai">molokai</a> and <a href="https://github.com/nanotech/jellybeans.vim">jellybeans</a>. You can also choose to use a built-in colorscheme. You can check those out by typing <code>:colorscheme (tab)</code>.
+You can view a large selection of Vim colorschemes <a href="https://code.google.com/p/vimcolorschemetest/">here</a>. 
+Here are some screenshots of the included colorschemes:
+</li>
+<a href="http://imgur.com/KcPikVN"><img src="http://i.imgur.com/KcPikVN.png" title="Hosted by imgur.com"/></a>
 
 </ol>
+
+### Installation
+Simply type this into your CLI
+
+<code>curl -L https://raw.github.com/ctaylo21/jarvis/master/install.sh | sh </code>
+
+<b>Warning</b>: This will move your .vim directory to .vim.bkp.
+
+<b>This will install a copy of jarvis in you current directory</b> so be aware of that when you run the above code. After it backs up the ~/.vim directory it will create a symlink from ~/.vim to where you installed jarvis.
+
+After this script runs you should be ready to go aside from the dependencies listed below. Any custom changes can be put in a file called vimrc.local inside of your jarvis directory. If the file doesn't exists when you run the above script it will copy the vimrc.custom file to vimrc.local so you can get started with a few custom options like font and colorscheme. Feel free to make any changes you want here as they won't be overwritten when you do a git pull.
 
 ###Plugins
 <i>Note: (leader) representes your leader key, defaulted to "," in this .vimrc</i>
@@ -98,7 +97,10 @@ You can view a large selection of Vim colorschemes <a href="https://code.google.
 </li>
 </ol>
 
+### Start Coding!
+Feel free to browse the source code as most of the vimrc file settings have comments explaining what they do. Be sure to check out the documentation of the plugins to take advantage of their full feature set. What we have mentioned here is only a small part of their functionality.
+
 Please don't hesitate to fork and send pull requests for improvements or report any issues.
 
-Happy Vimming! 
-Next Jump
+Happy Vimming! <br/>
+<a href='http://www.nextjump.com'>Next Jump</a>
