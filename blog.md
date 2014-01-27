@@ -1,19 +1,19 @@
 ## Vim - Next Jump Style with Jarvis
-The Vim lovers at Next Jump have come together and built a .vimrc that is comprised of some of the best plugins, shortcuts, and user commands that we have open-sourced and thoroughly documented to allow anyone to be able to hit the ground running with an awesome Vim setup we call <a href=''>Jarvis</a>.
+Next Jump’s Vim lovers have come together to collect, document, and open-source some of the best plugins, shortcuts, and user commands into one .vimrc. We hope that our setup, which we call <a href=''>Jarvis</a>, can help any hit the ground running with an awesome Vim configuration.
 
 <img src="http://i.imgur.com/QkN0bpN.png" title="Gvim Screenshot"/></a>
 
 ### The Motivation
-&nbsp;&nbsp;&nbsp;&nbsp;Here at Next Jump we are a diverse group. This applies to our choice of coding environment as well. If you have ever watched someone that has mastered their editor write code, you know it is a thing of beauty. They quickly open files with a few key strokes, use shortcuts for all of the common commands, can quickly hop to the location they want to edit in a file, and employ a host of other shortcuts or plugins that generally make them very, very fast. I witnessed this for the first time when I originally joined Next Jump. A senior engineer had spent years working in Vim, and watching him code with it was simply amazing. His hands never left the keyboard, he moved around a file faster than you could with a mouse and I was inspired to immediately begin using Vim. My aspirations of becoming a master of Vim shattered nearly immediately. One of my favorite images in the internet graphs (mostly as a joke) the learning curve for a few popular editors:
+&nbsp;&nbsp;&nbsp;&nbsp;Next Jumpers are a diverse group. This diversity translates to our choice of coding environment as well. If you have ever watched someone who has mastered their editor write code, you know it is a thing of beauty. They quickly open files with a few key strokes, use shortcuts for all of the common commands, quickly hop to the location they want to edit in a file, and employ a host of other shortcuts or plugins that generally make them very, very fast. I witnessed this for the first time when I originally joined Next Jump. A senior engineer had spent years working in Vim, and watching him code with it was simply amazing. His hands never left the keyboard, he moved around a file faster than you could with a mouse and I was inspired to immediately begin using Vim. Unfortunately, my aspirations of becoming a Vim master shattered nearly immediately. One of my favorite images on the internet parodies the learning curve for a few popular editors:
 
 <p align="center">
 <img src="http://i.imgur.com/howSiB6.jpg" title="Learning curve" style='width:100%'/>
 </p>
 
-&nbsp;&nbsp;&nbsp;&nbsp;I have since become an avid user of Vim and have spent countless hours customizing my own configuration file. I believe that mastering the tools you work with every day while coding is an important part of being a good engineer. It surprises me how often people simply take the vanilla settings of a text editor or IDE and never attempt to modify them. I was discussing this with a few engineers during a <a href="http://devpoets.com">Dev Poets Society</a> meeting and we began to talk about our own Vim setups and it was surprising how many awesome plugins and shortcuts we discussed that I never knew about. So we decided to join our collective minds to come up with our first company-wide .vimrc. It has some of the good stuff that almost every Vimmer should have: Nerdtree, Ctrlp, Syntastic, Tagbar, and BufExplorer. It also has some lesser known plugins and a collection of settings, customizations, and shortcuts that have proved beneficial to our productivity.
+&nbsp;&nbsp;&nbsp;&nbsp;I have since become an avid user of Vim and have spent countless hours customizing my own configuration file. Mastering the tools you work with every day while coding is an important part of being a good engineer. It surprises me how often people simply take the vanilla settings of a text editor or an IDE and never attempt to modify them. I was discussing this with a few engineers during a <a href="http://devpoets.com">Dev Poets Society</a> meeting and we began to talk about our own Vim setups. It was surprising how many awesome plugins and shortcuts we discussed that I'd never known about. So we decided to combine our efforts to come up with Next Jump's first company-wide .vimrc. It has some of the good stuff that almost every Vimmer should have: Nerdtree, Ctrlp, Syntastic, Tagbar, and BufExplorer. It also has some lesser known plugins and a collection of settings, customizations, and shortcuts that have proved beneficial to our productivity.
 
 ###Features
-&nbsp;&nbsp;&nbsp;&nbsp; One of the best ways to measure the effectiveness of an editor is how you can use it to handle common tasks and problems that arise while programming. The docs have very thorough documentation of the setup but if you are new to Vim here are some highlights of how this setup can help improve your productivity (please note that here we have mapped the <code>,</code> key as the leader):
+&nbsp;&nbsp;&nbsp;&nbsp; One of the best ways to measure the effectiveness of an editor is how you can use it to handle common programming tasks and problems. The setup is very thoroughly documentated but if you are new to Vim here are some highlights of how this setup can help improve your productivity (please note that here we have mapped the <code>,</code> key as the leader):
 
 <ol>
   <li>
@@ -55,5 +55,5 @@ The Vim lovers at Next Jump have come together and built a .vimrc that is compri
 
 For a full set of docs please check out the git repo and please don't hesitate to fork and send pull requests for improvements or report any issues. 
 
-Happy Vimming!
+Happy Vimming!<br/>
 Next Jump
