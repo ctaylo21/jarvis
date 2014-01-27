@@ -1,5 +1,5 @@
 ## Vim - Next Jump Style with Jarvis
-Next Jump’s Vim lovers have come together to collect, document, and open-source some of the best plugins, shortcuts, and user commands into one .vimrc. We hope that our setup, which we call <a href=''>Jarvis</a>, can help any hit the ground running with an awesome Vim configuration.
+Next Jump’s Vim lovers have come together to collect, document, and open-source some of the best plugins, shortcuts, and user commands into one .vimrc. We hope that our setup, which we call <a href=''>Jarvis</a>, can help anyone hit the ground running with an awesome Vim configuration.
 
 <img src="http://i.imgur.com/QkN0bpN.png" title="Gvim Screenshot"/></a>
 
