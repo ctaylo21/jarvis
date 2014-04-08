@@ -1,39 +1,159 @@
-" font/colorscheme options "
-set background=dark
-set t_Co=256
-if (has('gui_running'))
+" ============================================================================ "
+" ===                            DISPLAY SETUP                             === "
+" ============================================================================ "
+
+" ### Font and colorsheme ### "
+try
+    set background=dark
     colorscheme solarized
     let g:airline_theme = 'solarized'   " -- Airline color theme
-else
-    colorscheme jellybeans
-    let g:airline_theme = 'jellybeans'
-endif
+catch
+    colorscheme default
+endtry
 
+" Font setup
 if has("gui_running")
   if has("gui_gtk2")
     set guifont=InconsolataForPowerline\ 11
   elseif has("gui_macvim")
-    set guifont=Inconsolata\ Regular:h14
+    set guifont=Inconsolata+for+Powerline:h13
   elseif has("gui_win32")
     set guifont=Consolas:h11:cANSI
   endif
 endif
 
-" Custom colors for vim easymotion
-hi link EasyMotionTarget ErrorMsg  
-hi link EasyMotionShade Comment
+" remove menu bar
+set guioptions-=m
 
+" remove toolbar
+:set guioptions-=T
+
+" ============================================================================ "
+" ===                             PLUGIN SETUP                             === "
+" ============================================================================ "
+
+
+" ### Vim airine ### "
+set laststatus=2                  " -- Show airline even when only one split is open
+set noshowmode                    " -- Hide default mode indicator
+let g:airline_powerline_fonts = 1 " -- Allow fancy separators
+let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#tmuxline#enabled = 0
+let g:airline_section_warning = 'syntastic'
+"Custom setup that removes filetype/whitespace from default vim airline bar
+let g:airline#extensions#default#layout = [[ 'a', 'b', 'c' ], ['x', 'warning' ]]
 " Keep list of open files in buffer at top
 let g:airline#extensions#tabline#enabled = 1
 
-"  Go support
-set rtp+=$GOROOT/misc/vim
+" ### PDV ### "
+let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates"
 
-" Allows you to save files you opened without write permissions
-cmap w!! w !sudo tee %
-
+" ### Ctrlp ### "
 " Define default location for ctrlp to begin searching
-let g:ctrlp_cmd = 'CtrlP ~/code/empire/trunk'
+" let g:ctrlp_cmd = 'CtrlP path/to/directory'
+
+" Ignore files we don't want Ctrlp to index
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn
+
+" ### Syntastic ### "
+let g:syntastic_php_checkers=['php', 'phpcs', 'phpmd']
+
+" ### SuperTab ### "
+let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']
+let g:SuperTabLongestHighlight = 2
+let g:SuperTabClosePreviewOnPopupClose = 1
+
+" ### Tagbar Options ### "
+let g:tagbar_show_visibility = 1
+let g:tagbar_expand = 1
+
+"latest version of tagbar is only compatible with vim >= 701
+if v:version > 700
+    Bundle 'majutsushi/tagbar'
+    " Same as nerdtree, only open if no file was specified
+    function! StartUpTagbar()
+        if 0 == argc()
+           TagbarOpen
+        end
+    endfunction
+
+    autocmd VimEnter * call StartUpTagbar()
+endif
+
+" ### Nerdtree ### "
+" Only open nerdtree if no file was specified on startup
+function! StartUpNerdtree()
+    if 0 == argc()
+        NERDTree
+    end
+endfunction
+
+autocmd VimEnter * call StartUpNerdtree()
+
+" ============================================================================ "
+" ===                             KEY MAPPINGS                             === "
+" ============================================================================ "
+" Note: This section is useful to get a quick idea of all the built-in
+" shortcuts so you have a better idea of what can be done with the default
+" setup
+
+" Document php function by placing cursor on function line
+" Can write your own templates or use default templates
+nnoremap <leader>g :call pdv#DocumentCurrentLine()<CR>
+
+" Clear highlighted search terms while preserving history
+nmap <silent> <leader>/ :nohlsearch<CR>
+
+" find and replace (another windows shortcut)
+map <leader>h :%s///gc<left><left><left><left>
+
+" === Nerdtree shorcuts === "
+" Open Nerdtree
+nmap <leader>n :NERDTree<CR>
+
+" Opens current file heiarchy in Nerdtree
+nmap <leader>f :NERDTreeFind<CR>
+
+" === Tagbar shortcuts === "
+"Open Tagbar or jump to it if already open (useful for split windows)
+nmap <leader>] :TagbarOpen j<CR>
+
+" Toggle Tagbar on and off with F6
+nmap <F6> :TagbarToggle<cr>
+
+" === Ctrlp shortcuts === "
+" Fuzzy search for files. You can specify where ctrlp will start searching
+" above. Having these duplicate settings may be unecessary
+nmap <leader>t :CtrlP<CR>
+let g:ctrlp_map = "<leader>t"
+
+" Opens Ctrlp but in buffer search mode to quickly search in recent files
+nmap <leader>b :CtrlPBuffer<CR>
+
+" Svn blame highlighted lines in visual mode for svn users
+vmap gl :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
+
+" Remove trailing whitespace
+function! <SID>StripTrailingWhitespace()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+nmap <silent> <leader>y :call <SID>StripTrailingWhitespace()<CR>
+
+" ============================================================================ "
+" ===                            MISC. OPTIONS                             === "
+" ============================================================================ "
 
 " For quick save/quit
 nnoremap ; :
@@ -41,3 +161,35 @@ nnoremap ; :
 " Remap space to page down and - to page up
 noremap <Space> <PageDown>
 noremap - <PageUp>
+
+" Allows you to save files you opened without write permissions
+cmap w!! w !sudo tee %
+
+" Go support
+set rtp+=$GOROOT/misc/vim
+
+" Highlight trailing whitespace
+autocmd InsertEnter * syn clear EOLWS | syn match EOLWS excludenl /\s\+\%#\@!$/
+autocmd InsertLeave * syn clear EOLWS | syn match EOLWS excludenl /\s\+$/
+highlight EOLWS ctermbg=red guibg=red
+
+" Auto-format go code on save
+fun! Gofix()
+    let regel=line(".")
+    %!$GOROOT/bin/gofmt
+    call cursor(regel, 1)
+endfunction
+
+autocmd Filetype go command! Fmt call Gofix() 
+
+" Set backups
+if has('persistent_undo')
+  set undodir=~/.vim/tmp/undo//     " undo files
+  set undofile
+  set undolevels=3000
+  set undoreload=10000
+endif
+set backupdir=~/.vim/tmp/backup// " backups
+set directory=~/.vim/tmp/swap//   " swap files
+set backup
+set noswapfile
