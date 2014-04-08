@@ -45,14 +45,14 @@ After this script runs you should be ready to go aside from the dependencies lis
 <li><b><a href="https://github.com/gmarik/vundle">Vundle</a></b> – A fantastic package manager for Vim.</li>
 <li><b><a href="https://github.com/scrooloose/nerdtree">Nerdtree</a></b>  – The best file explorer for Vim. You can set bookmarks and open files in new tabs or splits.  
   <ul>
-    <li> <code>(leader)f</code> - Jumps to current file's location in NerdTree. Useful for browsing in the same folder quickly without navigating through file structure</li>
+    <li> <code>(leader)f</code> - Jumps to current file's location in NerdTree. Useful for browsing in the same folder quickly without navigating through file structure.</li>
   </ul>
 </li>
-<li><b><a href="https://github.com/majutsushi/tagbar">Tagbar</a></b>  – Tagbar uses the ctags library to display the tags of a file ordered by scope in a sidebar. This plugin requires <a href="http://ctags.sourceforge.net/">ctags</a> to work</li> 
+<li><b><a href="https://github.com/majutsushi/tagbar">Tagbar</a></b>  – Tagbar uses the ctags library to display the tags of a file ordered by scope in a sidebar. This plugin requires <a href="http://ctags.sourceforge.net/">ctags</a> to work.</li> 
 <li><b><a href="https://github.com/kien/ctrlp.vim">Ctrlp</a></b>  – A full path fuzzy file, buffer, mru, tag, … finder for Vim. Allows you to quickly search your file system or buffer for a file.
   <ul>
-    <li><code>(leader)b</code> - Opens CtrlP in buffer search mode (for quickly finding files you have previuosly opened)</li>
-    <li><code>(ctrl)p</code> - Opens Ctrlp in file search mode. You can default it to open at a specific location in your .vimrc (like the root of your project, for example)</li>
+    <li><code>(leader)b</code> - Opens CtrlP in buffer search mode (for quickly finding files you have previously opened).</li>
+    <li><code>(ctrl)p</code> - Opens Ctrlp in file search mode. You can default it to open at a specific location in your .vimrc (like the root of your project, for example).</li>
   </ul>
 </li>
 <li><b><a href="https://github.com/scrooloose/syntastic">Syntastic</a></b>  – An awesome syntax checking plugin that works with external syntax checkers and displays syntax errors to you. </li>
@@ -61,7 +61,7 @@ After this script runs you should be ready to go aside from the dependencies lis
 </li>
 <li><b><a href="https://github.com/corntrace/bufexplorer"> Bufexplorer </a></b> - Easy and quickly switch between buffers(aka files). Quickly switch back and forth between a group of files.
   <ul>
-    <li><code>(leader)be</code> - Opens bufexplorer and shows list of recently opened files (in order of MRU by default)</li>
+    <li><code>(leader)be</code> - Opens bufexplorer and shows list of recently opened files (in order of MRU by default).</li>
   </ul>
 </li>
 <li><b> <a href="https://github.com/ervandew/supertab">SuperTab</a></b> - Allows you to use tab for all of your auto-complete needs. 
