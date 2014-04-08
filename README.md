@@ -1,7 +1,7 @@
 Jarvis
 ============
 
-This .vimrc was developed by a few engineers at Next Jump and features some of the best plugins and shorcuts that we've found while using Vim. The hope is that this installation will get you up-and-running quickly without needing much vim knowledge in advance.
+This .vimrc features some of the best plugins and shorcuts that I've found while using Vim. The hope is that this installation will get you up-and-running quickly without needing much vim knowledge in advance.
 
 <img src="http://i.imgur.com/QkN0bpN.png" title="Gvim Screenshot"/></a>
 Beautiful, isn't it?
@@ -21,7 +21,7 @@ Beautiful, isn't it?
 Instructions can be found in the official powerline <a href="https://powerline.readthedocs.org/en/latest/fontpatching.html">documentation</a>. Prepatched fonts can be 
 found in the <a href="https://github.com/Lokaltog/powerline-fonts">powerline-fonts</a> repository.</p></pre>
 </li>
-<li> Colorscheme - This setup comes with <a href="http://ethanschoonover.com/solarized">solarized</a>, an extremely popular colorscheme that comes in both light and dark. We've also included <a href="https://github.com/tomasr/molokai">molokai</a> and <a href="https://github.com/nanotech/jellybeans.vim">jellybeans</a>. You can also choose to use a built-in colorscheme. You can check those out by typing <code>:colorscheme (tab)</code>.
+<li> Colorscheme - This setup comes with <a href="http://ethanschoonover.com/solarized">solarized</a>, an extremely popular colorscheme that comes in both light and dark. I've also included <a href="https://github.com/tomasr/molokai">molokai</a> and <a href="https://github.com/nanotech/jellybeans.vim">jellybeans</a>. You can also choose to use a built-in colorscheme. You can check those out by typing <code>:colorscheme (tab)</code>.
 You can view a large selection of Vim colorschemes <a href="https://code.google.com/p/vimcolorschemetest/">here</a>. 
 Here are some screenshots of the included colorschemes:
 </li>
@@ -45,14 +45,14 @@ After this script runs you should be ready to go aside from the dependencies lis
 <li><b><a href="https://github.com/gmarik/vundle">Vundle</a></b> – A fantastic package manager for Vim.</li>
 <li><b><a href="https://github.com/scrooloose/nerdtree">Nerdtree</a></b>  – The best file explorer for Vim. You can set bookmarks and open files in new tabs or splits.  
   <ul>
-    <li> <code>(leader)f</code> - Jumps to current file's location in NerdTree. Useful for browsing in the same folder quickly without navigating through file structure</li>
+    <li> <code>(leader)f</code> - Jumps to current file's location in NerdTree. Useful for browsing in the same folder quickly without navigating through file structure.</li>
   </ul>
 </li>
-<li><b><a href="https://github.com/majutsushi/tagbar">Tagbar</a></b>  – Tagbar uses the ctags library to display the tags of a file ordered by scope in a sidebar. This plugin requires <a href="http://ctags.sourceforge.net/">ctags</a> to work</li> 
+<li><b><a href="https://github.com/majutsushi/tagbar">Tagbar</a></b>  – Tagbar uses the ctags library to display the tags of a file ordered by scope in a sidebar. This plugin requires <a href="http://ctags.sourceforge.net/">ctags</a> to work.</li> 
 <li><b><a href="https://github.com/kien/ctrlp.vim">Ctrlp</a></b>  – A full path fuzzy file, buffer, mru, tag, … finder for Vim. Allows you to quickly search your file system or buffer for a file.
   <ul>
-    <li><code>(leader)b</code> - Opens CtrlP in buffer search mode (for quickly finding files you have previuosly opened)</li>
-    <li><code>(ctrl)p</code> - Opens Ctrlp in file search mode. You can default it to open at a specific location in your .vimrc (like the root of your project, for example)</li>
+    <li><code>(leader)b</code> - Opens CtrlP in buffer search mode (for quickly finding files you have previously opened).</li>
+    <li><code>(ctrl)p</code> - Opens Ctrlp in file search mode. You can default it to open at a specific location in your .vimrc (like the root of your project, for example).</li>
   </ul>
 </li>
 <li><b><a href="https://github.com/scrooloose/syntastic">Syntastic</a></b>  – An awesome syntax checking plugin that works with external syntax checkers and displays syntax errors to you. </li>
@@ -61,7 +61,7 @@ After this script runs you should be ready to go aside from the dependencies lis
 </li>
 <li><b><a href="https://github.com/corntrace/bufexplorer"> Bufexplorer </a></b> - Easy and quickly switch between buffers(aka files). Quickly switch back and forth between a group of files.
   <ul>
-    <li><code>(leader)be</code> - Opens bufexplorer and shows list of recently opened files (in order of MRU by default)</li>
+    <li><code>(leader)be</code> - Opens bufexplorer and shows list of recently opened files (in order of MRU by default).</li>
   </ul>
 </li>
 <li><b> <a href="https://github.com/ervandew/supertab">SuperTab</a></b> - Allows you to use tab for all of your auto-complete needs. 
@@ -97,9 +97,9 @@ After this script runs you should be ready to go aside from the dependencies lis
 </ol>
 
 ### Start Coding!
-Feel free to browse the source code as most of the vimrc file settings have comments explaining what they do. Be sure to check out the documentation of the plugins to take advantage of their full feature set. What we have mentioned here is only a small part of their functionality.
+Feel free to browse the source code as most of the vimrc file settings have comments explaining what they do. Be sure to check out the documentation of the plugins to take advantage of their full feature set. What I have mentioned here is only a small part of their functionality.
 
 Please don't hesitate to fork and send pull requests for improvements or report any issues.
 
 Happy Vimming! <br/>
-<a href='http://www.nextjump.com'>Next Jump</a>
+Caleb
