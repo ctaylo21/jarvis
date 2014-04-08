@@ -1,7 +1,7 @@
 Jarvis
 ============
 
-This .vimrc was developed by a few engineers at Next Jump and features some of the best plugins and shorcuts that we've found while using Vim. The hope is that this installation will get you up-and-running quickly without needing much vim knowledge in advance.
+This .vimrc features some of the best plugins and shorcuts that I've found while using Vim. The hope is that this installation will get you up-and-running quickly without needing much vim knowledge in advance.
 
 <img src="http://i.imgur.com/QkN0bpN.png" title="Gvim Screenshot"/></a>
 Beautiful, isn't it?
@@ -21,7 +21,7 @@ Beautiful, isn't it?
 Instructions can be found in the official powerline <a href="https://powerline.readthedocs.org/en/latest/fontpatching.html">documentation</a>. Prepatched fonts can be 
 found in the <a href="https://github.com/Lokaltog/powerline-fonts">powerline-fonts</a> repository.</p></pre>
 </li>
-<li> Colorscheme - This setup comes with <a href="http://ethanschoonover.com/solarized">solarized</a>, an extremely popular colorscheme that comes in both light and dark. We've also included <a href="https://github.com/tomasr/molokai">molokai</a> and <a href="https://github.com/nanotech/jellybeans.vim">jellybeans</a>. You can also choose to use a built-in colorscheme. You can check those out by typing <code>:colorscheme (tab)</code>.
+<li> Colorscheme - This setup comes with <a href="http://ethanschoonover.com/solarized">solarized</a>, an extremely popular colorscheme that comes in both light and dark. I've also included <a href="https://github.com/tomasr/molokai">molokai</a> and <a href="https://github.com/nanotech/jellybeans.vim">jellybeans</a>. You can also choose to use a built-in colorscheme. You can check those out by typing <code>:colorscheme (tab)</code>.
 You can view a large selection of Vim colorschemes <a href="https://code.google.com/p/vimcolorschemetest/">here</a>. 
 Here are some screenshots of the included colorschemes:
 </li>
@@ -97,9 +97,9 @@ After this script runs you should be ready to go aside from the dependencies lis
 </ol>
 
 ### Start Coding!
-Feel free to browse the source code as most of the vimrc file settings have comments explaining what they do. Be sure to check out the documentation of the plugins to take advantage of their full feature set. What we have mentioned here is only a small part of their functionality.
+Feel free to browse the source code as most of the vimrc file settings have comments explaining what they do. Be sure to check out the documentation of the plugins to take advantage of their full feature set. What I have mentioned here is only a small part of their functionality.
 
 Please don't hesitate to fork and send pull requests for improvements or report any issues.
 
 Happy Vimming! <br/>
-<a href='http://www.nextjump.com'>Next Jump</a>
+Caleb
