@@ -52,7 +52,7 @@ After this script runs you should be ready to go aside from the dependencies lis
 <li><b><a href="https://github.com/kien/ctrlp.vim">Ctrlp</a></b>  – A full path fuzzy file, buffer, mru, tag, … finder for Vim. Allows you to quickly search your file system or buffer for a file.
   <ul>
     <li><code>(leader)b</code> - Opens CtrlP in buffer search mode (for quickly finding files you have previously opened).</li>
-    <li><code>(ctrl)p</code> - Opens Ctrlp in file search mode. You can default it to open at a specific location in your .vimrc (like the root of your project, for example).</li>
+    <li><code>(leader>t</code> - Opens Ctrlp in file search mode. You can default it to open at a specific location in your .vimrc (like the root of your project, for example).</li>
   </ul>
 </li>
 <li><b><a href="https://github.com/scrooloose/syntastic">Syntastic</a></b>  – An awesome syntax checking plugin that works with external syntax checkers and displays syntax errors to you. </li>
@@ -93,6 +93,8 @@ After this script runs you should be ready to go aside from the dependencies lis
         <span class="nt">&lt;/tr&gt;</span>
     <span class="nt">&lt;/table&gt;</span>
 </pre></div>
+</li>
+<li><b><a href="https://github.com/tobyS/pdv">PDV</a></b> - Allows you to generate documetation using <a href="https://github.com/SirVer/ultisnips">utlisnips</a>. By default it uses a standard template. Simply use <code>(leader)g</code> while your cursor is on a function definition and it will generate standard PHP documetation for that function.
 </li>
 </ol>
 
