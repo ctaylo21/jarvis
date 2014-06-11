@@ -24,6 +24,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tobyS/pdv'
 Bundle 'SirVer/ultisnips'
 Bundle 'tobyS/vmustache'
+Bundle 'airblade/vim-gitgutter'
 
 " ============================================================================ "
 " ===                           EDITING OPTIONS                            === "
