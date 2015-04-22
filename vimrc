@@ -25,6 +25,9 @@ Bundle 'tobyS/pdv'
 Bundle 'SirVer/ultisnips'
 Bundle 'tobyS/vmustache'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'evidens/vim-twig'
+Bundle 'Townk/vim-autoclose'
+Bundle 'edkolev/tmuxline.vim'
 
 " ============================================================================ "
 " ===                           EDITING OPTIONS                            === "

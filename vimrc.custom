@@ -39,7 +39,7 @@ set noshowmode                    " -- Hide default mode indicator
 let g:airline_powerline_fonts = 1 " -- Allow fancy separators
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#tmuxline#enabled = 0
+let g:airline#extensions#tmuxline#enabled = 1
 let g:airline_section_warning = 'syntastic'
 "Custom setup that removes filetype/whitespace from default vim airline bar
 let g:airline#extensions#default#layout = [[ 'a', 'b', 'c' ], ['x', 'warning' ]]
@@ -60,6 +60,7 @@ set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn
 
 " ### Syntastic ### "
 let g:syntastic_php_checkers=['php', 'phpcs', 'phpmd']
+let g:syntastic_javascript_checkers = ['jshint']
 
 " ### SuperTab ### "
 let g:SuperTabDefaultCompletionType = "context"
@@ -70,6 +71,16 @@ let g:SuperTabClosePreviewOnPopupClose = 1
 " ### Tagbar Options ### "
 let g:tagbar_show_visibility = 1
 let g:tagbar_expand = 1
+let g:tagbar_type_php  = {
+    \ 'ctagstype' : 'php',
+    \ 'kinds'     : [
+        \ 'i:interfaces',
+        \ 'c:classes',
+        \ 'd:constant definitions',
+        \ 'f:functions',
+        \ 'j:javascript functions:1'
+    \ ]
+  \ }
 
 "latest version of tagbar is only compatible with vim >= 701
 if v:version > 700
