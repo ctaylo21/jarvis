@@ -28,6 +28,7 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'evidens/vim-twig'
 Bundle 'Townk/vim-autoclose'
 Bundle 'edkolev/tmuxline.vim'
+Bundle 'jelera/vim-javascript-syntax'
 
 " ============================================================================ "
 " ===                           EDITING OPTIONS                            === "

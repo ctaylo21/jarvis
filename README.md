@@ -55,7 +55,9 @@ After this script runs you should be ready to go aside from the dependencies lis
     <li><code>(leader>t</code> - Opens Ctrlp in file search mode. You can default it to open at a specific location in your .vimrc (like the root of your project, for example).</li>
   </ul>
 </li>
-<li><b><a href="https://github.com/scrooloose/syntastic">Syntastic</a></b>  – An awesome syntax checking plugin that works with external syntax checkers and displays syntax errors to you. </li>
+<li><b><a href="https://github.com/scrooloose/syntastic">Syntastic</a></b>  – An awesome syntax checking plugin that works with external syntax checkers and displays syntax errors to you. For certain langauges like javascript there are recommended syntax checkers to install. For exapmple, the setting currently for javascript is to use <a href="http://jshint.com/">JSHint</a>.
+  <pre><code>sudo npm -g install jshint</code></pre>
+</li>
 <li><b><a href="https://github.com/bling/vim-airline">Vim-airline</a></b>   - Highly customizable vim status bar that allows you to display exactly what you want and comes with several awesome color schemes and even integrates with common Vim plugins like Tagbar and Ctrlp.
 <a href="https://github.com/bling/vim-airline/wiki/screenshots/demo.gif" target="_blank"><img src="https://github.com/bling/vim-airline/wiki/screenshots/demo.gif" alt="img" style="max-width:100%;"></a>
 </li>
