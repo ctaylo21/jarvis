@@ -29,6 +29,7 @@ Bundle 'evidens/vim-twig'
 Bundle 'Townk/vim-autoclose'
 Bundle 'edkolev/tmuxline.vim'
 Bundle 'jelera/vim-javascript-syntax'
+Bundle "pangloss/vim-javascript"
 
 " ============================================================================ "
 " ===                           EDITING OPTIONS                            === "
@@ -99,6 +100,20 @@ set wildmode=list:longest
 
 autocmd BufRead,BufNewFile *.go set filetype=go
 autocmd BufRead,BufNewFile *.go set makeprg=go\ build\ %
+
+" Method to clear buffer history for large projects/files
+function! ClearHiddenRO()
+    let i = 1
+    while i <= bufnr('$')
+        if buflisted(i)
+            if (getbufvar(i, '&readonly') && (bufwinnr(i) == -1)) || !bufloaded(i)
+                exe "bdel!" i
+            endif
+        endif
+        let i += 1
+    endwhile
+endfunc
+map <leader>q call ClearHiddenRO()
 
 " Make any custom changes here. If this file doesn't exists, the
 " base vimrc.custom is copied here to give you some font options
