@@ -6,6 +6,9 @@ This .vimrc features some of the best plugins and shorcuts that I've found while
 <img src="http://i.imgur.com/QkN0bpN.png" title="Gvim Screenshot"/></a>
 Beautiful, isn't it?
 
+##Vim
+Below is the setup for Vim, the main IDE of Jarvis.
+
 ###Dependencies
 <ol>
   <li><a href="http://ctags.sourceforge.net/">Ctags</a> - Ctags is required for a few of the plugins. After you have it installed, if you have a project located at  <code>~/code/project1</code> you can run this command: <code>ctags -R -f ~/.vim/mytags/project1 ~/code/project1</code> to have ctags recursively generate a tags file for your project located at <code>~/code/project1</code> and then place that tags file in <code>~/.vim/mytags/project1</code>. It's not required to do this but storing tag files in folders named after the project they represent is a nice way of keeping things organized. The final step is to run <code>:set tags=~/.vim/mytags/project1</code> inside of Vim. 
@@ -99,6 +102,30 @@ After this script runs you should be ready to go aside from the dependencies lis
 <li><b><a href="https://github.com/tobyS/pdv">PDV</a></b> - Allows you to generate documetation using <a href="https://github.com/SirVer/ultisnips">utlisnips</a>. By default it uses a standard template. Simply use <code>(leader)g</code> while your cursor is on a function definition and it will generate standard PHP documetation for that function.
 </li>
 </ol>
+
+## Tmux
+Jarvis includes a config file for <a href="http://tmux.sourceforge.net/">tmux</a>, a terminal multiplexer that can significantly improve your productivity and help you organize your workspace. You can find a few good <a href="https://gist.github.com/MohamedAlaa/2961058">cheat sheets</a> to help you get used to the commands. My typical workflow is to have a separate session for each project I'm working on and then have each session split into multiple panes as needed for code/logs/etc. 
+
+Having a session per project allows you to arrange the window for each project as you need it and not have to open files from different projects into the same window.
+
+### Depedencies
+For Mac OSX you may need to install <code>reattach-to-user-namespace</code> to use the tmux configuration. Here's how to install it via homebrew:
+
+<code>brew install reattach-to-user-namespace</code>
+
+### Instructions
+1. Copy <code>tmux.conf</code> to the default tmux config file location (~/.tmux.conf). 
+
+That's it! You can used tmux however you wish and modify the tmux config to suit your needs. The only note is that the default tmux prefix for starting tmux commands - <code>ctrl+b</code> - has been switched to be <code>ctrl+a</code>.
+
+##Oh-my-zsh
+Jarvis also works nicely with <a href="http://zsh.sourceforge.net/">zsh</a> - an interactive shell with many unique features - and <a href="https://github.com/robbyrussell/oh-my-zsh">oh-my-zsh</a> - a community-driven framework for managing your zsh configuration.
+
+### Instructions
+1. You can modify your theme by editing the <code>~/.zshrc</code> file and modifying the theme line. I prefer the <code>agnoster</code> theme:
+  <code>ZSH_THEME="agnoster"</code>
+
+More to come!
 
 ### Start Coding!
 Feel free to browse the source code as most of the vimrc file settings have comments explaining what they do. Be sure to check out the documentation of the plugins to take advantage of their full feature set. What I have mentioned here is only a small part of their functionality.
