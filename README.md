@@ -54,7 +54,8 @@ After this script runs you should be ready to go aside from the dependencies lis
 1. [Vundle](https://github.com/gmarik/vundle">Vundle) – A fantastic package manager for Vim.
 2. [Nerdtree](https://github.com/scrooloose/nerdtree) – A file explorer that lets you set bookmarks and open files in new tabs or splits.
 
-  `(leader)f` - Jumps to current file's location in NerdTree. Useful for browsing in the same folder quickly without navigating through file structure.
+   `(leader)f` - Jumps to current file's location in NerdTree. Useful for browsing in the same folder quickly without navigating through file structure.
+
 3. [Ctrlp](https://github.com/kien/ctrlp.vim) – A full path fuzzy file, buffer, mru, tag, … finder for Vim. Allows you to quickly search your file system or buffer for a file.
 
    `(leader)b` - Opens CtrlP in buffer search mode (for quickly finding files you have previously opened).  
