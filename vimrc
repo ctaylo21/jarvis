@@ -12,24 +12,22 @@ Bundle 'gmarik/vundle'
 
 " Installed plugins
 Bundle 'corntrace/bufexplorer'
-Bundle 'bling/vim-airline'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'ervandew/supertab'
-Bundle 'shawncplus/phpcomplete.vim'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'tpope/vim-fugitive'
-Bundle 'tobyS/pdv'
-Bundle 'SirVer/ultisnips'
-Bundle 'tobyS/vmustache'
 Bundle 'airblade/vim-gitgutter'
-Bundle 'evidens/vim-twig'
 Bundle 'Townk/vim-autoclose'
 Bundle 'edkolev/tmuxline.vim'
-Bundle 'jelera/vim-javascript-syntax'
-Bundle "pangloss/vim-javascript"
+Bundle 'heavenshell/vim-jsdoc'
+
+" Airline bundles "
+Bundle 'bling/vim-airline'
+Bundle "vim-airline/vim-airline-themes"
+
+" Javascript bundles"
+Bundle 'othree/javascript-libraries-syntax.vim'
 
 " ============================================================================ "
 " ===                           EDITING OPTIONS                            === "
@@ -39,11 +37,6 @@ let mapleader=","
 
 " Line Numbers
 set nu
-
-" Tabs as 4 spaces
-set expandtab
-set softtabstop=4
-set shiftwidth=4
 
 " Backspace works as it damn well should!
 set backspace=indent,eol,start
@@ -92,6 +85,8 @@ au BufReadPost fugitive://* set bufhidden=delete
 
 set encoding=utf-8
 
+set lazyredraw
+
 " Autocomplete in menu will list all available options that match
 set wildmenu
 
@@ -100,6 +95,9 @@ set wildmode=list:longest
 
 autocmd BufRead,BufNewFile *.go set filetype=go
 autocmd BufRead,BufNewFile *.go set makeprg=go\ build\ %
+
+" Enable CtrlP extension to be used
+let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 
 " Method to clear buffer history for large projects/files
 function! ClearHiddenRO()
@@ -114,6 +112,9 @@ function! ClearHiddenRO()
     endwhile
 endfunc
 map <leader>q call ClearHiddenRO()
+
+" Set location of tags file
+set tags=./tags,tags;/
 
 " Make any custom changes here. If this file doesn't exists, the
 " base vimrc.custom is copied here to give you some font options
