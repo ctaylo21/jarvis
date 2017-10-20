@@ -9,15 +9,20 @@ This setup is my current development environment for MacOS. It includes the foll
 <img src="http://i.imgur.com/QkN0bpN.png" title="vim Screenshot"/></a>
 Beautiful, isn't it?
 
-
 ## Dependencies
 1. [Homebrew](https://brew.sh/) - Package manager for macOS.
-  * Install command `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+
+    Install command `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+
 2. [Iterm2](https://www.iterm2.com/) - Terminal emulator for macOS. Available via the (download page)[https://www.iterm2.com/downloads.html]
 3. [Tmux](https://github.com/tmux/tmux/wiki) - Terminal multiplexer.
-  * Can be installed via homebrew. `brew install tmux`
+
+   Can be installed via homebrew. `brew install tmux`
+
 4. [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh) - Open-source framewokr for managing your ZSH configuration
-  * Intall via curl: `sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
+
+   Intall via curl: `sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
+
 5. [Solarized color scheme](http://ethanschoonover.com/solarized/vim-colors-solarized) - Beautiful colorscheme
 
 ## Vim Installation
@@ -52,29 +57,30 @@ After this script runs you should be ready to go aside from the dependencies lis
   `(leader)f` - Jumps to current file's location in NerdTree. Useful for browsing in the same folder quickly without navigating through file structure.
 3. [Ctrlp](https://github.com/kien/ctrlp.vim) – A full path fuzzy file, buffer, mru, tag, … finder for Vim. Allows you to quickly search your file system or buffer for a file.
 
-  `(leader)b` - Opens CtrlP in buffer search mode (for quickly finding files you have previously opened).
-  `(leader>t` - Opens Ctrlp in file search mode. You can default it to open at a specific location in your .vimrc (like the root of your project, for example).
+   `(leader)b` - Opens CtrlP in buffer search mode (for quickly finding files you have previously opened).  
+   `(leader>t` - Opens Ctrlp in file search mode. You can default it to open at a specific location in your .vimrc (like the root of your project, for example).
 
 4. [Syntastic](https://github.com/scrooloose/syntastic) – An awesome syntax checking plugin that works with external syntax checkers and displays syntax errors to you. For certain langauges like javascript there are recommended syntax checkers to install. For exapmple, the setting currently for javascript is to use [JSHint](http://jshint.com/)
-  ```
-  sudo npm -g install jshint
-  ```
+
+   ```
+   sudo npm -g install jshint
+   ```
 5. [Vim-airline](https://github.com/bling/vim-airline) - Highly customizable vim status bar that allows you to display exactly what you want and comes with several awesome color schemes and even integrates with common Vim plugins like Ctrlp.
 <a href="https://github.com/bling/vim-airline/wiki/screenshots/demo.gif" target="_blank"><img src="https://github.com/bling/vim-airline/wiki/screenshots/demo.gif" alt="img" style="max-width:100%;"></a>
 6. [Bufexplorer](https://github.com/corntrace/bufexplorer) - Easy and quickly switch between buffers(aka files). Quickly switch back and forth between a group of files.
 
-  `(leader)be` - Opens bufexplorer and shows list of recently opened files (in order of MRU by default).
+   `(leader)be` - Opens bufexplorer and shows list of recently opened files (in order of MRU by default).
 
 7. [Easy Motion](https://github.com/Lokaltog/vim-easymotion) - Gives you the ability to quickly and precisely hop around a file with Vim motions.
 
-  `(leader)(leader)` is the default mapping to trigger motions. For example, `(leader)(leader)w` will highlight the first letter in each word below the cursor and allow you to select the exact word you want to cursor to hop to.
+   `(leader)(leader)` is the default mapping to trigger motions. For example, `(leader)(leader)w` will highlight the first letter in each word below the cursor and allow you to select the exact word you want to cursor to hop to.
 
 ## Iterm2 and Oh my ZSH
 To use Oh my ZSH, the default shell should be changed to Zsh in iTerm2. Open iTerm2 and type run:
+
 ```
 chsh -s /bin/zsh
 ```
-
 Copy the `zshrc` file into your home directory `cp zshrc ~/.zshrc` and update it to include your custom paths
 
 ## Tmux
