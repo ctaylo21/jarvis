@@ -26,11 +26,11 @@ Beautiful, isn't it?
 5. [Solarized color scheme](http://ethanschoonover.com/solarized/vim-colors-solarized) - Beautiful colorscheme
 6. [fzf](https://github.com/junegunn/fzf#installation) - A command-line fuzzy finder
 
-  Install via `brew instal fzf`
+   Install via `brew instal fzf`
 
 7. [ripgrep](https://github.com/BurntSushi/ripgrep) - line oriented search tool that respsects .gitignore rules
 
-  Install via `brew install ripgrep`
+   Install via `brew install ripgrep`
 
 ## Vim Installation
 You can install vim by running:
@@ -54,7 +54,7 @@ To get Jarvis, simply type this into your CLI
 **This will install a copy of jarvis in you current directory** so be aware of that when you run the above code.
 After it backs up the ~/.vim directory it will create a symlink from ~/.vim to where you installed jarvis.
 
-After this script runs you should be ready to go aside from the dependencies listed below. Any custom changes can be put in a file called vimrc.local inside of your jarvis directory. If the file doesn't exists when you run the above script it will copy the vimrc.custom file to vimrc.local so you can get started with a few custom options like font and colorscheme. Feel free to make any changes you want here as they won't be overwritten when you do a git pull.
+After this script runs you should be ready to go aside from the dependencies listed below. Any custom changes can be put in a file called `vimrc.local` inside of your jarvis directory. If the file doesn't exists when you run the above script it will copy the `vimrc.custom` file to `vimrc.local` so you can get started with a few custom options like font and colorscheme. Feel free to make any changes you want here as they won't be overwritten when you do a git pull.
 
 ### Plugins
 *Note: (leader) representes your leader key, defaulted to "," in this .vimrc*
@@ -63,25 +63,25 @@ After this script runs you should be ready to go aside from the dependencies lis
 
    `(leader)f` - Jumps to current file's location in NerdTree. Useful for browsing in the same folder quickly without navigating through file structure.
 
-3. [Ctrlp](https://github.com/kien/ctrlp.vim) – A full path fuzzy file, buffer, mru, tag, … finder for Vim. Allows you to quickly search your file system or buffer for a file.
-
-   `(leader)b` - Opens CtrlP in buffer search mode (for quickly finding files you have previously opened).  
-   `(leader>t` - Opens Ctrlp in file search mode. You can default it to open at a specific location in your .vimrc (like the root of your project, for example).
-
-4. [Syntastic](https://github.com/scrooloose/syntastic) – An awesome syntax checking plugin that works with external syntax checkers and displays syntax errors to you. For certain langauges like javascript there are recommended syntax checkers to install. For exapmple, the setting currently for javascript is to use [JSHint](http://jshint.com/)
+3. [Syntastic](https://github.com/scrooloose/syntastic) – An awesome syntax checking plugin that works with external syntax checkers and displays syntax errors to you. For certain langauges like javascript there are recommended syntax checkers to install. For exapmple, the setting currently for javascript is to use [JSHint](http://jshint.com/)
 
    ```
    sudo npm -g install jshint
    ```
-5. [Vim-airline](https://github.com/bling/vim-airline) - Highly customizable vim status bar that allows you to display exactly what you want and comes with several awesome color schemes and even integrates with common Vim plugins like Ctrlp.
+4. [Vim-airline](https://github.com/bling/vim-airline) - Highly customizable vim status bar that allows you to display exactly what you want and comes with several awesome color schemes and even integrates with common Vim plugins like Ctrlp.
 <a href="https://github.com/bling/vim-airline/wiki/screenshots/demo.gif" target="_blank"><img src="https://github.com/bling/vim-airline/wiki/screenshots/demo.gif" alt="img" style="max-width:100%;"></a>
-6. [Bufexplorer](https://github.com/corntrace/bufexplorer) - Easy and quickly switch between buffers(aka files). Quickly switch back and forth between a group of files.
+5. [Bufexplorer](https://github.com/corntrace/bufexplorer) - Easy and quickly switch between buffers(aka files). Quickly switch back and forth between a group of files.
 
    `(leader)be` - Opens bufexplorer and shows list of recently opened files (in order of MRU by default).
 
-7. [Easy Motion](https://github.com/Lokaltog/vim-easymotion) - Gives you the ability to quickly and precisely hop around a file with Vim motions.
+6. [Easy Motion](https://github.com/Lokaltog/vim-easymotion) - Gives you the ability to quickly and precisely hop around a file with Vim motions.
 
    `(leader)(leader)` is the default mapping to trigger motions. For example, `(leader)(leader)w` will highlight the first letter in each word below the cursor and allow you to select the exact word you want to cursor to hop to.
+7. [fzf.vim](https://github.com/junegunn/fzf.vim) - Collection of things you can do with [fzf](https://github.com/junegunn/fzf) and vim. Uses [ripgrep](https://github.com/BurntSushi/ripgrep) as default tool for speed and support for respecting `.gitignore` files.
+
+   `;` - Opens up window to fuzzy-find current buffers in the current directory.
+   `(leader)t` - Opens up window to fuzzy-find files in the current directory.
+   `(leader)r` - Opens up window to fuzzy-find tags
 
 ## Iterm2 and Oh my ZSH
 To use Oh my ZSH, the default shell should be changed to Zsh in iTerm2. Open iTerm2 and type run:
