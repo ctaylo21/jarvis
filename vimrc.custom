@@ -45,15 +45,6 @@ let g:airline#extensions#default#layout = [[ 'a', 'b', 'c' ], ['x', 'warning' ]]
 " Keep list of open files in buffer at top
 let g:airline#extensions#tabline#enabled = 1
 
-" ### Ctrlp ### "
-" Define default location for ctrlp to begin searching
-" let g:ctrlp_cmd = 'CtrlP path/to/directory'
-
-" Ignore files we don't want Ctrlp to index
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
-set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
-set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn
-
 " ### Syntastic ### "
 let g:syntastic_php_checkers=['php', 'phpcs', 'phpmd']
 let g:syntastic_javascript_checkers = ['jshint']
@@ -78,6 +69,22 @@ let g:jsdoc_default_mapping = 0
 " ### Javascript Libraries ### "
 let g:used_javascript_libs = 'jquery,require,underscore,chai'
 
+" ### GitGutter ###"
+" GitGutter styling to use · instead of +/-
+let g:gitgutter_sign_added = '∙'
+let g:gitgutter_sign_modified = '∙'
+let g:gitgutter_sign_removed = '∙'
+let g:gitgutter_sign_modified_removed = '∙'
+
+" ### fzf ###"
+" Use ripgrep with fzf
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
+
 " ============================================================================ "
 " ===                             KEY MAPPINGS                             === "
 " ============================================================================ "
@@ -88,9 +95,6 @@ let g:used_javascript_libs = 'jquery,require,underscore,chai'
 " Clear highlighted search terms while preserving history
 nmap <silent> <leader>/ :nohlsearch<CR>
 
-" find and replace (another windows shortcut)
-map <leader>h :%s///gc<left><left><left><left>
-
 " === Nerdtree shorcuts === "
 " Open Nerdtree
 nmap <leader>n :NERDTree<CR>
@@ -98,14 +102,10 @@ nmap <leader>n :NERDTree<CR>
 " Opens current file heiarchy in Nerdtree
 nmap <leader>f :NERDTreeFind<CR>
 
-" === Ctrlp shortcuts === "
-" Fuzzy search for files. You can specify where ctrlp will start searching
-" above. Having these duplicate settings may be unecessary
-nmap <leader>t :CtrlP<CR>
-let g:ctrlp_map = "<leader>t"
-
-" Opens Ctrlp but in buffer search mode to quickly search in recent files
-nmap <leader>b :CtrlPBuffer<CR>
+" === fzf shortcuts === "
+nmap ; :Buffers<CR>
+nmap <Leader>t :Files<CR>
+nmap <Leader>r :Tags<CR>
 
 " Svn blame highlighted lines in visual mode for svn users
 vmap gl :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
@@ -136,9 +136,6 @@ set expandtab
 set softtabstop=2
 set tabstop=2
 set shiftwidth=2
-
-" For quick save/quit
-nnoremap ; :
 
 " Remap space to page down and - to page up
 noremap <Space> <PageDown>

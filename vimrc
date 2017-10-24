@@ -12,7 +12,6 @@ Bundle 'gmarik/vundle'
 
 " Installed plugins
 Bundle 'corntrace/bufexplorer'
-Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'Lokaltog/vim-easymotion'
@@ -22,9 +21,13 @@ Bundle 'Townk/vim-autoclose'
 Bundle 'edkolev/tmuxline.vim'
 Bundle 'heavenshell/vim-jsdoc'
 
+" Fuzzy Finding
+set rtp+=/usr/local/opt/fzf/
+Bundle 'junegunn/fzf.vim'
+
 " Airline bundles "
 Bundle 'bling/vim-airline'
-Bundle "vim-airline/vim-airline-themes"
+Bundle 'vim-airline/vim-airline-themes'
 
 " Javascript bundles"
 Bundle 'othree/javascript-libraries-syntax.vim'
@@ -92,12 +95,6 @@ set wildmenu
 
 " allow for tab completion in the command line
 set wildmode=list:longest
-
-autocmd BufRead,BufNewFile *.go set filetype=go
-autocmd BufRead,BufNewFile *.go set makeprg=go\ build\ %
-
-" Enable CtrlP extension to be used
-let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 
 " Method to clear buffer history for large projects/files
 function! ClearHiddenRO()

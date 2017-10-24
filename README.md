@@ -14,7 +14,7 @@ Beautiful, isn't it?
 
     Install command `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 
-2. [Iterm2](https://www.iterm2.com/) - Terminal emulator for macOS. Available via the (download page)[https://www.iterm2.com/downloads.html]
+2. [Iterm2](https://www.iterm2.com/) - Terminal emulator for macOS. Available via the [download page](https://www.iterm2.com/downloads.html)
 3. [Tmux](https://github.com/tmux/tmux/wiki) - Terminal multiplexer.
 
    Can be installed via homebrew. `brew install tmux`
@@ -24,6 +24,13 @@ Beautiful, isn't it?
    Intall via curl: `sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
 
 5. [Solarized color scheme](http://ethanschoonover.com/solarized/vim-colors-solarized) - Beautiful colorscheme
+6. [fzf](https://github.com/junegunn/fzf#installation) - A command-line fuzzy finder
+
+  Install via `brew instal fzf`
+
+7. [ripgrep](https://github.com/BurntSushi/ripgrep) - line oriented search tool that respsects .gitignore rules
+
+  Install via `brew install ripgrep`
 
 ## Vim Installation
 You can install vim by running:
@@ -83,6 +90,10 @@ To use Oh my ZSH, the default shell should be changed to Zsh in iTerm2. Open iTe
 chsh -s /bin/zsh
 ```
 Copy the `zshrc` file into your home directory `cp zshrc ~/.zshrc` and update it to include your custom paths
+
+### Using fzf within Iterm2
+
+Running the command `fe` in iTerm2 will open up an fzf window to fuzzy-find files in the current directory. Presseing "enter" on your choice will then open that file in vim.
 
 ## Tmux
 Jarvis includes a config file for <a href="http://tmux.sourceforge.net/">tmux</a>, a terminal multiplexer that can significantly improve your productivity and help you organize your workspace. You can find a few good <a href="https://gist.github.com/MohamedAlaa/2961058">cheat sheets</a> to help you get used to the commands. My typical workflow is to have a separate session for each project I'm working on and then have each session split into multiple panes as needed for code/logs/etc.
