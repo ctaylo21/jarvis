@@ -66,7 +66,7 @@ After this script runs you should be ready to go aside from the dependencies lis
 3. [Syntastic](https://github.com/scrooloose/syntastic) – An awesome syntax checking plugin that works with external syntax checkers and displays syntax errors to you. For certain langauges like javascript there are recommended syntax checkers to install. For exapmple, the setting currently for javascript is to use [JSHint](http://jshint.com/)
 
    ```
-   sudo npm -g install jshint
+   npm install -g jshint
    ```
 4. [Vim-airline](https://github.com/bling/vim-airline) - Highly customizable vim status bar that allows you to display exactly what you want and comes with several awesome color schemes and even integrates with common Vim plugins like Ctrlp.
 <a href="https://github.com/bling/vim-airline/wiki/screenshots/demo.gif" target="_blank"><img src="https://github.com/bling/vim-airline/wiki/screenshots/demo.gif" alt="img" style="max-width:100%;"></a>
