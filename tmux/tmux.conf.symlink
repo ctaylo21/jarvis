@@ -1,5 +1,6 @@
-# make tmux display things in 256 colors
-  set -g default-terminal "screen-256color"
+# tmux display things in 256 colors
+  set -g default-terminal    "screen-256color"
+  set -ga terminal-overrides ",xterm-256color:Tc"
 
 # set scrollback history to 10000 (10k)
   set -g history-limit 10000

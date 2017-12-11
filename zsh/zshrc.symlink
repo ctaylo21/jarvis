@@ -1,0 +1,57 @@
+# Path to oh-my-zsh installation.
+export ZSH=~/.oh-my-zsh
+
+# Name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+ZSH_THEME="agnoster"
+
+# Enable command auto-correction.
+ENABLE_CORRECTION="true"
+
+# Display red dots whilst waiting for completion.
+COMPLETION_WAITING_DOTS="true"
+
+# Disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git node brew)
+
+# User configuration
+
+# Hide user@hostname if it's expected default user
+DEFAULT_USER="ctay20"
+prompt_context(){}
+
+# Setting rg as the default source for fzf
+export FZF_DEFAULT_COMMAND='rg --files'
+
+# Apply the command to CTRL-T as well
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+# fe [FUZZY PATTERN] - Open the selected file with the default editor
+#   - Bypass fuzzy finder if there's only one match (--select-1)
+#   - Exit if there's no match (--exit-0)
+fe() {
+  local files
+  IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
+  [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
+}
+
+source $ZSH/oh-my-zsh.sh
+
+# Set default editor to nvim
+export EDITOR='nvim'
+
+# Enabled true color support for terminals
+export NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+#  Aliases
+alias vim="nvim"
+
+source $ZSH/oh-my-zsh.sh

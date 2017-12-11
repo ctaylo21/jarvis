@@ -5,6 +5,7 @@
 tags
 
 tmp/*
-bundle/*
 
 vimrc.local
+config/nvim/plugged
+config/nvim/autoload/plug.vim
