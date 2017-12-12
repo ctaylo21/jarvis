@@ -44,8 +44,7 @@ call matchadd('Trail', '\s\+$', 100)
 "   --glob:  Include or exclues files for searching that match the given glob
 "            (aka ignore .git files)
 "
-call denite#custom#var('file_rec', 'command',
-      \ ['rg', '--files', '--glob', '!.git'])
+call denite#custom#var('file_rec', 'command', ['rg', '--files', '--glob', '!.git'])
 
 " Use ripgrep in place of "grep"
 call denite#custom#var('grep', 'command', ['rg'])
@@ -55,8 +54,7 @@ call denite#custom#var('grep', 'command', ['rg'])
 "   --hidden:   Search hidden directories and files
 "   --heading:  Show the file name above clusters of matches from each file
 "   --S:        Search case insensitively if the pattern is all lowercase
-call denite#custom#var('grep', 'default_opts',
-      \ ['--hidden', '--vimgrep', '--heading', '-S'])
+call denite#custom#var('grep', 'default_opts', ['--hidden', '--vimgrep', '--heading', '-S'])
 
 " Recommended defaults for ripgrep via Denite docs
 call denite#custom#var('grep', 'recursive_opts', [])
@@ -68,9 +66,7 @@ call denite#custom#var('grep', 'final_opts', [])
 " call denite#custom#option('default', 'highlight_mode_insert', 'TermCursor')
 
 " Remove date from buffer list
-call denite#custom#var(
-      \ 'buffer',
-      \ 'date_format', '')
+call denite#custom#var('buffer', 'date_format', '')
 
 " Custom options for Denite
 "   auto_resize   - Auto resize the Denite window height automatically.
@@ -78,10 +74,10 @@ call denite#custom#var(
 "   direction     - Specify Denite window direction as directly below current pane
 "   winminheight  - Specify min height for Denite window
 let s:denite_options = {'default' : {
-  \ 'auto_resize': 1,
-  \ 'prompt': '❯',
-  \ 'direction': 'rightbelow',
-  \ 'winminheight': '10'
+\ 'auto_resize': 1,
+\ 'prompt': '❯',
+\ 'direction': 'rightbelow',
+\ 'winminheight': '10'
 \ }}
 
 " Loop through denite options and enable them
@@ -151,6 +147,7 @@ call airline#parts#define_accent('error', 'white')
 " ============================================================================ "
 " ===                                UI                                    === "
 " ============================================================================ "
+
 " Enable true color support
 set termguicolors
 
