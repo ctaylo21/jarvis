@@ -16,11 +16,43 @@
 </div>
 
 ## Table of Contents
+- [Features](#features)
 - [Dependencies](#dependencies)
 - [Installation](#installation)
-- [Features](#features)
 - [Commands](#commmands)
 - [Support](#support)
+
+## Features
+
+The following are features provided by Jarvis. They all have quick keybindings to make them quick and easy to use.
+
+1. **Quick-open files** - *zsh* & *NeoVim*
+
+    Open files with simple keystrokes with fuzzy matching via command line and inside NeoVim.
+
+    <img src="https://media.giphy.com/media/xUOxeZpELYRSECCZR6/giphy.gif"/>
+    
+2. **Buffer management** - *NeoVim*
+
+    Manage buffers inside NeoVim and add/delete/search your open files.
+    
+    <img src="https://media.giphy.com/media/xT0xejSMJ76K68Nf0c/giphy.gif"/>
+    
+3. **Project searching** - *NeoVim*
+
+    Quickly search for simple terms or complex regular expressions in your project.
+    
+    <img src="https://media.giphy.com/media/3oxHQpx3kxuUk2oa40/giphy.gif"/>
+    
+4. **Asynchronous linting** - *NeoVim*
+5. **Session Management** - *Tmux*
+6. **Auto-complete** - *zsh* & *NeoVim*
+7. **Improved JS and JSDoc syntax highlighting** - *NeoVim*
+8. **Powerful Git integration** - *zsh* & *NeoVim*
+9. **Clean, customizable UI** - *zsh* & *NeoVim*
+10. **Improved Vim motion** - *NeoVim*
+
+1. [vim-plug](https://github.com/junegunn/vim-plug) - A minimalist Vim plugin manager with a ton of features. Installed by default with the install script.
 
 ## Dependencies
 
@@ -80,16 +112,8 @@ Now that NeoVim is installed, just install all of its plugins and you should be 
 nvim +PlugInstall
 ```
 
-## Features
+## Commands
 
-### Iterm2
-
-### Tmux
-
-### ZSH 
-
-### Neovim
-1. [vim-plug](https://github.com/junegunn/vim-plug) - A minimalist Vim plugin manager with a ton of features. Installed by default with the install script.
 
 ## Support
 
