@@ -219,6 +219,13 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " Allows you to save files you opened without write permissions via sudo
 cmap w!! w !sudo tee %
 
+" === Search === "
+" ignore case when searching
+set ignorecase
+
+" if the search string has an upper case letter in it, the search will be case sensitive
+set smartcase
+
 " Set backups
 if has('persistent_undo')
   set undodir=~/.vim/tmp/undo//
