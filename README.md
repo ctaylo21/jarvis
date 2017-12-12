@@ -52,8 +52,6 @@ The following are features provided by Jarvis. They all have quick keybindings t
 9. **Clean, customizable UI** - *zsh* & *NeoVim*
 10. **Improved Vim motion** - *NeoVim*
 
-1. [vim-plug](https://github.com/junegunn/vim-plug) - A minimalist Vim plugin manager with a ton of features. Installed by default with the install script.
-
 ## Dependencies
 
 *Note: Many suggested install commands use [Homebrew](https://brew.sh/). For Windows/linux, the linked github repos and websites provide additional install instructions.*
