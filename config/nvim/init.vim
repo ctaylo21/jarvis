@@ -142,7 +142,12 @@ let g:airline#extensions#tabline#buffer_min_count = 2
 call airline#parts#define_accent('error', 'white')
 
 " === vim-javascript === "
-" Enable syntax highlighting for JSDoc let g:javascript_plugin_jsdoc = 1
+" Enable syntax highlighting for JSDoc
+let g:javascript_plugin_jsdoc = 1
+
+" === vim-jsx === "
+" Highlight jsx syntax even in non .jsx files
+let g:jsx_ext_required = 0
 
 " ============================================================================ "
 " ===                                UI                                    === "
