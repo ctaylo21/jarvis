@@ -167,6 +167,9 @@ let g:airline_solarized_bg='dark'
 " Make end of buffer char (~) less noticeable
 hi! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
 
+" Better higlighting of matched search lines
+call denite#custom#option('default', 'highlight_mode_insert', 'WildMenu')
+
 " ============================================================================ "
 " ===                             KEY MAPPINGS                             === "
 " ============================================================================ "
