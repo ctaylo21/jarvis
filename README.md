@@ -19,7 +19,7 @@
 - [Features](#features)
 - [Dependencies](#dependencies)
 - [Installation](#installation)
-- [Commands](#commmands)
+- [Commands](#commands)
 - [Support](#support)
 
 ## Features
