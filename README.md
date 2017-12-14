@@ -130,7 +130,7 @@ The following are some of the custom commands in Jarvis. Each configuration file
 | `;`          | normal         | Denite        | Browser currently open buffers                        |
 | `<leader>t`  | normal         | Denite        | Browser files in current directory                    |
 | `<leader>g`  | normal         | Denite        | Search current directory for occurences of term       |
-| `<c-o>`      | insert         | Denite        | Switch to normal mode (useful inside Denite window)   |
+| `<c-o>`      | insert         | Denite        | Switch to normal mode (useful inside *DW*)            |
 | `<leader>d`  | normal     *DW*| Denite        | Delete item (can delete open buffer inside *DW*)      |
 | `<leader>y`  | normal         | vim-better-whitespace        | Remove trailing whitespace in file     |
 | `<leader>w`  | normal         | EasyMotion    | Highglight first letter of file words for quick move  |
