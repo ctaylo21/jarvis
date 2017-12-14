@@ -199,7 +199,6 @@ noremap - <PageUp>
 
 " === vim-better-whitespace === "
 "   <leader>y - Automatically remove trailing whitespace
-"
 nmap <leader>y :StripWhitespace<CR>
 
 " === Search shorcuts === "
@@ -214,15 +213,15 @@ nmap <silent> <leader>/ :nohlsearch<CR>
 "
 map <leader>w <Plug>(easymotion-bd-w)
 
+" Allows you to save files you opened without write permissions via sudo
+cmap w!! w !sudo tee %
+
 " ============================================================================ "
 " ===                                 MISC.                                === "
 " ============================================================================ "
 
 " Automaticaly close nvim if NERDTree is only thing left open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-" Allows you to save files you opened without write permissions via sudo
-cmap w!! w !sudo tee %
 
 " === Search === "
 " ignore case when searching
