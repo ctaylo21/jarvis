@@ -121,9 +121,9 @@ The following are some of the custom commands in Jarvis. Each configuration file
 
 | Command      | Mode           | Tool          | Description                                           |
 | :---         | :---           | :---          |:---                                                   |
-| `<Space>     | normal         | NeoVim        | Page down                                             |
+| `<Space>`    | normal         | NeoVim        | Page down                                             |
 | `-`          | normal         | NeoVim        | Page up                                               |
-| `<leader>h   | normal         | NeoVim        | Find and replace                                      |
+| `<leader>h`  | normal         | NeoVim        | Find and replace                                      |
 | `<leader>/`  | normal         | NeoVim        | Clear highlighted search terms                        |
 | `<leader>f`  | normal         | NERDTree      | Find current file in tree hiearchy                    |
 | `<leader>n`  | normal         | NERDTree      | Toggle NERDTree window                                |
@@ -131,7 +131,7 @@ The following are some of the custom commands in Jarvis. Each configuration file
 | `<leader>t`  | normal         | Denite        | Browser files in current directory                    |
 | `<leader>g`  | normal         | Denite        | Search current directory for occurences of term       |
 | `<c-o>`      | insert         | Denite        | Switch to normal mode (useful inside Denite window)   |
-| `<leader>d   | normal     *DW*| Denite        | Delete item (can delete open buffer inside *DW*)      |
+| `<leader>d`  | normal     *DW*| Denite        | Delete item (can delete open buffer inside *DW*)      |
 | `<leader>y`  | normal         | vim-better-whitespace        | Remove trailing whitespace in file     |
 | `<leader>w`  | normal         | EasyMotion    | Highglight first letter of file words for quick move  |
 
