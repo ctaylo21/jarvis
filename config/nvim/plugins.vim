@@ -47,6 +47,7 @@ Plug 'vim-airline/vim-airline-themes'
 " Javascript plugins
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+Plug 'heavenshell/vim-jsdoc'
 
 " Lazy Loaded Plugins
 " File Explorer
