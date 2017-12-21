@@ -113,7 +113,7 @@ cd ~/jarvis
 ./install.sh
 ```
 
-Now that NeoVim is installed, just install all of its plugins and you should be ready to go.
+Now that Jarvis is installed, just install all of NeoVim's plugins and you should be ready to go.
 
 ```
 nvim +PlugInstall
@@ -121,7 +121,7 @@ nvim +PlugInstall
 
 ## Commands
 
-The following are some of the custom commands in Jarvis. Each configuration file is carefully documented to make it easy to understand. Some default commands for each tool may not be listed.
+The following are the custom commands in Jarvis and some of the most useful default ones. Each configuration file is carefully documented to make it easy to understand. Many default commands for each tool may not be listed.
 
 ### Neovim Commands
 
@@ -133,8 +133,9 @@ The following are some of the custom commands in Jarvis. Each configuration file
 | `<leader>/`  | normal         | NeoVim        | Clear highlighted search terms                        |
 | `<leader>f`  | normal         | NERDTree      | Find current file in tree hiearchy                    |
 | `<leader>n`  | normal         | NERDTree      | Toggle NERDTree window                                |
-| `;`          | normal         | Denite        | Browser currently open buffers                        |
-| `<leader>t`  | normal         | Denite        | Browser files in current directory                    |
+| `C`          | normal     *NT*| NERDTree      | Switch NERDTree root to be directory under cursor     |
+| `;`          | normal         | Denite        | Browse currently open buffers                         |
+| `<leader>t`  | normal         | Denite        | Browse files in current directory                     |
 | `<leader>g`  | normal         | Denite        | Search current directory for occurences of term       |
 | `<c-o>`      | insert         | Denite        | Switch to normal mode (useful inside *DW*)            |
 | `<leader>d`  | normal     *DW*| Denite        | Delete item (can delete open buffer inside *DW*)      |
@@ -142,7 +143,9 @@ The following are some of the custom commands in Jarvis. Each configuration file
 | `<leader>w`  | normal         | EasyMotion    | Highglight first letter of file words for quick move  |
 
 <br />
+
 *DW* - Within Denite window
+*NT* - Within NERDTree window
 
 
 ## Support
