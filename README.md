@@ -96,6 +96,12 @@ The following are features provided by Jarvis. They all have quick keybindings t
     ```
     brew install fzf
     ```
+    
+8. [z](https://github.com/rupa/z) - Tracks your most used directories and lets you quickly hop there with regexes.  
+
+    ```
+    brew install z
+    ```  
 
 ## Installation
 
