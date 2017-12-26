@@ -99,6 +99,9 @@ let NERDTreeShowHidden=1
 let g:NERDTreeDirArrowExpandable = '↠'
 let g:NERDTreeDirArrowCollapsible = '↡'
 
+" Hide certain files and directories from NERDTree
+let NERDTreeIgnore = ['^\.DS_Store$', '^tags$', '\.git$[[dir]]', '\.idea$[[dir]]', '\.sass-cache$']
+
 " === Ale === "
 " Enable language-specif linters
 let g:ale_linters = {
