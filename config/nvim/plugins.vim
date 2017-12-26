@@ -20,12 +20,7 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
 
-" Denite - Fuzzy finding, buffer management
-Plug 'Shougo/denite.nvim'
-
-" Colorscheme
-Plug 'mhartington/oceanic-next'
-
+" === Editing Plugins === "
 " Trailing whitespace highlighting & automatic fixing
 Plug 'ntpeters/vim-better-whitespace'
 
@@ -35,23 +30,35 @@ Plug 'easymotion/vim-easymotion'
 " Asynchronous linting
 Plug 'w0rp/ale'
 
-" Git
+" Denite - Fuzzy finding, buffer management
+Plug 'Shougo/denite.nvim'
+
+" === Git Plugins === "
 " Enable git changes to be shown in sign column
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+
+" === Javascript Plugins === "
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'heavenshell/vim-jsdoc'
+
+" === UI === "
+" File explorer
+Plug 'scrooloose/nerdtree'
+
+" Colorscheme
+Plug 'mhartington/oceanic-next'
 
 " Customized vim status line
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-" Javascript plugins
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'heavenshell/vim-jsdoc'
+" Icon support for NERDTree, Denite, etc..
+Plug 'ryanoasis/vim-devicons'
 
-" Lazy Loaded Plugins
-" File Explorer
-Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeFind'] }
+" Color highlighting for icons
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Initialize plugin system
 call plug#end()

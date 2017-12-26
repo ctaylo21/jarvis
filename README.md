@@ -102,6 +102,15 @@ The following are features provided by Jarvis. They all have quick keybindings t
     ```
     brew install z
     ```  
+    
+9. [nerd font](https://github.com/ryanoasis/nerd-fonts#font-installation) - Custom fonts with glyphs added for icon support within NeoVim. For example, to install the nerd version of [Hack](http://sourcefoundry.org/hack/):
+
+    ```
+    brew cask install font-hack-nerd-font
+    ```
+    
+    Don't forget to update your iTerm2 setup to use the new font (*Knack Regular Nerd Font Complete* for `font-hack-nerd-font`). 
+    You must make this change to your current iTerm2 profile. Otherwise, you can set the patched nerd font directly in the NeoVim config file.
 
 ## Installation
 
