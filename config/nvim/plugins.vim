@@ -33,15 +33,30 @@ Plug 'w0rp/ale'
 " Denite - Fuzzy finding, buffer management
 Plug 'Shougo/denite.nvim'
 
+" Asychronous keyword completion
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+" Snippet support
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
+
 " === Git Plugins === "
 " Enable git changes to be shown in sign column
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
 " === Javascript Plugins === "
+" Improved syntax highlighting and indentation
 Plug 'pangloss/vim-javascript'
+
+" ReactJS JSX syntax highlighting
 Plug 'mxw/vim-jsx'
+
+" Generate JSDoc commands based on function signature
 Plug 'heavenshell/vim-jsdoc'
+
+" Deoplete source for javascript
+Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 
 " === UI === "
 " File explorer

@@ -45,15 +45,25 @@ The following are features provided by Jarvis. They all have quick keybindings t
     <img src="https://media.giphy.com/media/3oxHQpx3kxuUk2oa40/giphy.gif"/>
     
 4. **Asynchronous linting** - *NeoVim*
-5. **Session Management** - *Tmux*
-6. **Auto-complete** - *zsh* & *NeoVim*
-7. **Improved JS and JSDoc syntax highlighting** - *NeoVim*
-8. **Powerful Git integration** - *zsh* & *NeoVim*
-9. **Clean, customizable UI** - *zsh* & *NeoVim*
-10. **Improved Vim motion** - *NeoVim*
-11. **Thoroughly documented** - *Neovim*, *zsh*, & *tmux*
+5. **Session management** - *Tmux*
+6. **Keyword auto-complete** - *NeoVim* and *zsh*
 
-    Each configuration file is documented to make each setting easy to understand.
+    Neovim - Automatic, asynchronous keyword completion available in the current buffer. Javascript support provided by [TernJS](http://ternjs.net/).
+    
+    
+    zsh - Command completion provided by zsh plugins. 
+    
+7. **Code Snippets** - *NeoVim*
+
+    Commonly used code snippets made available with a few keystrokes to reduce time and effort. Snippets available via auto-complete window removes need to memorize commands.
+    
+8. **Improved JS and JSDoc syntax highlighting** - *NeoVim*
+9. **Powerful Git integration** - *zsh* & *NeoVim*
+10. **Clean, customizable UI** - *zsh* & *NeoVim*
+11. **Improved Vim motion** - *NeoVim*
+12. **Extensive documentation** - *Neovim*, *zsh*, & *tmux*
+
+    Each configuration file is thoroughly documented to make each setting easy to understand.
 
 ## Dependencies
 
@@ -149,12 +159,19 @@ The following are the custom commands in Jarvis and some of the most useful defa
 | `<c-o>`      | insert         | Denite        | Switch to normal mode (useful inside *DW*)            |
 | `<leader>d`  | normal     *DW*| Denite        | Delete item (can delete open buffer inside *DW*)      |
 | `<leader>y`  | normal         | vim-better-whitespace        | Remove trailing whitespace in file     |
-| `<leader>w`  | normal         | EasyMotion    | Highglight first letter of file words for quick move  |
+| `<leader>w`  | normal         | EasyMotion    | Highlight first letter of file words for quick move   |
+| `<TAB>`      | insert    *AWV*| Deoplete      | Moves inside of auto-complete window if it's open     |
+| `<c-k>`      | insert    *AWV*| NeoSnippet    | Activates first valid snippet that matches            |
+| `<TAB>`      | insert     *SP*| NeoSnippet    | Move to next available field of snippet               |
+| `<TAB>`      | select     *SP*| NeoSnippet    | Move to next available field of snippet               |
 
 <br />
 
-*DW* - Within Denite window
-*NT* - Within NERDTree window
+* *DW*  - Within Denite window
+* *NT*  - Within NERDTree window
+* *AWV* - With auto-complete window visible
+* *AW*  - Inside auto-complete window
+* *SP*  - Inside of snippet
 
 
 ## Support

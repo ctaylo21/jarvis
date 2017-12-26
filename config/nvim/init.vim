@@ -91,6 +91,38 @@ endfunction
 
 call s:profile(s:denite_options)
 
+" === Deoplete === "
+" Enable deoplete at startup
+let g:deoplete#enable_at_startup = 1
+
+" Use smartcase
+let g:deoplete#enable_smart_case = 1
+
+" Set minimum syntax keyword length.
+let g:deoplete#sources#syntax#min_keyword_length = 2
+
+" === NeoSnippet === "   
+" Map <C-k> as shortcut to activate snippet if available
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+
+" INSERT MODE:
+" <TAB> will jump into autocomplete menu if it is visible
+" OR, it will move to next available snippet field if available
+imap <expr><TAB>
+\ pumvisible() ? "\<C-n>" :
+\ neosnippet#expandable_or_jumpable() ?
+\   "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" Expand the snippet trigger from autocomplete menu with <CR>
+imap <expr><CR>
+\ (pumvisible() && neosnippet#expandable()) ?
+\   "\<Plug>(neosnippet_expand)" : "\<CR>"
+
+" SELECT MODE:
+" Use <TAB> to move to next snippet field if available
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
 " === NERDTree === "
 " Show hidden files/directories
 let NERDTreeShowHidden=1
