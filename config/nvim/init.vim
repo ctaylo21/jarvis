@@ -170,6 +170,10 @@ hi! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
 " Better higlighting of matched search lines
 call denite#custom#option('default', 'highlight_mode_insert', 'WildMenu')
 
+" Change vertical split character to not leave small spaces between lines
+" (warning) - This could vary based on font used
+set fillchars+=vert:│
+
 " ============================================================================ "
 " ===                             KEY MAPPINGS                             === "
 " ============================================================================ "
