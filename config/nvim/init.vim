@@ -101,7 +101,20 @@ let g:deoplete#enable_smart_case = 1
 " Set minimum syntax keyword length.
 let g:deoplete#sources#syntax#min_keyword_length = 2
 
-" === NeoSnippet === "   
+" === Deoplete-ternjs ==="
+" Include the types of completions in result data
+let g:deoplete#sources#ternjs#types = 1
+
+" Include documentation strings (if found) in the result data
+let g:deoplete#sources#ternjs#docs = 1
+
+" Stop ternjs from guessing at matches if it doesn't know
+let g:deoplete#sources#ternjs#guess = 0
+
+" Close preview window after completion is made
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+
+" === NeoSnippet === "
 " Map <C-k> as shortcut to activate snippet if available
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 
@@ -208,6 +221,9 @@ call denite#custom#option('default', 'highlight_mode_insert', 'WildMenu')
 " Change vertical split character to not leave small spaces between lines
 " (warning) - This could vary based on font used
 set fillchars+=vert:│
+
+" Set preview window to appear at bottom
+set splitbelow
 
 " ============================================================================ "
 " ===                             KEY MAPPINGS                             === "
