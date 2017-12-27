@@ -58,6 +58,9 @@ Plug 'heavenshell/vim-jsdoc'
 " Deoplete source for javascript
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 
+" === Vim Plugins === "
+Plug 'Shougo/neco-vim'
+
 " === UI === "
 " File explorer
 Plug 'scrooloose/nerdtree'

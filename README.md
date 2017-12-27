@@ -48,7 +48,11 @@ The following are features provided by Jarvis. They all have quick keybindings t
 5. **Session management** - *Tmux*
 6. **Keyword auto-complete** - *NeoVim* and *zsh*
 
-    Neovim - Automatic, asynchronous keyword completion available in the current buffer. Javascript support provided by [TernJS](http://ternjs.net/).
+    Neovim - Automatic, asynchronous keyword completion available in the current buffer via [deoplete](https://github.com/Shougo/deoplete.nvim).
+    
+    **Supported Languages**
+    * Javascript - support provided by [deoplete-ternjs](https://github.com/carlitux/deoplete-ternjs) and [TernJS](http://ternjs.net/).
+    * Vimscript - support provided by [neco-vim](https://github.com/Shougo/neco-vim)
     
     
     zsh - Command completion provided by zsh plugins. 
