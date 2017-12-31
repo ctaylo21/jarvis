@@ -1,116 +1,105 @@
-# tmux display things in 256 colors
-  set -g default-terminal    "screen-256color"
-  set -ga terminal-overrides ",xterm-256color:Tc"
+########################
+# ***    PLUGINS   *** #
+########################
+set -g @plugin 'tmux-plugins/tmux-battery'
+set -g @plugin 'tmux-plugins/tmux-cpu'
+
+########################
+# ***    DISPLAY   *** #
+########################
+
+# Set tmux to display in 256 colors
+set -g default-terminal    "screen-256color"
+set -ga terminal-overrides ",xterm-256color:Tc"
+
+########################
+# ***    GENERAL   *** #
+########################
+
+# Set Ctrl-a as the default prefix key combination
+# and unbind C-b to free it up
+set -g prefix C-a
+unbind C-b
+
+# Start windows numbering at 1
+set -g base-index 1
+
+# Start pane numbering at 1
+setw -g pane-base-index 1
 
 # set scrollback history to 10000 (10k)
-  set -g history-limit 10000
-
-# set Ctrl-a as the default prefix key combination
-# and unbind C-b to free it up
-  set -g prefix C-a
-  unbind C-b
-
-# use send-prefix to pass C-a through to application
-  bind C-a send-prefix
+set -g history-limit 10000
 
 # shorten command delay
-  set -sg escape-time 1
+set -sg escape-time 1
 
-# set window and pane index to 1 (0 by default)
-  set-option -g base-index 1
-  setw -g pane-base-index 1
+# use send-prefix to pass C-a through to application
+bind C-a send-prefix
 
 # reload ~/.tmux.conf using PREFIX r
-  bind r source-file ~/.tmux.conf \; display "Reloaded!"
+bind r source-file ~/.tmux.conf \; display "tmux.conf source"
 
-# use PREFIX | to split window horizontally and PREFIX - to split vertically
-  bind | split-window -h
-  bind - split-window -v
+# Bind <prefix>- to split window horizontally
+bind - split-window -v
 
-# Make the current window the first window
-  bind T swap-window -t 1
+# Bind <prefix>| to split window vertically
+bind | split-window -h
 
-# map Vi movement keys as pane movement keys
-  bind h select-pane -L
-  bind j select-pane -D
-  bind k select-pane -U
-  bind l select-pane -R
-
-# and use C-h and C-l to cycle thru panes
-  bind -r C-h select-window -t :-
-  bind -r C-l select-window -t :+
+# Map vim movement keys as pane movement keys with prefix
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
 
 # resize panes using PREFIX H, J, K, L
-  bind H resize-pane -L 5
-  bind J resize-pane -D 5
-  bind K resize-pane -U 5
-  bind L resize-pane -R 5
-
-# explicitly disable mouse control
-  set -g mouse off
-
-# ---------------------
-# Copy & Paste
-# ---------------------
-# provide access to the clipboard for pbpaste, pbcopy
-  set-option -g default-command "reattach-to-user-namespace -l zsh"
-  set-window-option -g automatic-rename on
-
-# use vim keybindings in copy mode
-  setw -g mode-keys vi
-
-# setup 'v' to begin selection as in Vim
-  bind-key -t vi-copy v begin-selection
-  bind-key -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy"
-
-# update default binding of 'Enter' to also use copy-pipe
-  unbind -t vi-copy Enter
-  bind-key -t vi-copy Enter copy-pipe "reattach-to-user-namespace pbcopy"
-
-  bind y run 'tmux save-buffer - | reattach-to-user-namespace pbcopy '
-  bind C-y run 'tmux save-buffer - | reattach-to-user-namespace pbcopy '
-
-# ----------------------
-# set some pretty colors
-# ----------------------
-# set pane colors - hilight the active pane
-  set-option -g pane-border-fg colour235 #base02
-  set-option -g pane-active-border-fg colour240 #base01
-
-# colorize messages in the command line
-  set-option -g message-bg black #base02
-  set-option -g message-fg brightred #orange
-
-# ----------------------
-# Status Bar
-# -----------------------
-  set-option -g status on                # turn the status bar on
-  set -g status-interval 5               # set update frequencey (default 15 seconds)
-  set -g status-justify centre           # center window list for clarity
+bind H resize-pane -L 5
+bind J resize-pane -D 5
+bind K resize-pane -U 5
+bind L resize-pane -R 5
 
 # visual notification of activity in other windows
-  setw -g monitor-activity on
-  set -g visual-activity on
+setw -g monitor-activity on
+set -g visual-activity on
 
-# set color for status bar
-  set-option -g status-bg colour235 #base02
-  set-option -g status-fg yellow #yellow
-  set-option -g status-attr dim
+#########################
+# ***  STATUS BAR   *** #
+#########################
 
-# set window list colors - red for active and cyan for inactive
-  set-window-option -g window-status-fg brightblue #base0
-  set-window-option -g window-status-bg colour236
-  set-window-option -g window-status-attr dim
+# Enable status bar
+set-option -g status on
 
-  set-window-option -g window-status-current-fg colour166 #orange
-  set-window-option -g window-status-current-bg colour236
-  set-window-option -g window-status-current-attr bright
+# Set window list to center
+set -g status-justify centre
 
-# show host name and IP address on left side of status bar
-  set -g status-left-length 70
-  set -g status-left "#[fg=green]: #h : #[fg=brightblue]# #[fg=yellow]#(ifconfig en0 | grep 'inet ' | awk '{print \"en0 \" $2}') #(ifconfig en1 | grep 'inet ' | awk '{print \"en1 \" $2}') #[fg=red]#(ifconfig tun0 | grep 'inet ' | awk '{print \"vpn \" $2}') "
+# Specify status line separator characters
+tmux_conf_theme_left_separator_main=''
+tmux_conf_theme_left_separator_sub=''
+tmux_conf_theme_right_separator_main=''
+tmux_conf_theme_right_separator_sub=''
 
-# show session name, window & pane number, date and time on right side of
-# status bar
-  set -g status-right-length 60
-  set -g status-right "#[fg=blue]#S #I:#P #[fg=yellow]:: %d %b %Y #[fg=green]:: %l:%M %p :: #(date -u | awk '{print $4}')::"
+# Set default bg/fg settings for status bar
+set-option -g status-bg colour237
+set-option -g status-fg default
+set-option -g status-attr dim
+
+set-window-option -g window-status-current-fg colour114
+set-window-option -g window-status-current-bg colour237
+set-window-option -g window-status-current-attr bright
+
+# Configure CPU plugin
+set -g @cpu_low_fg_color "#[fg=colour237]"
+set -g @cpu_medium_fg_color "#[fg=#ffff00]"
+set -g @cpu_high_fg_color "#[fg=#ff0000]"
+
+set -g @cpu_low_bg_color "#[bg=green]"
+set -g @cpu_medium_bg_color "#[bg=#ffff00]"
+set -g @cpu_high_bg_color "#[bg=#ff0000]"
+
+# Empty left side
+set -g status-left "#{cpu_bg_color}#{cpu_fg_color} #{cpu_icon}#{cpu_percentage} "
+
+# Right Status Bar
+set -g status-right "#[fg=blue]#S #I:#P #[fg=yellow]$tmux_conf_theme_right_separator_main#[fg=colour237,bg=yellow,bold] %b %d %Y #[fg=green]$tmux_conf_theme_right_separator_main#[bg=green,fg=colour237,bold]%l:%M %p #[fg=blue]$tmux_conf_theme_right_separator_main#[bg=blue, fg=brightwhite] #{battery_icon} #{battery_percentage} "
+
+# Initialize TMUX plugin manager
+run '~/.tmux/plugins/tpm/tpm'

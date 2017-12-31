@@ -12,7 +12,7 @@
   <strong>(Neo)Vim of the Future</strong>
 </div>
 <div align="center">
-  An old-school editor with cutting-edge features
+  A powerful development environment with cutting-edge features
 </div>
 
 ## Table of Contents
@@ -46,6 +46,9 @@ The following are features provided by Jarvis. They all have quick keybindings t
     
 4. **Asynchronous linting** - *NeoVim*
 5. **Session management** - *Tmux*
+
+    Create sessions for each project with a custom layout. Quickly browse, create, and delete sessions. Tmux even keeps sessions alive if the terminal is closed.
+    
 6. **Keyword auto-complete** - *NeoVim* and *zsh*
 
     Neovim - Automatic, asynchronous keyword completion available in the current buffer via [deoplete](https://github.com/Shougo/deoplete.nvim).
@@ -125,6 +128,13 @@ The following are features provided by Jarvis. They all have quick keybindings t
     
     Don't forget to update your iTerm2 setup to use the new font (*Knack Regular Nerd Font Complete* for `font-hack-nerd-font`). 
     You must make this change to your current iTerm2 profile. Otherwise, you can set the patched nerd font directly in the NeoVim config file.
+    
+10. [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm) - Installs and loads tmux plugins.
+
+    ```
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+    ```
+    Install plugins via `<tmux-prefix>I`
 
 ## Installation
 
@@ -169,6 +179,7 @@ The following are the custom commands in Jarvis and some of the most useful defa
 | `<TAB>`      | insert     *SP*| NeoSnippet    | Move to next available field of snippet               |
 | `<TAB>`      | select     *SP*| NeoSnippet    | Move to next available field of snippet               |
 
+
 <br />
 
 * *DW*  - Within Denite window
@@ -177,6 +188,26 @@ The following are the custom commands in Jarvis and some of the most useful defa
 * *AW*  - Inside auto-complete window
 * *SP*  - Inside of snippet
 
+### Tmux Commands
+Below are some custom key mappings as well as some default tmux commands. Not all tmux commands are included,
+just some of the more common ones in my workflow.
+
+#### Prefix Mappings
+| Command          | Tool            | Description                                           |
+| :---             | :---            |:---                                                   |
+| `<c-a>I`         | tmux-plugins    | Install tmux plugins                                  |
+| `<c-a>(H|J|K|L)` | tmux            | Switch Tmux panes                                     |
+| `<c-a>-`         | tmux            | Create split horizontally                             |
+| `<c-a>|`         | tmux            | Create split vertically                               |
+| `<c-a>x`         | tmux            | Close pane                                            |
+| `<c-a>$`         | tmux            | Rename session                                        |
+| `<c-a>s`         | tmux            | Browse open sessions                                  |
+
+#### Tmux Command Line
+All of the following command are triggered by `<c-a>:`
+
+Create a new session: `new -s test`
+Delete session (named "test"): `kill-session -t test`
 
 ## Support
 
