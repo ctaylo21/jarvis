@@ -170,8 +170,9 @@ The following are the custom commands in Jarvis and some of the most useful defa
 | `;`          | normal         | Denite        | Browse currently open buffers                         |
 | `<leader>t`  | normal         | Denite        | Browse files in current directory                     |
 | `<leader>g`  | normal         | Denite        | Search current directory for occurences of term       |
+| `<leader>j`  | normal         | Denite        | Search current directory for word under cursor        |
 | `<c-o>`      | insert         | Denite        | Switch to normal mode (useful inside *DW*)            |
-| `<leader>d`  | normal     *DW*| Denite        | Delete item (can delete open buffer inside *DW*)      |
+| `d`          | normal     *DW*| Denite        | Delete item (can delete open buffer inside *DW*)      |
 | `<leader>y`  | normal         | vim-better-whitespace        | Remove trailing whitespace in file     |
 | `<leader>w`  | normal         | EasyMotion    | Highlight first letter of file words for quick move   |
 | `<TAB>`      | insert    *AWV*| Deoplete      | Moves inside of auto-complete window if it's open     |

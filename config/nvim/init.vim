@@ -233,11 +233,12 @@ set splitbelow
 "   ;         - Browser currently open buffers
 "   <leader>t - Browse list of files in current directory
 "   <leader>g - Search current directory for occurences of given term
+"   <leader>j - Search current directory for occurences of word under cursor
 "   <leader>d - Delete item under cursor (useful for delete buffers in normal mode)
 nmap ; :Denite buffer<CR>
 nmap <leader>t :Denite file_rec<CR>
 nnoremap <leader>g :<C-u>Denite grep:. -mode=normal<CR>
-call denite#custom#map('normal', '<leader>d', '<denite:do_action:delete>')
+nnoremap <leader>j :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
 
 " === Nerdtree shorcuts === "
 "  <leader>n - Toggle NERDTree on/off
