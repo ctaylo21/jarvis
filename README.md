@@ -209,7 +209,7 @@ just some of the more common ones in my workflow.
 #### Tmux Command Line
 All of the following command are triggered by `<c-a>:`
 
-Create a new session: `new -s test`
+Create a new session: `new -s test` <br />
 Delete session (named "test"): `kill-session -t test`
 
 ## Support
