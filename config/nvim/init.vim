@@ -276,6 +276,12 @@ nmap <leader>z :JsDoc<CR>
 " ===                                 MISC.                                === "
 " ============================================================================ "
 
+" Refresh vim-devicons to ensure they render properly (fixes render issues
+" after sourcing config file)
+if exists("g:loaded_webdevicons")
+  call webdevicons#refresh()
+endif
+
 " Automaticaly close nvim if NERDTree is only thing left open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
