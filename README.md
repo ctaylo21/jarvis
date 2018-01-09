@@ -201,7 +201,7 @@ just some of the more common ones in my workflow.
 | `<c-a>I`         | tmux-plugins    | Install tmux plugins                                  |
 | `<c-a>(H/J/K/L)` | tmux            | Switch Tmux panes                                     |
 | `<c-a>-`         | tmux            | Create split horizontally                             |
-| `<c-a>|`         | tmux            | Create split vertically                               |
+| `<c-a>&#124;`    | tmux            | Create split vertically                               |
 | `<c-a>x`         | tmux            | Close pane                                            |
 | `<c-a>$`         | tmux            | Rename session                                        |
 | `<c-a>s`         | tmux            | Browse open sessions                                  |
