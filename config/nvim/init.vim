@@ -69,15 +69,23 @@ call denite#custom#var('grep', 'final_opts', [])
 call denite#custom#var('buffer', 'date_format', '')
 
 " Custom options for Denite
-"   auto_resize   - Auto resize the Denite window height automatically.
-"   prompt        - Customize denite prompt
-"   direction     - Specify Denite window direction as directly below current pane
-"   winminheight  - Specify min height for Denite window
+"   auto_resize             - Auto resize the Denite window height automatically.
+"   prompt                  - Customize denite prompt
+"   direction               - Specify Denite window direction as directly below current pane
+"   winminheight            - Specify min height for Denite window
+"   highlight_mode_insert   - Specify h1-CursorLine in insert mode
+"   prompt_highlight        - Specify color of prompt
+"   highlight_matched_char  - Matched characters highlight
+"   highlight_matched_range - matched range highlight
 let s:denite_options = {'default' : {
 \ 'auto_resize': 1,
 \ 'prompt': '❯',
 \ 'direction': 'rightbelow',
-\ 'winminheight': '10'
+\ 'winminheight': '10',
+\ 'highlight_mode_insert': 'WildMenu',
+\ 'prompt_highlight': 'Function',
+\ 'highlight_matched_char': 'Function',
+\ 'highlight_matched_range': 'Normal'
 \ }}
 
 " Loop through denite options and enable them
@@ -217,9 +225,6 @@ let g:airline_solarized_bg='dark'
 
 " Make end of buffer char (~) less noticeable
 hi! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
-
-" Better higlighting of matched search lines
-call denite#custom#option('default', 'highlight_mode_insert', 'WildMenu')
 
 " Change vertical split character to not leave small spaces between lines
 " (warning) - This could vary based on font used
