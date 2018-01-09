@@ -102,7 +102,7 @@ set -g @cpu_high_bg_color "#[bg=red]"
 set -g status-left "#{cpu_bg_color}#{cpu_fg_color} #{cpu_icon}#{cpu_percentage} "
 
 # Right Status Bar: [Session Name Window Index:Pane Index][Date][Time][Battery Usage]
-set -g status-right "#[fg=blue]#S #I:#P #[fg=yellow]$tmux_conf_theme_right_separator_main#[fg=colour237,bg=yellow,bold] %b %d %Y #[fg=green]$tmux_conf_theme_right_separator_main#[bg=green,fg=colour237,bold]%l:%M %p #[fg=blue]$tmux_conf_theme_right_separator_main#[bg=blue, fg=brightwhite] #{battery_icon} #{battery_percentage} "
+set -g status-right "#[fg=blue]#S #I:#P #[fg=yellow]$tmux_conf_theme_right_separator_main#[fg=colour237,bg=yellow,bold] %b %d %Y #[fg=green]$tmux_conf_theme_right_separator_main#[bg=green,fg=colour237,bold] %l:%M %p #[fg=blue]$tmux_conf_theme_right_separator_main#[bg=blue, fg=brightwhite] #{battery_icon} #{battery_percentage} "
 
 # Initialize TMUX plugin manager
 run '~/.tmux/plugins/tpm/tpm'
