@@ -176,6 +176,8 @@ The following are the custom commands in Jarvis and some of the most useful defa
 | `<leader>y`  | normal         | vim-better-whitespace        | Remove trailing whitespace in file     |
 | `<leader>w`  | normal         | EasyMotion    | Highlight first letter of file words for quick move   |
 | `<TAB>`      | insert    *AWV*| Deoplete      | Moves inside of auto-complete window if it's open     |
+| `<c-n>`      | normal    *AWV*| Deoplete      | Moves to next suggested auto-complete term            |
+| `<c-p>`      | normal    *AWV*| Deoplete      | Moves to previous suggested auto-complete term         |
 | `<c-k>`      | insert    *AWV*| NeoSnippet    | Activates first valid snippet that matches            |
 | `<TAB>`      | insert     *SP*| NeoSnippet    | Move to next available field of snippet               |
 | `<TAB>`      | select     *SP*| NeoSnippet    | Move to next available field of snippet               |
