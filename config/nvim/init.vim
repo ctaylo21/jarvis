@@ -272,6 +272,11 @@ cmap w!! w !sudo tee %
 " Generate jsdoc for function under cursor
 nmap <leader>z :JsDoc<CR>
 
+" Delete current visual selection and dump in black hole buffer before pasting
+" Used when you want to paste over something without it getting copied to
+" Vim's default buffer
+vnoremap <leader>p "_dP
+
 " ============================================================================ "
 " ===                                 MISC.                                === "
 " ============================================================================ "
@@ -291,6 +296,9 @@ set ignorecase
 
 " if the search string has an upper case letter in it, the search will be case sensitive
 set smartcase
+
+" Automatically re-read file if a change was detected outside of vim
+set autoread
 
 " Set backups
 if has('persistent_undo')
