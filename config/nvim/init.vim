@@ -319,12 +319,10 @@ set autoread
 
 " Set backups
 if has('persistent_undo')
-  set undodir=~/.vim/tmp/undo//
   set undofile
   set undolevels=3000
   set undoreload=10000
 endif
-set backupdir=~/.vim/tmp/backup//
-set directory=~/.vim/tmp/swap//
+set backupdir=~/.local/share/nvim/backup " Don't put backups in current dir
 set backup
 set noswapfile
