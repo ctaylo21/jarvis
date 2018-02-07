@@ -29,10 +29,6 @@ set shiftwidth=2
 " do not wrap long lines by default
 set nowrap
 
-" Hightlight trailing whitespace
-highlight Trail ctermbg=red guibg=red
-call matchadd('Trail', '\s\+$', 100)
-
 " ============================================================================ "
 " ===                           PLUGIN SETUP                               === "
 " ============================================================================ "
@@ -62,9 +58,6 @@ call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
 call denite#custom#var('grep', 'separator', ['--'])
 call denite#custom#var('grep', 'final_opts', [])
 
-" Customize highlighted option group
-" call denite#custom#option('default', 'highlight_mode_insert', 'TermCursor')
-
 " Remove date from buffer list
 call denite#custom#var('buffer', 'date_format', '')
 
@@ -79,10 +72,11 @@ call denite#custom#var('buffer', 'date_format', '')
 "   highlight_matched_range - matched range highlight
 let s:denite_options = {'default' : {
 \ 'auto_resize': 1,
-\ 'prompt': '❯',
+\ 'prompt': 'λ:',
 \ 'direction': 'rightbelow',
 \ 'winminheight': '10',
-\ 'highlight_mode_insert': 'WildMenu',
+\ 'highlight_mode_insert': 'Visual',
+\ 'highlight_mode_normal': 'Visual',
 \ 'prompt_highlight': 'Function',
 \ 'highlight_matched_char': 'Function',
 \ 'highlight_matched_range': 'Normal'
@@ -163,7 +157,7 @@ let g:ale_linters = {
 \ }
 
 " Customize warning/error signs
-let g:ale_sign_error = '•'
+let g:ale_sign_error = '⁉'
 let g:ale_sign_warning = '•'
 
 " Custom error format
@@ -218,6 +212,21 @@ set termguicolors
 " Editor theme
 set background=dark
 colorscheme OceanicNext
+
+" Add custom highlights in method that is executed every time a
+" colorscheme is sourced
+" See https://gist.github.com/romainl/379904f91fa40533175dfaec4c833f2f for
+" details
+function! MyHighlights() abort
+  " Hightlight trailing whitespace
+  highlight Trail ctermbg=red guibg=red
+  call matchadd('Trail', '\s\+$', 100)
+endfunction
+
+augroup MyColors
+    autocmd!
+    autocmd ColorScheme * call MyHighlights()
+augroup END
 
 " Vim airline theme
 let g:airline_theme='base16_oceanicnext'
