@@ -85,9 +85,9 @@ let s:denite_options = {'default' : {
 " Loop through denite options and enable them
 function! s:profile(opts) abort
   for fname in keys(a:opts)
-	  for dopt in keys(a:opts[fname])
-		  call denite#custom#option(fname, dopt, a:opts[fname][dopt])
-	  endfor
+    for dopt in keys(a:opts[fname])
+      call denite#custom#option(fname, dopt, a:opts[fname][dopt])
+    endfor
   endfor
 endfunction
 
