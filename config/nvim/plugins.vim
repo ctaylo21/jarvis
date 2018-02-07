@@ -46,8 +46,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
 " === Javascript Plugins === "
-" Improved syntax highlighting and indentation
-Plug 'pangloss/vim-javascript'
 
 " ReactJS JSX syntax highlighting
 Plug 'mxw/vim-jsx'
@@ -60,6 +58,17 @@ Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 
 " === Vim Plugins === "
 Plug 'Shougo/neco-vim'
+
+" === Syntax Highlighting === "
+
+" Syntax highlighting for nginx
+Plug 'chr4/nginx.vim'
+
+" Syntax highlighting for javascript libraries
+Plug 'othree/javascript-libraries-syntax.vim'
+
+" Improved syntax highlighting and indentation
+Plug 'othree/yajs.vim'
 
 " === UI === "
 " File explorer
