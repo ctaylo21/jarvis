@@ -31,39 +31,39 @@ The following are features provided by Jarvis. They all have quick keybindings t
     Open files with simple keystrokes with fuzzy matching via command line and inside NeoVim.
 
     <img src="https://media.giphy.com/media/xUOxeZpELYRSECCZR6/giphy.gif"/>
-    
+
 2. **Buffer management** - *NeoVim*
 
     Manage buffers inside NeoVim and add/delete/search your open files.
-    
+
     <img src="https://media.giphy.com/media/xT0xejSMJ76K68Nf0c/giphy.gif"/>
-    
+
 3. **Project searching** - *NeoVim*
 
     Quickly search for simple terms or complex regular expressions in your project.
-    
+
     <img src="https://media.giphy.com/media/3oxHQpx3kxuUk2oa40/giphy.gif"/>
-    
+
 4. **Asynchronous linting** - *NeoVim*
 5. **Session management** - *Tmux*
 
     Create sessions for each project with a custom layout. Quickly browse, create, and delete sessions. Tmux even keeps sessions alive if the terminal is closed.
-    
+
 6. **Keyword auto-complete** - *NeoVim* and *zsh*
 
     Neovim - Automatic, asynchronous keyword completion available in the current buffer via [deoplete](https://github.com/Shougo/deoplete.nvim).
-    
+
     **Supported Languages**
     * Javascript - support provided by [deoplete-ternjs](https://github.com/carlitux/deoplete-ternjs) and [TernJS](http://ternjs.net/).
     * Vimscript - support provided by [neco-vim](https://github.com/Shougo/neco-vim)
-    
-    
-    zsh - Command completion provided by zsh plugins. 
-    
+
+
+    zsh - Command completion provided by zsh plugins.
+
 7. **Code Snippets** - *NeoVim*
 
     Commonly used code snippets made available with a few keystrokes to reduce time and effort. Snippets available via auto-complete window removes need to memorize commands.
-    
+
 8. **Improved JS and JSDoc syntax highlighting** - *NeoVim*
 9. **Powerful Git integration** - *zsh* & *NeoVim*
 10. **Clean, customizable UI** - *zsh* & *NeoVim*
@@ -74,83 +74,44 @@ The following are features provided by Jarvis. They all have quick keybindings t
 
 ## Dependencies
 
-*Note: Many suggested install commands use [Homebrew](https://brew.sh/). For Windows/linux, the linked github repos and websites provide additional install instructions.*
+The following tools are the only ones that are required to be installed manually (if you are using OSX). 
 
-1. [Homebrew](https://brew.sh/) - Package manager for macOS.
+1. [iTerm2](https://www.iterm2.com/) - Terminal emulator for macOS.
 
-    ```
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    ```
+2. [iTerm2 Oceanic Theme](https://github.com/mhartington/oceanic-next-iterm) - Oceanic theme for Iterm. Provies seamless UI experience between Neovim + Tmux.
 
-2. [Iterm2](https://www.iterm2.com/) - Terminal emulator for macOS.
-
-3. [Tmux](https://github.com/tmux/tmux/wiki) - Terminal multiplexer with session management, customizable terminal layouts, and much more.
-
-   ```
-   brew install tmux
-   ```
-
-4. [NeoVim](https://github.com/neovim/neovim) - A fork of Vim that was created to be a community-driven rewrite of Vim that is focused on cleaning up the codebase and providing a way for developers to contribute to the advancement of the editor. Many [install options](https://github.com/neovim/neovim/wiki/Installing-Neovim) are available, or you can use:
-
-    ```
-    brew install neovim
-    ```
-    
-5. [Python 3](https://www.python.org/downloads/)/[Python Neovim Client](https://github.com/neovim/python-client) - Implements support for python plugins in Neovim.
-    
-    ```
-    brew intall python3
-    pip3 install neovim
-    ```
-6. [ripgrep](https://github.com/BurntSushi/ripgrep) - A blazingly fast line-oriented search tool that respects .gitignore rules.
-
-    ```
-    brew install ripgrep
-    ```
-    
-7. [fzf](https://github.com/junegunn/fzf#installation) - A general-purpose command-line fuzzy finder that can be used with any list; files, command history, processes, hostnames, bookmarks, git commits, etc.
-
-    ```
-    brew install fzf
-    ```
-    
-8. [z](https://github.com/rupa/z) - Tracks your most used directories and lets you quickly hop there with regexes.  
-
-    ```
-    brew install z
-    ```  
-    
-9. [nerd font](https://github.com/ryanoasis/nerd-fonts#font-installation) - Custom fonts with glyphs added for icon support within NeoVim. For example, to install the nerd version of [Hack](http://sourcefoundry.org/hack/):
-
-    ```
-    brew cask install font-hack-nerd-font
-    ```
-    
-    Don't forget to update your iTerm2 setup to use the new font (*Knack Regular Nerd Font Complete* for `font-hack-nerd-font`). 
-    You must make this change to your current iTerm2 profile. Otherwise, you can set the patched nerd font directly in the NeoVim config file.
-    
-10. [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm) - Installs and loads tmux plugins.
-
-    ```
-    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-    ```
-    Install plugins via `<tmux-prefix>I`
+    Manually update your iTerm setup to use the new font (*Knack Regular Nerd Font Complete* is added by the installation script) and colorscheme.
 
 ## Installation
 
-Just clone Jarvis into your directory of choice and run the install script.
+Clone Jarvis into your directory of choice and run the install script. This script will install [Homebrew](https://brew.sh/) (if it needs to) and then install all of Jarvis' dependencies. 
+
+**Warning: This will move existing `zsh`, `tmux`, or `nvim` configurations to a backup folder inside of the installation repo.**
+
+*Note: If you are on another OS, then you will have to install the supported plugins yourself. No guarantees on compatibility issues.*
 
 ```
 git clone https://github.com/ctaylo21/jarvis ~/jarvis
 cd ~/jarvis
 ./install.sh
 ```
+**Installed Tools**
 
-Now that Jarvis is installed, just install all of NeoVim's plugins and you should be ready to go.
+1. [Tmux](https://github.com/tmux/tmux/wiki) - Terminal multiplexer with session management, customizable terminal layouts, and much more.
 
-```
-nvim +PlugInstall
-```
+2. [NeoVim](https://github.com/neovim/neovim) - A fork of Vim that was created to be a community-driven rewrite of Vim that is focused on cleaning up the codebase and providing a way for developers to contribute to the advancement of the editor. For a list of all the plugins installed for Neovim, see the [plugins file](config/nvim/plugins.vim).
+
+3. [Python 3](https://www.python.org/downloads/)/[Python Neovim Client](https://github.com/neovim/python-client) - Implements support for python plugins in Neovim.
+
+4. [ripgrep](https://github.com/BurntSushi/ripgrep) - A blazingly fast line-oriented search tool that respects .gitignore rules.
+
+5. [fzf](https://github.com/junegunn/fzf#installation) - A general-purpose command-line fuzzy finder that can be used with any list; files, command history, processes, hostnames, bookmarks, git commits, etc.
+
+6. [z](https://github.com/rupa/z) - Tracks your most used directories and lets you quickly hop there with regexes.
+
+7. [nerd font](https://github.com/ryanoasis/nerd-fonts#font-installation) - Custom fonts with glyphs added for icon support within NeoVim.
+
+8. [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm) - Installs and loads tmux plugins.
 
 ## Commands
 
@@ -181,7 +142,6 @@ The following are the custom commands in Jarvis and some of the most useful defa
 | `<c-k>`      | insert    *AWV*| NeoSnippet    | Activates first valid snippet that matches            |
 | `<TAB>`      | insert     *SP*| NeoSnippet    | Move to next available field of snippet               |
 | `<TAB>`      | select     *SP*| NeoSnippet    | Move to next available field of snippet               |
-
 
 <br />
 
@@ -214,4 +174,4 @@ Delete session (named "test"): `kill-session -t test`
 
 ## Support
 
-If you find any problems or bugs, please open a new [issue](https://github.com/ctaylo21/jarvis/issues). 
+If you find any problems or bugs, please open a new [issue](https://github.com/ctaylo21/jarvis/issues).
