@@ -156,21 +156,37 @@ Below are some custom key mappings as well as some default tmux commands. Not al
 just some of the more common ones in my workflow.
 
 #### Prefix Mappings
-| Command          | Tool            | Description                                           |
-| :---             | :---            |:---                                                   |
-| `<c-a>I`         | tmux-plugins    | Install tmux plugins                                  |
-| `<c-a>(H/J/K/L)` | tmux            | Switch Tmux panes                                     |
-| `<c-a>-`         | tmux            | Create split horizontally                             |
-| `<c-a>`&#124;    | tmux            | Create split vertically                               |
-| `<c-a>x`         | tmux            | Close pane                                            |
-| `<c-a>$`         | tmux            | Rename session                                        |
-| `<c-a>s`         | tmux            | Browse open sessions                                  |
+| Command          | Description                                                        |
+| :---             | :---                                                               |
+| `<c-a>I`         | Install tmux plugins                                               |
+| `<c-a>(h/j/k/l)` | Switch Tmux panes (left/down/up/right)                             |
+| `<c-a>(H/J/K/L)` | Resize Tmux panes based on current pane (left/down/up/right)       |
+| `<c-a>-`         | Create split horizontally                                          |
+| `<c-a>`&#124;    | Create split vertically                                            |
+| `<c-a>x`         | Close pane                                                         |
+| `<c-a>$`         | Rename session                                                     |
+| `<c-a>s`         | Browse open sessions - navigate with h/j/k/l and enter to select   |
+| `<c-a>z`         | Full-screen the current pane                                       |
 
 #### Tmux Command Line
-All of the following command are triggered by `<c-a>:`
+All of the following command are triggered by `<c-a>:` (Note the colon)
 
-Create a new session: `new -s test` <br />
-Delete session (named "test"): `kill-session -t test`
+| Command               | Description                                                        |
+| :---                  | :---                                                               |
+| `new -s test`         | Create new session named "test"                                    |
+| `kill-session -t test`| Delete session named "test"                                        |
+
+## Miscellaneous Configuration
+
+The following configurations require changes outside of Jarvis.
+
+### Mapping Caps Lock to Escape
+
+In order to keep your fingers near the home row, mapping caps lock to escape to get out of different vim modes can be extremely helpful.
+
+This can be done on MacOS by following these simple steps: http://vim.wikia.com/wiki/Map_caps_lock_to_escape_in_macOS
+
+This is especially useful for laptops that made the escape key "virutal" (*I'm looking at you, Apple*).
 
 ## Support
 
