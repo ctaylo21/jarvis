@@ -21,7 +21,7 @@ for filename in "${files[@]}"; do
       echo "---------------------------------------------------------"
       echo "$(tput setaf 2)JARVIS: Backing up $filename.$(tput sgr 0)"
       echo "---------------------------------------------------------"
-        mv $filename $BACKUP_DIR
+      mv $filename $BACKUP_DIR 2>/dev/null
     else
       echo "---------------------------------------------------------"
       echo -e "$(tput setaf 3)JARVIS: $filename does not exist at this location or is a symlink.$(tput sgr 0)"
