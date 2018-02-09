@@ -29,6 +29,9 @@ set shiftwidth=2
 " do not wrap long lines by default
 set nowrap
 
+" Highlight current line
+set cursorline
+
 " ============================================================================ "
 " ===                           PLUGIN SETUP                               === "
 " ============================================================================ "

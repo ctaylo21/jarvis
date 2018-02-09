@@ -12,6 +12,10 @@ set -g @plugin 'tmux-plugins/tmux-cpu'
 set -g default-terminal    "screen-256color"
 set -ga terminal-overrides ",xterm-256color:Tc"
 
+# Set active border colors
+set-option -g pane-active-border-bg default
+set-option -g pane-active-border-fg colour3
+
 ########################
 # ***    GENERAL   *** #
 ########################
