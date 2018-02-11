@@ -293,6 +293,16 @@ cmap w!! w !sudo tee %
 " Generate jsdoc for function under cursor
 nmap <leader>z :JsDoc<CR>
 
+" === Pane switching shortcuts === "
+"   <C-J> - Switch pane down
+"   <C-K> - Switch pane up
+"   <C-L> - Switch pane left
+"   <C-H> - Switch pane right
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 " Delete current visual selection and dump in black hole buffer before pasting
 " Used when you want to paste over something without it getting copied to
 " Vim's default buffer
