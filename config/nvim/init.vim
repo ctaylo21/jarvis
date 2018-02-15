@@ -36,6 +36,8 @@ set cursorline
 " ===                           PLUGIN SETUP                               === "
 " ============================================================================ "
 
+" Wrap in try/catch to avoid errors on initial install before plugin is available
+try
 " === Denite setup ==="
 " Use ripgrep for searching current directory for files
 " By default, ripgrep will respect rules in .gitignore
@@ -95,6 +97,9 @@ function! s:profile(opts) abort
 endfunction
 
 call s:profile(s:denite_options)
+catch
+  echo "Denite not installed. It should work after running :PlugInstall"
+endtry
 
 " === Deoplete === "
 " Enable deoplete at startup
@@ -171,6 +176,8 @@ let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_enter = 1
 
+" Wrap in try/catch to avoid errors on initial install before plugin is available
+try
 " === Vim airline ==== "
 " Custom setup that removes filetype/whitespace from default vim airline bar
 let g:airline#extensions#default#layout = [[ 'a', 'b', 'c'], ['z', 'warning', 'error']]
@@ -193,6 +200,9 @@ let g:airline#extensions#tabline#buffer_min_count = 2
 " Make font white for readability in warning/error section
 " TODO: Report this bug with ocean colorscheme
 call airline#parts#define_accent('error', 'white')
+catch
+  echo "Airlline not installed. It should work after running :PlugInstall"
+endtry
 
 " === vim-javascript === "
 " Enable syntax highlighting for JSDoc
@@ -214,7 +224,14 @@ set termguicolors
 
 " Editor theme
 set background=dark
-colorscheme OceanicNext
+try
+  colorscheme OceanicNext
+  " Make end of buffer char (~) less noticeable
+  hi! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
+catch
+  colorscheme slate
+endtry
+
 
 " Add custom highlights in method that is executed every time a
 " colorscheme is sourced
@@ -234,9 +251,6 @@ augroup END
 " Vim airline theme
 let g:airline_theme='base16_oceanicnext'
 let g:airline_solarized_bg='dark'
-
-" Make end of buffer char (~) less noticeable
-hi! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
 
 " Change vertical split character to not leave small spaces between lines
 " (warning) - This could vary based on font used
