@@ -30,6 +30,9 @@ Plug 'easymotion/vim-easymotion'
 " Asynchronous linting
 Plug 'w0rp/ale'
 
+" Tmux/Neovim movement integration
+Plug 'christoomey/vim-tmux-navigator'
+
 " Denite - Fuzzy finding, buffer management
 Plug 'Shougo/denite.nvim'
 

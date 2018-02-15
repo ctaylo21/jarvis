@@ -125,6 +125,7 @@ The following are the custom commands in Jarvis and some of the most useful defa
 | :---         | :---           | :---          |:---                                                   |
 | `<Space>`    | normal         | NeoVim        | Page down                                             |
 | `-`          | normal         | NeoVim        | Page up                                               |
+| `<c>hjkl`    | normal         | NeoVim        | Switch windows and Tmux panes (left/down/up/right)    |
 | `<leader>h`  | normal         | NeoVim        | Find and replace                                      |
 | `<leader>/`  | normal         | NeoVim        | Clear highlighted search terms                        |
 | `<leader>f`  | normal         | NERDTree      | Find current file in tree hiearchy                    |
@@ -140,7 +141,7 @@ The following are the custom commands in Jarvis and some of the most useful defa
 | `<leader>w`  | normal         | EasyMotion    | Highlight first letter of file words for quick move   |
 | `<TAB>`      | insert    *AWV*| Deoplete      | Moves inside of auto-complete window if it's open     |
 | `<c-n>`      | normal    *AWV*| Deoplete      | Moves to next suggested auto-complete term            |
-| `<c-p>`      | normal    *AWV*| Deoplete      | Moves to previous suggested auto-complete term         |
+| `<c-p>`      | normal    *AWV*| Deoplete      | Moves to previous suggested auto-complete term        |
 | `<c-k>`      | insert    *AWV*| NeoSnippet    | Activates first valid snippet that matches            |
 | `<TAB>`      | insert     *SP*| NeoSnippet    | Move to next available field of snippet               |
 | `<TAB>`      | select     *SP*| NeoSnippet    | Move to next available field of snippet               |
@@ -161,7 +162,7 @@ just some of the more common ones in my workflow.
 | Command          | Description                                                        |
 | :---             | :---                                                               |
 | `<c-a>I`         | Install tmux plugins                                               |
-| `<c-a>(h/j/k/l)` | Switch Tmux panes (left/down/up/right)                             |
+| `<c>(h/j/k/l)`.  | Switch Tmux panes and Neovim windows (left/down/up/right)          |
 | `<c-a>(H/J/K/L)` | Resize Tmux panes based on current pane (left/down/up/right)       |
 | `<c-a>-`         | Create split horizontally                                          |
 | `<c-a>`&#124;    | Create split vertically                                            |
