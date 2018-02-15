@@ -72,18 +72,9 @@ The following are features provided by Jarvis. They all have quick keybindings t
 
     Each configuration file is thoroughly documented to make each setting easy to understand.
 
-## Dependencies
-
-The following tools are the only ones that are required to be installed manually (if you are using OSX). 
-
-1. [iTerm2](https://www.iterm2.com/) - Terminal emulator for macOS.
-
-2. [iTerm2 Oceanic Theme](https://github.com/mhartington/oceanic-next-iterm) - Oceanic theme for Iterm. Provies seamless UI experience between Neovim + Tmux.
-
-    Manually update your iTerm setup to use the new font (*Knack Regular Nerd Font Complete* is added by the installation script) and colorscheme.
-
 ## Installation
 
+### Step 1: Installation script
 Clone Jarvis into your directory of choice and run the install script. This script will install [Homebrew](https://brew.sh/) (if it needs to) and then install all of Jarvis' dependencies. 
 
 **Warning: This will move existing `zsh`, `tmux`, or `nvim` configurations to a backup folder inside of the installation repo.**
@@ -95,6 +86,17 @@ git clone https://github.com/ctaylo21/jarvis ~/jarvis
 cd ~/jarvis
 ./install.sh
 ```
+
+### Step 2: Additional Steps
+
+The following tools are the only ones that are (currently) required to be installed manually (if you are using OSX). 
+
+1. Install [iTerm2](https://www.iterm2.com/) - Terminal emulator for macOS.
+	
+2. Install [iTerm2 Oceanic Theme](https://github.com/mhartington/oceanic-next-iterm) - Oceanic theme for Iterm. Provies seamless UI experience between Neovim + Tmux.
+
+3. Manually update your iTerm profile	 to use the new font (*Knack Regular Nerd Font Complete* is added by the installation script) and colorscheme.
+    
 **Installed Tools**
 
 1. [Tmux](https://github.com/tmux/tmux/wiki) - Terminal multiplexer with session management, customizable terminal layouts, and much more.
@@ -169,7 +171,7 @@ just some of the more common ones in my workflow.
 | `<c-a>z`         | Full-screen the current pane                                       |
 
 #### Tmux Command Line
-All of the following command are triggered by `<c-a>:` (Note the colon)
+All of the following command are triggered by `<c-a>:` (Note the colon)	
 
 | Command               | Description                                                        |
 | :---                  | :---                                                               |
