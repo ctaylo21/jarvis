@@ -37,6 +37,11 @@ set -g status-interval 5
 # set scrollback history to 10000 (10k)
 set -g history-limit 10000
 
+# enable scroll with mouse
+set -g mouse on
+bind -n WheelUpPane if-shell -F -t = "#{mouse_any_flag}" "send-keys -M" "if -Ft= '#{pane_in_mode}' 'send-keys -M' 'select-pane -t=; copy-mode -e; send-keys -M'"
+bind -n WheelDownPane select-pane -t= \; send-keys -M
+
 # shorten command delay
 set -sg escape-time 1
 
