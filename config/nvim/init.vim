@@ -161,7 +161,7 @@ let NERDTreeIgnore = ['^\.DS_Store$', '^tags$', '\.git$[[dir]]', '\.idea$[[dir]]
 " Enable language-specif linters
 let g:ale_linters = {
 \ 'vim' : ['vint'],
-\ 'javascript' : ['jshint']
+\ 'javascript' : ['eslint']
 \ }
 
 " Customize warning/error signs
@@ -192,10 +192,7 @@ let g:airline_section_z = airline#section#create(['linenr',':%3v'])
 let g:airline#extensions#tabline#enabled = 1
 
 " Smartly uniquify buffers names with similar filename, suppressing common parts of paths.
-let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
-
-" Set minimum required files to show the tabline
-let g:airline#extensions#tabline#buffer_min_count = 2
+let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 " Make font white for readability in warning/error section
 " TODO: Report this bug with ocean colorscheme
@@ -214,6 +211,11 @@ let g:jsx_ext_required = 0
 
 " === javascript-libraries-syntax === "
 let g:used_javascript_libs = 'underscore,requirejs,chai,jquery'
+
+" === vim-devicons === "
+" Don't use icons for Denite as it has render issues
+" and potential performance issues
+let g:webdevicons_enable_denite = 0
 
 " ============================================================================ "
 " ===                                UI                                    === "
