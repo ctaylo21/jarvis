@@ -55,6 +55,9 @@ The following are features provided by Jarvis. They all have quick keybindings t
 
     **Supported Languages**
     * Javascript - support provided by [deoplete-ternjs](https://github.com/carlitux/deoplete-ternjs) and [TernJS](http://ternjs.net/).
+
+	<img src="https://media.giphy.com/media/1ynTzQz05GZUCutRS3/giphy.gif"/>
+
     * Vimscript - support provided by [neco-vim](https://github.com/Shougo/neco-vim)
 
 
