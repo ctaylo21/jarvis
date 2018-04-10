@@ -97,6 +97,13 @@ The following tools are the only ones that are (currently) required to be instal
 
 3. Manually update your iTerm profile	 to use the new font (*Knack Regular Nerd Font Complete* is added by the installation script) and colorscheme.
 
+4. (Optional) If you are using [TernJS](http://ternjs.net/), the [tern_for_vim](https://github.com/ternjs/tern_for_vim) plugin requires you to manually install node modules inside its install directory.
+
+	```
+	cd ~/.config/nvim/plugged/tern_for_vim/
+	npm install
+	```
+
 **Installed Tools**
 
 1. [Tmux](https://github.com/tmux/tmux/wiki) - Terminal multiplexer with session management, customizable terminal layouts, and much more.
@@ -142,6 +149,10 @@ The following are the custom commands in Jarvis and some of the most useful defa
 | `<TAB>`      | insert    *AWV*| Deoplete      | Moves inside of auto-complete window if it's open     |
 | `<c-n>`      | normal    *AWV*| Deoplete      | Moves to next suggested auto-complete term            |
 | `<c-p>`      | normal    *AWV*| Deoplete      | Moves to previous suggested auto-complete term        |
+| `<leader>dj` | normal         | tern\_for\_vim| Jump to definition of word under cursor               |
+| `<leader>dr` | normal         | tern\_for\_vim| Show references of word under cursor.                 |
+| `<leader>dn` | normal         | tern\_for\_vim| Rename word under cursor                              |
+| `<leader>dd` | normal         | tern\_for\_vim| Look up documentation of word under cursor            |
 | `<c-k>`      | insert    *AWV*| NeoSnippet    | Activates first valid snippet that matches            |
 | `<TAB>`      | insert     *SP*| NeoSnippet    | Move to next available field of snippet               |
 | `<TAB>`      | select     *SP*| NeoSnippet    | Move to next available field of snippet               |

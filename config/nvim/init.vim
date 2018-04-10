@@ -111,7 +111,18 @@ let g:deoplete#enable_smart_case = 1
 " Set minimum syntax keyword length.
 let g:deoplete#sources#syntax#min_keyword_length = 2
 
+call deoplete#custom#source('omni', 'functions', {
+\ 'javascript': ['tern#Complete', 'jspc#omni']
+\})
+
 " === Deoplete-ternjs ==="
+
+" Use same tern command as tern_for_vim
+let g:tern#command = ['tern']
+
+" Ensure tern server doesn't shut off after 5 minutes for performance
+let g:tern#arguments = ['--persistent']
+
 " Include the types of completions in result data
 let g:deoplete#sources#ternjs#types = 1
 
@@ -217,6 +228,10 @@ let g:used_javascript_libs = 'underscore,requirejs,chai,jquery'
 " and potential performance issues
 let g:webdevicons_enable_denite = 0
 
+" === echdoc === "
+" Enable echodoc at startup
+let g:echodoc#enable_at_startup = 1
+
 " ============================================================================ "
 " ===                                UI                                    === "
 " ============================================================================ "
@@ -261,6 +276,8 @@ set fillchars+=vert:│
 " Set preview window to appear at bottom
 set splitbelow
 
+" Don't dispay mode in command line (airilne already shows it)
+set noshowmode
 " ============================================================================ "
 " ===                             KEY MAPPINGS                             === "
 " ============================================================================ "
@@ -313,6 +330,19 @@ nmap <leader>z :JsDoc<CR>
 " Used when you want to paste over something without it getting copied to
 " Vim's default buffer
 vnoremap <leader>p "_dP
+
+" === tern_for_vim === "
+" Jump to the definition of the thing under cursor
+nmap <leader>dj :TernDef<CR>
+
+" Show all references to the variable or property under the cursor
+nmap <leader>dr :TernRefs<CR>
+
+" Rename the variable under cursor
+nmap <leader>dn :TernRename<CR>
+
+" Look up documentation of thing under cursor
+nmap <leader>dd :TernDoc<CR>
 
 " ============================================================================ "
 " ===                                 MISC.                                === "
