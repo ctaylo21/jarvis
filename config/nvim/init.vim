@@ -111,9 +111,14 @@ let g:deoplete#enable_smart_case = 1
 " Set minimum syntax keyword length.
 let g:deoplete#sources#syntax#min_keyword_length = 2
 
+" Set deoplete sources for javascript
 call deoplete#custom#source('omni', 'functions', {
 \ 'javascript': ['tern#Complete', 'jspc#omni']
 \})
+
+" Disable autocomplete inside of comments
+call deoplete#custom#source('_',
+\ 'disabled_syntaxes', ['Comment', 'String'])
 
 " === Deoplete-ternjs ==="
 
