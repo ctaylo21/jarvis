@@ -93,7 +93,7 @@ cd ~/jarvis
 ./install.sh
 ```
 
-####Step 2: Additional Steps
+#### Step 2: Manually Install Additional Tools
 
 The following tools are the only ones that are (currently) required to be installed manually (if you are using OSX).
 
@@ -105,10 +105,11 @@ The following tools are the only ones that are (currently) required to be instal
 
 4. (Optional) If you are using [TernJS](http://ternjs.net/), the [tern_for_vim](https://github.com/ternjs/tern_for_vim) plugin requires you to manually install node modules inside its install directory.
 
-  ```
+  ```bash
   cd ~/.config/nvim/plugged/tern_for_vim/
   npm install
   ```
+
 
 **Installed Tools**
 
