@@ -152,6 +152,10 @@ The following are the custom commands in Jarvis and some of the most useful defa
 
 ### Neovim Commands
 
+> Note: Several of the commands expect you to be in the directory you are working in. Fuzzy finding, for example, won't work as expected unless Neovim's current directory is correct. You can check that via `:pwd` inside of Neovim. 
+>
+> Either open Neovim from the directory you want to work in, or set the directory once Neovim is open via the `:cd /path/to/directory` command.
+
 | Command      | Mode            | Tool                  | Description                              |
 | :----------- | :-------------- | :-------------------- | :--------------------------------------- |
 | `<Space>`    | normal          | NeoVim                | Page down                                |
