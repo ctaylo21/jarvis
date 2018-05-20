@@ -14,12 +14,21 @@
 <div align="center">
   A powerful development environment with cutting-edge features
 </div>
+<br/>
+
+<div align="center">
+  <img src="https://i.imgur.com/HwQCi5D.jpg" alt="Jarvis SS"/>
+</div>
+
+> **Important**: The above UI reflects a work in progress. It requires a combination of settings in iTerm, Neovim, and tmux. It requires some manual tweaking. See the [Manual Configuration section](#manual-configuration) for more details.
 
 ## Table of Contents
 - [Features](#features)
 - [Dependencies](#dependencies)
 - [Installation](#installation)
 - [Commands](#commands)
+- [Manual Configuration](#manual-configuration)
+- [Tool Benefits](#tool-benefits)
 - [Support](#support)
 
 ## Features
@@ -218,9 +227,35 @@ All of the following command are triggered by `<c-a>:` (Note the colon)
 | `new -s test`          | Create new session named "test" |
 | `kill-session -t test` | Delete session named "test"     |
 
-## Miscellaneous Configuration
+## Manual Configuration
 
-The following configurations require changes outside of Jarvis.
+The following configurations require manual changes outside of Jarvis.
+
+### Iterm Setup
+
+These are the steps to configure your iTerm setup. Typically, I work in full-screen mode with multiple tmux sessions and panes. This keeps things very distraction-free and maximizes screen space.
+
+#### Automatically Load Settings
+
+**Warning**: The automatic loading of settings is untested. The settings were just exported from my current setup.
+
+In iTerm, do the following:
+
+1. Load settings from folder: `Preferences` -> `General` -> `Preferences` -> `Load preferences from a custom folder or URL` and choose `<your-jarvis-directory>/iterm`
+2. Update the background image to one of your choosing (dark and subtle pattern preferred): `Prefereneces` -> `Profiles` -> `Window` -> `Background Image`
+
+#### Manually Update Settings
+
+If automatically loading settings didn't work, the key pieces to manually configure are:
+
+1. Setting your font: `Prefereneces` -> `Profiles` -> `Text` -> `Font` -> `Change Font`
+2. Update the background image to one of your choosing (dark and subtle pattern preferred): `Prefereneces` -> `Profiles` -> `Window` -> `Background Image`
+
+If you use iTerm in full-screen (like me), you can making the following changes to remove all UI clutter around windows:
+
+1. Make iterm default to full-screen windows: `Preferences` -> `Profiles` -> `Window` -> `Settings for New Windows` -> `Style: Fullscreen`
+2. Hide scrollbars: `Preferences` -> `Appearance` -> `Window` -> `Hide scrollbars`
+3. Uncheck "Show border around window": `Preferences` -> `Appearance` -> `Window` -> `Show border around window`
 
 ### Mapping Caps Lock to Escape
 
@@ -234,7 +269,7 @@ This can be done on MacOS by following these simple steps: http://vim.wikia.com/
 
 Install and use the free tool [SharpKeys](https://github.com/randyrants/sharpkeys) to easily remap caps lock to escape on Windows.
 
-## Benefits of Tools
+## Tool Benefits
 
 ### Zsh
 1. Auto-correct of mistyped commands

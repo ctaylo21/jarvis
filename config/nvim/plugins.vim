@@ -85,10 +85,6 @@ Plug 'scrooloose/nerdtree'
 " Colorscheme
 Plug 'mhartington/oceanic-next'
 
-" Customized vim status line
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
 " Icon support for NERDTree, Denite, etc..
 Plug 'ryanoasis/vim-devicons'
 

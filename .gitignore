@@ -10,3 +10,4 @@ vimrc.local
 config/nvim/plugged
 config/nvim/autoload/plug.vim
 backup/
+*.log

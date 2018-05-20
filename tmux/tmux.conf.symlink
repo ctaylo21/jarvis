@@ -12,9 +12,15 @@ set -g @plugin 'christoomey/vim-tmux-navigator'
 set -g default-terminal    "screen-256color"
 set -ga terminal-overrides ",xterm-256color:Tc"
 
-# Set active border colors
-set-option -g pane-active-border-bg default
-set-option -g pane-active-border-fg colour3
+# Set border colors
+set-option -g pane-border-fg colour232
+set-option -g pane-active-border-fg colour4
+
+# Set status line message style
+set -g message-style "fg=colour5,bg=default"
+
+# Set mode style (including history bar)
+set -g mode-style "fg=colour3"
 
 ########################
 # ***    GENERAL   *** #
@@ -77,6 +83,8 @@ set -g visual-activity on
 # ***  STATUS BAR   *** #
 #########################
 
+set status-bg default
+
 # Enable status bar
 set-option -g status on
 
@@ -89,23 +97,23 @@ set-option -g status-fg default
 set-option -g status-attr dim
 
 set-window-option -g window-status-current-fg colour114
-set-window-option -g window-status-current-bg colour237
+set-window-option -g window-status-current-bg default
 set-window-option -g window-status-current-attr bright
 
 # Configure CPU plugin colors for statusline
-set -g @cpu_low_fg_color "#[fg=colour237]"
-set -g @cpu_medium_fg_color "#[fg=colour237]"
-set -g @cpu_high_fg_color "#[fg=colour237]"
+set -g @cpu_low_fg_color "#[fg=green]"
+set -g @cpu_medium_fg_color "#[fg=yellow]"
+set -g @cpu_high_fg_color "#[fg=red]"
 
-set -g @cpu_low_bg_color "#[bg=green]"
-set -g @cpu_medium_bg_color "#[bg=yellow]"
-set -g @cpu_high_bg_color "#[bg=red]"
+set -g @cpu_low_bg_color "#[bg=default]"
+set -g @cpu_medium_bg_color "#[bg=default]"
+set -g @cpu_high_bg_color "#[bg=default]"
 
 # Left Status Bar: [CPU Usage]
 set -g status-left "#{cpu_bg_color}#{cpu_fg_color} #{cpu_icon}#{cpu_percentage} "
 
 # Right Status Bar: [Session Name Window Index:Pane Index][Date][Time][Battery Usage]
-set -g status-right "#[fg=blue]#S #I:#P #[fg=yellow]#[fg=colour237,bg=yellow,bold] %b %d %Y #[fg=green]#[bg=green,fg=colour237,bold] %l:%M %p #[fg=blue]"
+set -g status-right "#[fg=blue]#S #I:#P #[fg=yellow]#[fg=yellow,bold,bg=default] %b %d %Y #[fg=green,bg=default]#[bg=default,fg=green,bold] %l:%M %p #[fg=blue]"
 
 # Initialize TMUX plugin manager
 run '~/.tmux/plugins/tpm/tpm'

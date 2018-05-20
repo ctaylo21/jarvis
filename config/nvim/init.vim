@@ -30,7 +30,7 @@ set shiftwidth=2
 set nowrap
 
 " Highlight current line
-set cursorline
+set nocursorline
 
 " ============================================================================ "
 " ===                           PLUGIN SETUP                               === "
@@ -192,31 +192,6 @@ let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_enter = 1
 
-" Wrap in try/catch to avoid errors on initial install before plugin is available
-try
-" === Vim airline ==== "
-" Custom setup that removes filetype/whitespace from default vim airline bar
-let g:airline#extensions#default#layout = [[ 'a', 'b', 'c'], ['z', 'warning', 'error']]
-
-" Update section b to only have git branch
-let g:airline_section_b = airline#section#create_left(['branch'])
-
-" Update section z to just have linenumber:column number
-let g:airline_section_z = airline#section#create(['linenr',':%3v'])
-
-" Keep list of open files in buffer at top
-let g:airline#extensions#tabline#enabled = 1
-
-" Smartly uniquify buffers names with similar filename, suppressing common parts of paths.
-let g:airline#extensions#tabline#formatter = 'unique_tail'
-
-" Make font white for readability in warning/error section
-" TODO: Report this bug with ocean colorscheme
-call airline#parts#define_accent('error', 'white')
-catch
-  echo "Airlline not installed. It should work after running :PlugInstall"
-endtry
-
 " === vim-javascript === "
 " Enable syntax highlighting for JSDoc
 let g:javascript_plugin_jsdoc = 1
@@ -237,6 +212,9 @@ let g:webdevicons_enable_denite = 0
 " Enable echodoc at startup
 let g:echodoc#enable_at_startup = 1
 
+" === vim-gitgutter === "
+let g:gitgutter_override_sign_column_highlight = 0
+
 " ============================================================================ "
 " ===                                UI                                    === "
 " ============================================================================ "
@@ -249,11 +227,10 @@ set background=dark
 try
   colorscheme OceanicNext
   " Make end of buffer char (~) less noticeable
-  hi! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
+  hi! EndOfBuffer ctermbg=NONE ctermfg=NONE guibg=NONE guifg=#041123
 catch
   colorscheme slate
 endtry
-
 
 " Add custom highlights in method that is executed every time a
 " colorscheme is sourced
@@ -270,19 +247,53 @@ augroup MyColors
     autocmd ColorScheme * call MyHighlights()
 augroup END
 
-" Vim airline theme
-let g:airline_theme='base16_oceanicnext'
-let g:airline_solarized_bg='dark'
-
-" Change vertical split character to not leave small spaces between lines
-" (warning) - This could vary based on font used
-set fillchars+=vert:│
+" Change vertical split character to be a space (essentially hide it)
+set fillchars+=vert:.
 
 " Set preview window to appear at bottom
 set splitbelow
 
 " Don't dispay mode in command line (airilne already shows it)
 set noshowmode
+
+" Make background transparent
+hi! Normal ctermbg=NONE guibg=NONE
+hi! NonText ctermbg=NONE guibg=NONE
+hi! LineNr ctermfg=NONE guibg=NONE
+hi! SignColumn ctermfg=NONE guibg=NONE
+hi! VertSplit gui=NONE guifg=#1b202a guibg=NONE
+hi! StatusLine gui=NONE guifg=#BBBBBB guibg=NONE
+hi! StatusLineNC gui=NONE guifg=#BBBBBB guibg=NONE
+
+" Remove background colors for warnings/errors in gutter from Ale
+hi! ALEErrorSign ctermbg=none guibg=NONE
+hi! ALEWarningSign ctermfg=NONE guibg=NONE
+
+" Make background color transparent for git gutter
+hi! GitGutterAdd guibg=NONE
+hi! GitGutterChange guibg=NONE
+hi! GitGutterDelete guibg=NONE
+hi! GitGutterChangeDelete guibg=NONE
+
+" Display errors from Ale in statusline
+function! LinterStatus() abort
+   let l:counts = ale#statusline#Count(bufnr(''))
+   let l:all_errors = l:counts.error + l:counts.style_error
+   let l:all_non_errors = l:counts.total - l:all_errors
+   return l:counts.total == 0 ? '' : printf(
+   \ 'W:%d E:%d',
+   \ l:all_non_errors,
+   \ l:all_errors
+   \)
+endfunction
+
+" Configure custom status line
+set laststatus=2
+set statusline=
+set statusline+=\ %f\ %*
+set statusline+=%=
+set statusline+=\ %{LinterStatus()}
+
 " ============================================================================ "
 " ===                             KEY MAPPINGS                             === "
 " ============================================================================ "
