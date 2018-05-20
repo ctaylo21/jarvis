@@ -3,7 +3,7 @@ export ZSH=~/.oh-my-zsh
 
 # Name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
-ZSH_THEME="agnoster"
+ZSH_THEME=""
 
 # Enable command auto-correction.
 ENABLE_CORRECTION="true"
@@ -23,7 +23,6 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 plugins=(git node brew)
 
 # User configuration
-
 # Hide user@hostname if it's expected default user
 DEFAULT_USER="ctay20"
 prompt_context(){}
@@ -58,3 +57,10 @@ export NVIM_TUI_ENABLE_TRUE_COLOR=1
 alias vim="nvim"
 
 source $ZSH/oh-my-zsh.sh
+
+# Set Spaceship as prompt
+autoload -U promptinit; promptinit
+prompt spaceship
+SPACESHIP_PACKAGE_SHOW=false
+SPACESHIP_NODE_SHOW=false
+SPACESHIP_GIT_STATUS_STASHED=''

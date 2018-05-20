@@ -238,6 +238,7 @@ Install and use the free tool [SharpKeys](https://github.com/randyrants/sharpkey
 
 ### Zsh
 1. Auto-correct of mistyped commands
+2. Auto-complete for tools like [git](https://git-scm.com/), [node](https://nodejs.org/en/), [brew](https://brew.sh/), and [more](https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins)
 
 ## Support
 
