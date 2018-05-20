@@ -202,9 +202,6 @@ let g:airline_section_b = airline#section#create_left(['branch'])
 " Update section z to just have linenumber:column number
 let g:airline_section_z = airline#section#create(['linenr',':%3v'])
 
-" Keep list of open files in buffer at top
-let g:airline#extensions#tabline#enabled = 1
-
 " Smartly uniquify buffers names with similar filename, suppressing common parts of paths.
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
