@@ -89,6 +89,12 @@ nvim +PlugInstall +qall
 nvim +UpdateRemotePlugins +qall
 
 echo "---------------------------------------------------------"
+echo "$(tput setaf 2)JARVIS: Installing Space vim-airline theme.$(tput sgr 0)"
+echo "---------------------------------------------------------"
+
+cp ./config/nvim/space.vim ./config/nvim/plugged/vim-airline-themes/autoload/airline/themes/space.vim
+
+echo "---------------------------------------------------------"
 echo "$(tput setaf 2)JARVIS: Installing tmux plugin manager.$(tput sgr 0)"
 echo "---------------------------------------------------------"
 

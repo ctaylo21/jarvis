@@ -190,6 +190,28 @@ let g:NERDTreeDirArrowCollapsible = '↡'
 " Hide certain files and directories from NERDTree
 let NERDTreeIgnore = ['^\.DS_Store$', '^tags$', '\.git$[[dir]]', '\.idea$[[dir]]', '\.sass-cache$']
 
+" Wrap in try/catch to avoid errors on initial install before plugin is available
+try
+" === Vim airline ==== "
+" Custom setup that removes filetype/whitespace from default vim airline bar
+let g:airline#extensions#default#layout = [[ 'a', 'b', 'c'], ['z', 'warning', 'error']]
+
+" Update section b to only have git branch
+let g:airline_section_b = airline#section#create_left(['branch'])
+
+" Update section z to just have linenumber:column number
+let g:airline_section_z = airline#section#create(['linenr',':%3v'])
+
+" Keep list of open files in buffer at top
+let g:airline#extensions#tabline#enabled = 1
+
+" Smartly uniquify buffers names with similar filename, suppressing common parts of paths.
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+
+catch
+  echo "Airlline not installed. It should work after running :PlugInstall"
+endtry
+
 " === Ale === "
 " Enable language-specif linters
 let g:ale_linters = {
@@ -249,6 +271,9 @@ catch
   colorscheme slate
 endtry
 
+" Vim airline theme
+let g:airline_theme='space'
+
 " Add custom highlights in method that is executed every time a
 " colorscheme is sourced
 " See https://gist.github.com/romainl/379904f91fa40533175dfaec4c833f2f for
@@ -291,25 +316,6 @@ hi! GitGutterAdd guibg=NONE
 hi! GitGutterChange guibg=NONE
 hi! GitGutterDelete guibg=NONE
 hi! GitGutterChangeDelete guibg=NONE
-
-" Display errors from Ale in statusline
-function! LinterStatus() abort
-   let l:counts = ale#statusline#Count(bufnr(''))
-   let l:all_errors = l:counts.error + l:counts.style_error
-   let l:all_non_errors = l:counts.total - l:all_errors
-   return l:counts.total == 0 ? '' : printf(
-   \ 'W:%d E:%d',
-   \ l:all_non_errors,
-   \ l:all_errors
-   \)
-endfunction
-
-" Configure custom status line
-set laststatus=2
-set statusline=
-set statusline+=\ %f\ %*
-set statusline+=%=
-set statusline+=\ %{LinterStatus()}
 
 " ============================================================================ "
 " ===                             KEY MAPPINGS                             === "
