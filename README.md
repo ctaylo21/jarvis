@@ -19,12 +19,12 @@
 <div align="center">
   <img src="https://i.imgur.com/HwQCi5D.jpg" alt="Jarvis SS"/>
 </div>
+<br/>
 
 > **Important**: The above UI reflects a work in progress. It requires a combination of settings in iTerm, Neovim, and tmux. It requires some manual tweaking. See the [Manual Configuration section](#manual-configuration) for more details.
 
 ## Table of Contents
 - [Features](#features)
-- [Dependencies](#dependencies)
 - [Installation](#installation)
 - [Commands](#commands)
 - [Manual Configuration](#manual-configuration)
