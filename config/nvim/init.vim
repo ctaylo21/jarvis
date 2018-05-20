@@ -102,6 +102,13 @@ catch
 endtry
 
 " === Deoplete === "
+
+" Custom options for Deoplete
+"   auto_copmlete - Disable automatic completion
+call deoplete#custom#option({
+\ 'auto_complete': v:false,
+\ })
+
 " Enable deoplete at startup
 let g:deoplete#enable_at_startup = 1
 
@@ -119,6 +126,16 @@ call deoplete#custom#source('omni', 'functions', {
 " Disable autocomplete inside of comments
 call deoplete#custom#source('_',
 \ 'disabled_syntaxes', ['Comment', 'String'])
+
+" Use <tab> for autocomplete
+inoremap <expr><tab> pumvisible() ? "\<C-n>" :
+\ <SID>check_back_space() ? "\<TAB>" :
+\ deoplete#mappings#manual_complete()
+
+function! s:check_back_space() abort "{{{
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction"}}}
 
 " === Deoplete-ternjs ==="
 
@@ -147,20 +164,20 @@ imap <C-k> <Plug>(neosnippet_expand_or_jump)
 " INSERT MODE:
 " <TAB> will jump into autocomplete menu if it is visible
 " OR, it will move to next available snippet field if available
-imap <expr><TAB>
-\ pumvisible() ? "\<C-n>" :
-\ neosnippet#expandable_or_jumpable() ?
-\   "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-" Expand the snippet trigger from autocomplete menu with <CR>
-imap <expr><CR>
-\ (pumvisible() && neosnippet#expandable()) ?
-\   "\<Plug>(neosnippet_expand)" : "\<CR>"
-
-" SELECT MODE:
-" Use <TAB> to move to next snippet field if available
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+" imap <expr><TAB>
+"\ pumvisible() ? "\<C-n>" :
+"\ neosnippet#expandable_or_jumpable() ?
+"\   "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+"
+"" Expand the snippet trigger from autocomplete menu with <CR>
+"imap <expr><CR>
+"\ (pumvisible() && neosnippet#expandable()) ?
+"\   "\<Plug>(neosnippet_expand)" : "\<CR>"
+"
+"" SELECT MODE:
+"" Use <TAB> to move to next snippet field if available
+"smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+"\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
 " === NERDTree === "
 " Show hidden files/directories
