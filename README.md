@@ -153,7 +153,8 @@ Follow the [Windows install instructions](https://github.com/neovim/neovim/wiki/
 2. Copy `jarvis/config/nvim/init.vim` to `~\AppData\Local\nvim\plugins.vim` on your computer.
 3. Open `~\AppData\Local\nvim\init.vim` and replace every instance of `~/.config/nvim/` with `~\AppData\Local\nvim\` 
 4. Open Neovim (`C:\tools\neovim\Neovim\bin\nvim-qt.exe`) and run `:PlugInstall` and `:UpdateRemotePlugins`. You might need to close and re-open Neovim.
-5. (Optional) Remove the line `Plug 'ryanoasis/vim-devicons'` from `~\AppData\Local\nvim\plugins.vim` and run `:PlugClean` if you can't get a patched font working in Neovim. I had issues getting it working and ended up just using default font. This means icons weren't supported so I remove that plugin.
+5. Install the vim linter [vint](https://github.com/Kuniwak/vint) with `pip install vim-vint`
+6. (Optional) Remove the line `Plug 'ryanoasis/vim-devicons'` from `~\AppData\Local\nvim\plugins.vim` and run `:PlugClean` if you can't get a patched font working in Neovim. I had issues getting it working and ended up just using default font. This means icons weren't supported so I remove that plugin.
 
 ## Commands
 

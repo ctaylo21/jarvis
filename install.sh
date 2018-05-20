@@ -50,6 +50,12 @@ echo "---------------------------------------------------------"
 pip3 install neovim
 
 echo "---------------------------------------------------------"
+echo "$(tput setaf 2)JARVIS: Installing vim linter (vint)$(tput sgr 0)"
+echo "---------------------------------------------------------"
+
+pip install vim-vint
+
+echo "---------------------------------------------------------"
 echo "$(tput setaf 2)JARVIS: Installing system fonts.$(tput sgr 0)"
 echo "---------------------------------------------------------"
 
