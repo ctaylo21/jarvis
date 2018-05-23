@@ -4,6 +4,8 @@
     <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square"
       alt="PR's Welcome" />
   </a>
+  <img src="https://img.shields.io/badge/Shell-zsh-yellow.svg" />
+  <img src="https://img.shields.io/badge/Editor-neovim-brightgreen.svg" />
 </div>
 
  <h1 align="center">Jarvis</h1>
@@ -17,7 +19,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://i.imgur.com/ZCWNXaF.jpg" alt="Jarvis SS"/>
+  <img src="https://i.imgur.com/3TFvjaY.jpg" alt="Jarvis SS"/>
 </div>
 <br/>
 
@@ -91,6 +93,11 @@ See the [Installation Guide](docs/INSTALL.md) for detailed instructions.
 ## Commands
 
 See the [Commands Guide](docs/COMMANDS.md) for a list of mappings/shortcuts.
+
+## Optional Tools
+This is a collection of cool tools that you might want to use.
+
+[`vtop`](https://github.com/MrRio/vtop) - A nifty graphical activity monitor for the command line.
 
 
 ## Support

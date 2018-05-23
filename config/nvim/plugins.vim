@@ -39,9 +39,6 @@ Plug 'Shougo/denite.nvim'
 " Asychronous keyword completion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
-" Displays function signature from completions in command line
-Plug 'Shougo/echodoc.vim'
-
 " Snippet support
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
@@ -89,11 +86,6 @@ Plug 'mhartington/oceanic-next'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-" Icon support for NERDTree, Denite, etc..
-Plug 'ryanoasis/vim-devicons'
-
-" Color highlighting for icons
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Initialize plugin system
 call plug#end()
