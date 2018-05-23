@@ -53,8 +53,10 @@ export EDITOR='nvim'
 # Enabled true color support for terminals
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
-#  Aliases
+# Aliases
 alias vim="nvim"
+alias top="vtop --theme=wizard"
+alias ls="colorls -lA --sd"
 
 source $ZSH/oh-my-zsh.sh
 

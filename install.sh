@@ -86,6 +86,11 @@ else
 fi
 
 echo "---------------------------------------------------------"
+echo "$(tput setaf 2)JARVIS: Installing vtop.$(tput sgr 0)"
+echo "---------------------------------------------------------"
+npm install -g vtop
+
+echo "---------------------------------------------------------"
 echo "$(tput setaf 2)JARVIS: Installing Neovim plugins and linking dotfiles.$(tput sgr 0)"
 echo "---------------------------------------------------------"
 
