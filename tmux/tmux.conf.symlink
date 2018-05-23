@@ -96,6 +96,8 @@ set-option -g status-bg colour237
 set-option -g status-fg default
 set-option -g status-attr dim
 
+set-window-option -g window-status-current-format ''
+set-window-option -g window-status-current-format ''
 set-window-option -g window-status-current-fg colour114
 set-window-option -g window-status-current-bg default
 set-window-option -g window-status-current-attr bright
@@ -112,8 +114,8 @@ set -g @cpu_high_bg_color "#[bg=default]"
 # Left Status Bar: [CPU Usage]
 set -g status-left "#{cpu_bg_color}#{cpu_fg_color} #{cpu_icon}#{cpu_percentage} "
 
-# Right Status Bar: [Session Name Window Index:Pane Index][Date][Time][Battery Usage]
-set -g status-right "#[fg=blue]#S #I:#P #[fg=yellow]#[fg=yellow,bold,bg=default] %b %d %Y #[fg=green,bg=default]#[bg=default,fg=green,bold] %l:%M %p #[fg=blue]"
+# Right Status Bar: [Date][Time][Battery Usage]
+set -g status-right "#[fg=yellow]#[fg=yellow,bold,bg=default] %b %d %Y #[fg=green,bg=default]#[bg=default,fg=green,bold] %l:%M %p #[fg=blue]"
 
 # Initialize TMUX plugin manager
 run '~/.tmux/plugins/tpm/tpm'

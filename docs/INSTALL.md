@@ -85,20 +85,17 @@ These are the steps to configure your iTerm setup. Typically, I work in full-scr
 In iTerm, do the following:
 
 1. Load settings from folder: `Preferences` -> `General` -> `Preferences` -> `Load preferences from a custom folder or URL` and choose `<your-jarvis-directory>/iterm`
-2. Update the background image to one of your choosing (dark and subtle pattern preferred): `Prefereneces` -> `Profiles` -> `Window` -> `Background Image`
 
 #### Manually Update Settings
 
 If automatically loading settings didn't work, the key pieces to manually configure are:
 
 1. Setting your font: `Prefereneces` -> `Profiles` -> `Text` -> `Font` -> `Change Font`
-2. Update the background image to one of your choosing (dark and subtle pattern preferred): `Prefereneces` -> `Profiles` -> `Window` -> `Background Image`
-
-If you use iTerm in full-screen (like me), you can making the following changes to remove all UI clutter around windows:
-
-1. Make iterm default to full-screen windows: `Preferences` -> `Profiles` -> `Window` -> `Settings for New Windows` -> `Style: Fullscreen`
-2. Hide scrollbars: `Preferences` -> `Appearance` -> `Window` -> `Hide scrollbars`
-3. Uncheck "Show border around window": `Preferences` -> `Appearance` -> `Window` -> `Show border around window`
+2. Set Native Windows: `Preferences` -> `General` -> `Window` -> `Native Full Screen Windows`
+3. Hide menu bar in full screen: `Preferences` -> `Appearances` -> `System` -> `Auto-hide menu bar in non-native fullscreen`
+4. Hide scrollbars: `Preferences` -> `Appearances` -> `Window` -> `Hide scrollbars`
+5. Uncheck "Show border around window": `Preferences` -> `Appearance` -> `Window` -> `Show border around window`
+6. (Optional) Make iterm default to full-screen windows: `Preferences` -> `Profiles` -> `Window` -> `Settings for New Windows` -> `Style: Fullscreen`
 
 ### Mapping Caps Lock to Escape
 

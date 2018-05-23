@@ -5,10 +5,13 @@ source ~/.config/nvim/plugins.vim
 " ============================================================================ "
 
 " Remap leader key to ,
-let mapleader=","
+let g:mapleader=','
 
-" Line Numbers
-set nu
+" Disable line numbers
+set nonumber
+
+" Don't show last command
+set noshowcmd
 
 " Yank and paste with the system clipboard
 set clipboard=unnamed
@@ -29,7 +32,7 @@ set shiftwidth=2
 " do not wrap long lines by default
 set nowrap
 
-" Highlight current line
+" Don't highlight current cursor line
 set nocursorline
 
 " ============================================================================ "
@@ -181,14 +184,20 @@ imap <C-k> <Plug>(neosnippet_expand_or_jump)
 
 " === NERDTree === "
 " Show hidden files/directories
-let NERDTreeShowHidden=1
+let g:NERDTreeShowHidden = 1
+
+" Remove bookmarks and help text from NERDTree
+let g:NERDTreeMinimalUI = 1
 
 " Custom icons for expandable/expanded directories
-let g:NERDTreeDirArrowExpandable = '↠'
-let g:NERDTreeDirArrowCollapsible = '↡'
+let g:NERDTreeDirArrowExpandable = '⬏'
+let g:NERDTreeDirArrowCollapsible = '⬎'
 
 " Hide certain files and directories from NERDTree
 let NERDTreeIgnore = ['^\.DS_Store$', '^tags$', '\.git$[[dir]]', '\.idea$[[dir]]', '\.sass-cache$']
+
+" Hide NERDTREE statusline
+let g:NERDTreeStatusline = '%#NonText#'
 
 " Wrap in try/catch to avoid errors on initial install before plugin is available
 try
@@ -199,21 +208,23 @@ let g:airline#extensions#default#layout = [[ 'a', 'b', 'c'], ['z', 'warning', 'e
 " Update section b to only have git branch
 let g:airline_section_b = airline#section#create_left(['branch'])
 
-" Update section z to just have linenumber:column number
-let g:airline_section_z = airline#section#create(['linenr',':%3v'])
+" Update section z to just have line number
+let g:airline_section_z = airline#section#create(['linenr'])
 
 " Smartly uniquify buffers names with similar filename, suppressing common parts of paths.
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
+let g:NerdTreeStatusline = ''
+
 catch
-  echo "Airlline not installed. It should work after running :PlugInstall"
+  echo "Airline not installed. It should work after running :PlugInstall"
 endtry
 
 " === Ale === "
 " Enable language-specif linters
 let g:ale_linters = {
 \ 'vim' : ['vint'],
-\ 'javascript' : ['eslint']
+\ 'javascript' : ['standard']
 \ }
 
 " Customize warning/error signs
@@ -239,15 +250,6 @@ let g:jsx_ext_required = 0
 " === javascript-libraries-syntax === "
 let g:used_javascript_libs = 'underscore,requirejs,chai,jquery'
 
-" === vim-devicons === "
-" Don't use icons for Denite as it has render issues
-" and potential performance issues
-let g:webdevicons_enable_denite = 0
-
-" === echdoc === "
-" Enable echodoc at startup
-let g:echodoc#enable_at_startup = 1
-
 " === vim-gitgutter === "
 let g:gitgutter_override_sign_column_highlight = 0
 
@@ -262,8 +264,6 @@ set termguicolors
 set background=dark
 try
   colorscheme OceanicNext
-  " Make end of buffer char (~) less noticeable
-  hi! EndOfBuffer ctermbg=NONE ctermfg=NONE guibg=NONE guifg=#041123
 catch
   colorscheme slate
 endtry
@@ -295,14 +295,20 @@ set splitbelow
 " Don't dispay mode in command line (airilne already shows it)
 set noshowmode
 
-" Make background transparent
+" Make background transparent for many things
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE
 hi! LineNr ctermfg=NONE guibg=NONE
 hi! SignColumn ctermfg=NONE guibg=NONE
-hi! VertSplit gui=NONE guifg=#1b202a guibg=NONE
 hi! StatusLine gui=NONE guifg=#BBBBBB guibg=NONE
 hi! StatusLineNC gui=NONE guifg=#BBBBBB guibg=NONE
+
+" Try to hide vertical spit and end of buffer symbol
+hi! VertSplit gui=NONE guifg=#17252c guibg=#17252c
+hi! EndOfBuffer ctermbg=NONE ctermfg=NONE guibg=#17252c guifg=#17252c
+
+" Customize NERDTree directory
+hi! NERDTreeCWD guifg=#99c794
 
 " Remove background colors for warnings/errors in gutter from Ale
 hi! ALEErrorSign ctermbg=none guibg=NONE

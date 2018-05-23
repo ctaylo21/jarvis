@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AdjustWindowForFontSizeChange</key>
+	<false/>
 	<key>AppleAntiAliasingThreshold</key>
 	<integer>1</integer>
 	<key>AppleScrollAnimationEnabled</key>
@@ -388,9 +390,9 @@
 	<key>HideScrollbar</key>
 	<true/>
 	<key>HideTabCloseButton</key>
-	<false/>
+	<true/>
 	<key>HideTabNumber</key>
-	<false/>
+	<true/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
 	<key>IRMemory</key>
@@ -440,15 +442,15 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>3285 -307 522 133 1440 -540 2560 1440 </string>
+	<string>660 395 522 94 0 0 1440 900 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>410 381 620 392 0 0 1440 877 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 126 606 469 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>271 421 796 473 0 0 1440 900 </string>
+	<string>271 417 796 473 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1440 900 0 0 1440 900 </string>
+	<string>0 56 1440 844 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>656 -130 650 429 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -649,8 +651,6 @@
 				<key>Red Component</key>
 				<real>0.071905560791492462</real>
 			</dict>
-			<key>Background Image Location</key>
-			<string>/Users/ctay20/Pictures/kLRFyFa-dark-space-background.jpg</string>
 			<key>Badge Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -1137,7 +1137,7 @@
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
-			<integer>1</integer>
+			<integer>12</integer>
 			<key>Working Directory</key>
 			<string>/Users/ctay20</string>
 		</dict>
@@ -1147,7 +1147,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>80912C02-4EDB-459F-B04A-8C48F4599139</string>
 	<key>NoSyncLastTipTime</key>
-	<real>548455040.08022404</real>
+	<real>548541954.73485506</real>
 	<key>NoSyncPermissionToShowTip</key>
 	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
@@ -1226,6 +1226,7 @@
 		<string>0068</string>
 		<string>0069</string>
 		<string>0070</string>
+		<string>0071</string>
 	</array>
 	<key>PMPrintingExpandedStateForPrint2</key>
 	<false/>
@@ -1277,19 +1278,25 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-05-20T14:29:58Z</date>
+	<date>2018-05-23T02:40:37Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
+	<false/>
+	<key>ShowPaneTitles</key>
 	<false/>
 	<key>SmartPlacement</key>
 	<true/>
 	<key>TabStyle</key>
 	<integer>1</integer>
+	<key>TabViewType</key>
+	<integer>0</integer>
+	<key>TerminalVMargin</key>
+	<integer>1</integer>
 	<key>UseBorder</key>
 	<false/>
 	<key>UseLionStyleFullscreen</key>
-	<false/>
+	<true/>
 	<key>WindowNumber</key>
 	<false/>
 	<key>WordCharacters</key>
