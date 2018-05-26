@@ -1,0 +1,241 @@
+/* Custom CSS file for Pecan header */
+/* Tweaked to match Oceanic-next theme */
+/* Place in ~/Library/Application Support/Übersicht/widgets/Pecan/style.css */
+
+/* Pecan is a bar for Ubersicht */
+/* Written by Daniel Neemann */
+:root {
+  /* Choose background colors, ordered from left to right */
+  /* Set --pecan-bg-center to "none" to have date's background same as bar */
+  /* #1B2B34 */
+  --pecan-bg: none;
+  --pecan-bg-left: #6699CC;
+  --pecan-bg-left2: #6699CC;
+  --pecan-bg-center: #1B2B34;
+  --pecan-bg-right2: #5FB3B3;
+  --pecan-bg-right: #C594C5;
+  /* Choose foreground colors */
+  --pecan-fg-left: #D8DEE9;
+  --pecan-fg-left2: #343D46;
+  --pecan-fg-center: #D8DEE9;
+  --pecan-fg-right2: #343D46;
+  --pecan-fg-right: #343D46;
+  /* Opacity.  Change --pecan-opacity-center to 0 in order to hide date */
+  /* --pecan-opacity affects --pecan-border, so set it to 0 if you would like */
+  /* for every widget to appear independent. */
+  --pecan-opacity: 0;
+  --pecan-opacity-inner: 1;
+  --pecan-opacity-center: 1;
+  /* Shadow. */
+  --pecan-shadow: 0px 4px 10px 4px rgba(0,0,0,0.15);
+  --pecan-shadow-inner: 0px 1px 1px 1px rgba(0,0,0,0.0);
+  /* Bar's total height including --pecan-border and excluding padding */
+  --pecan-height: 36px;
+  /* Entire bar's outer padding (use --pecan-border for space between widgets) */
+  --pecan-padding-left: 0px;
+  --pecan-padding-right: 0px;
+  --pecan-padding-v: 0px;
+  /* Border size.  Also functions as space between widgets, */
+  /* so set --pecan-opacity to 0 if you want widgets to appear independent */
+  --pecan-border: 5px;
+  /* Rounded corner radius */
+  /* Inner radius is best suited for when widgets appear independent */
+  /* by setting --pecan-opacity to 0 */
+  --pecan-border-radius: 0px;
+  --pecan-border-radius-inner: 5px;
+  /* Inner-horizontal padding.  --pecan-height determines inner-vertical padding */
+  --pecan-text-padding: 3ch;
+  /* Alignment */
+  /* Set 0 to where you want the bar aligned */
+  /* and "auto" where you don't */
+  --pecan-alignment-top: 0;
+  --pecan-alignment-bottom: auto;
+  /* Mono font recommended (alignment depends on character width) */
+  --pecan-font: Hack, SF Mono, Menlo;
+  --pecan-font-size: 11px;
+  --pecan-font-style: none;
+  /* Xanthia */
+  /* If Xanthia is not installed then these values will be ignored */
+  --pecan-xanthia-bg: #545256;
+  --pecan-xanthia-fg: #D8D4D0;
+  /* This is padding from edge of screen */
+  --pecan-xanthia-horizontal: calc(var(--pecan-padding-right) + calc(var(--pecan-text-padding) * 4) + 14ch + calc(3 * var(--pecan-border)));
+  --pecan-xanthia-vertical: calc(var(--pecan-border) + var(--pecan-padding-v));
+  /* These are maximum sizes */
+  --pecan-xanthia-width: auto;
+  --pecan-xanthia-height: calc(var(--pecan-height) - calc(var(--pecan-border) * 2));
+  --pecan-xanthia-border-radius: var(--pecan-border-radius-inner);
+  --pecan-xanthia-shadow: var(--pecan-shadow-inner);
+}
+
+/* Get monitor width */
+.screen {
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Bar background */
+.background {
+  background-color: var(--pecan-bg);
+  display: block;
+  position: absolute;
+  height: var(--pecan-height);
+  top: var(--pecan-alignment-top);
+  right: 0px;
+  bottom: var(--pecan-alignment-bottom);
+  left: 0px;
+  margin-top: var(--pecan-padding-v);
+  margin-right: var(--pecan-padding-right);
+  margin-bottom: var(--pecan-padding-v);
+  margin-left: var(--pecan-padding-left);
+  opacity: var(--pecan-opacity);
+  z-index: -1;
+  box-shadow: var(--pecan-shadow);
+  border-top-left-radius: calc(var(--pecan-border) + 1px + var(--pecan-border-radius));
+  border-top-right-radius: calc(var(--pecan-border) + 1px + var(--pecan-border-radius));
+  border-bottom-right-radius: var(--pecan-border-radius-inner);
+  border-bottom-left-radius: var(--pecan-border-radius-inner);
+}
+
+/* Workspace indicator -- far left */
+.left {
+  font: var(--pecan-font-size) var(--pecan-font);
+  font-style: var(--pecan-font-style);
+  color: var(--pecan-fg-left);
+  display: inline-block;
+  position: absolute;
+  background-color: var(--pecan-bg-left);
+  opacity: var(--pecan-opacity-inner);
+  top: var(--pecan-alignment-top);
+  right: auto;
+  bottom: var(--pecan-alignment-bottom);
+  left: 0px;
+  padding: 0px var(--pecan-text-padding);
+  margin-top: calc(var(--pecan-padding-v) + var(--pecan-border));
+  margin-bottom: calc(var(--pecan-padding-v) + var(--pecan-border));
+  margin-left: calc(var(--pecan-padding-left) + var(--pecan-border));
+  line-height: calc(var(--pecan-height) - calc(var(--pecan-border) * 2));
+  border-top-left-radius: var(--pecan-border-radius-inner);
+  border-top-right-radius: var(--pecan-border-radius-inner);
+  border-bottom-right-radius: var(--pecan-border-radius-inner);
+  border-bottom-left-radius: var(--pecan-border-radius-inner);
+  box-shadow: var(--pecan-shadow-inner);
+  display: none;
+}
+
+/* Network bandwidth -- 2nd to left */
+.left2 {
+  font: var(--pecan-font-size) var(--pecan-font);
+  font-style: var(--pecan-font-style);
+  background-color: var(--pecan-bg-left2);
+  opacity: var(--pecan-opacity-inner);
+  color: var(--pecan-fg-left2);
+  position: absolute;
+  display: inline-block;
+  top: var(--pecan-alignment-top);
+  right: auto;
+  bottom: var(--pecan-alignment-bottom);
+  left: 0px;
+  padding: 0px var(--pecan-text-padding);
+  margin-top: calc(var(--pecan-border) + var(--pecan-padding-v));
+  margin-bottom: calc(var(--pecan-border) + var(--pecan-padding-v));
+  margin-left: calc(var(--pecan-border) + var(--pecan-padding-left));
+  line-height: calc(var(--pecan-height) - calc(var(--pecan-border) * 2));
+  border-top-left-radius: var(--pecan-border-radius-inner);
+  border-top-right-radius: var(--pecan-border-radius-inner);
+  border-bottom-right-radius: var(--pecan-border-radius-inner);
+  border-bottom-left-radius: var(--pecan-border-radius-inner);
+  box-shadow: var(--pecan-shadow-inner);
+}
+
+/* Date -- third to left -- set --pecan-opacity-center to 0 to hide */
+.center {
+  font: var(--pecan-font-size) var(--pecan-font);
+  font-style: var(--pecan-font-style);
+  color: var(--pecan-fg-center);
+  background-color: var(--pecan-bg-center);
+  opacity: var(--pecan-opacity-center);
+  position: absolute;
+  display: inline-block;
+  padding: 0px var(--pecan-text-padding);
+  width: auto;
+  top: var(--pecan-alignment-top);
+  bottom: var(--pecan-alignment-bottom);
+  left: 50%;
+  transform: translate(-50%);
+  margin: var(--pecan-border);
+  line-height: calc(var(--pecan-height) - calc(var(--pecan-border) * 2));
+  text-align: center;
+  border-top-left-radius: var(--pecan-border-radius-inner);
+  border-top-right-radius: var(--pecan-border-radius-inner);
+  border-bottom-right-radius: var(--pecan-border-radius-inner);
+  border-bottom-left-radius: var(--pecan-border-radius-inner);
+  box-shadow: var(--pecan-shadow-inner);
+}
+
+/* This is a container to align the center widget */
+.holder {
+  background-color: none;
+  display: inline-block;
+  position: absolute;
+  height: var(--pecan-height);
+  top: var(--pecan-alignment-top);
+  right: 0px;
+  bottom: var(--pecan-alignment-bottom);
+  left: 0px;
+  margin-top: var(--pecan-padding-v);
+  margin-right: var(--pecan-padding-right);
+  margin-bottom: var(--pecan-padding-v);
+  margin-left: var(--pecan-padding-left);
+}
+
+/* Battery percentage -- 4th to left */
+.right2 {
+  font: var(--pecan-font-size) var(--pecan-font);
+  font-style: var(--pecan-font-style);
+  color: var(--pecan-fg-right2);
+  display: inline-block;
+  position: absolute;
+  background-color: var(--pecan-bg-right2);
+  opacity: var(--pecan-opacity-inner);
+  padding: 0px var(--pecan-text-padding);
+  top: var(--pecan-alignment-top);
+  right: 5px;
+  bottom: var(--pecan-alignment-bottom);
+  left: auto;
+  margin-top: calc(var(--pecan-padding-v) + var(--pecan-border));
+  margin-right: calc(var(--pecan-padding-right) + calc(var(--pecan-text-padding) * 2) + 9ch + calc(var(--pecan-border) * 2));
+  margin-bottom: calc(var(--pecan-padding-v) + var(--pecan-border));
+  line-height: calc(var(--pecan-height) - calc(var(--pecan-border) * 2));
+  border-top-left-radius: var(--pecan-border-radius-inner);
+  border-top-right-radius: var(--pecan-border-radius-inner);
+  border-bottom-right-radius: var(--pecan-border-radius-inner);
+  border-bottom-left-radius: var(--pecan-border-radius-inner);
+  box-shadow: var(--pecan-shadow-inner);
+}
+
+/* Clock -- 5th to left */
+.right {
+  font: var(--pecan-font-size) var(--pecan-font);
+  font-style: var(--pecan-font-style);
+  color: var(--pecan-fg-right);
+  display: inline-block;
+  position: absolute;
+  background-color: var(--pecan-bg-right);
+  opacity: var(--pecan-opacity-inner);
+  padding: 0px var(--pecan-text-padding);
+  margin: var(--pecan-border);
+  top: var(--pecan-alignment-top);
+  right: 0px;
+  bottom: var(--pecan-alignment-bottom);
+  left: auto;
+  margin-top: calc(var(--pecan-padding-v) + var(--pecan-border));
+  margin-right: calc(var(--pecan-border) + var(--pecan-padding-right));
+  margin-bottom: calc(var(--pecan-padding-v) + var(--pecan-border));
+  line-height: calc(var(--pecan-height) - calc(var(--pecan-border) * 2));
+  border-top-left-radius: var(--pecan-border-radius-inner);
+  border-top-right-radius: var(--pecan-border-radius-inner);
+  border-bottom-right-radius: var(--pecan-border-radius-inner);
+  border-bottom-left-radius: var(--pecan-border-radius-inner);
+  box-shadow: var(--pecan-shadow-inner);
+}

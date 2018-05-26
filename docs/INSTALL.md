@@ -24,9 +24,11 @@ The following tools are the only ones that are (currently) required to be instal
 
 2. Install [iTerm2 Oceanic Theme](https://github.com/mhartington/oceanic-next-iterm) - Oceanic theme for Iterm. Provides seamless UI experience between Neovim + Tmux.
 
-3. Manually update your iTerm profile to use the new font (*Knack Regular Nerd Font Complete* is added by the installation script) and colorscheme.
+3. Manually update your iTerm profile to use a new font (*Knack Regular Nerd Font Complete* is added by the installation script) and colorscheme.
 
-4. (Optional) If you are using [TernJS](http://ternjs.net/), the [tern_for_vim](https://github.com/ternjs/tern_for_vim) plugin requires you to manually install node modules inside its install directory.
+4. (Optional) Install [Pecan](https://github.com/zzzeyez/Pecan) for customizable OSX header. Follow install instructions on page. For Oceanic theme, copy `jarvis/config/Pecan/style.css` into `~/Library/Application Support/Übersicht/widgets/Pecan/style.css` and refresh widget by using `Übersicht` -> `Refresh All Widgets` from native OSX menu bar.
+
+5. (Optional) If you are using [TernJS](http://ternjs.net/), the [tern_for_vim](https://github.com/ternjs/tern_for_vim) plugin requires you to manually install node modules inside its install directory.
 
   ```bash
   cd ~/.config/nvim/plugged/tern_for_vim/

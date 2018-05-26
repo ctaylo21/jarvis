@@ -14,9 +14,13 @@
   <strong>(Neo)Vim of the Future</strong>
 </div>
 <div align="center">
-  A powerful development environment with cutting-edge features
+  A powerful, minimalist development environment with cutting-edge features
 </div>
 <br/>
+
+<div align="center">
+  <img src="https://i.redditmedia.com/5hM6ZNO1nVaGShnp78BRFuGtXcnDDNftA-7cc6aINFI.png?s=10cc17271fc5823361cb4e238183fc1b" />
+</div>
 
 <div align="center">
   <img src="https://i.imgur.com/3TFvjaY.jpg" alt="Jarvis SS"/>
@@ -98,7 +102,7 @@ See the [Commands Guide](docs/COMMANDS.md) for a list of mappings/shortcuts.
 This is a collection of cool tools that you might want to use.
 
 [`vtop`](https://github.com/MrRio/vtop) - A nifty graphical activity monitor for the command line.
-
+[`pecan`](https://github.com/zzzeyez/Pecan) - Configurable menu bar for OSX.
 
 ## Support
 
