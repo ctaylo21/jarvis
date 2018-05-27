@@ -102,6 +102,7 @@ See the [Commands Guide](docs/COMMANDS.md) for a list of mappings/shortcuts.
 This is a collection of cool tools that you might want to use.
 
 [`vtop`](https://github.com/MrRio/vtop) - A nifty graphical activity monitor for the command line.
+
 [`pecan`](https://github.com/zzzeyez/Pecan) - Configurable menu bar for OSX.
 
 ## Support
