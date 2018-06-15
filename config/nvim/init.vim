@@ -5,7 +5,7 @@ source ~/.config/nvim/plugins.vim
 " ============================================================================ "
 
 " Remap leader key to ,
-let g:mapleader=','
+let mapleader=','
 
 " Disable line numbers
 set nonumber
@@ -92,16 +92,16 @@ let s:denite_options = {'default' : {
 
 " Loop through denite options and enable them
 function! s:profile(opts) abort
-  for fname in keys(a:opts)
-    for dopt in keys(a:opts[fname])
-      call denite#custom#option(fname, dopt, a:opts[fname][dopt])
+  for l:fname in keys(a:opts)
+    for l:dopt in keys(a:opts[l:fname])
+      call denite#custom#option(l:fname, l:dopt, a:opts[l:fname][l:dopt])
     endfor
   endfor
 endfunction
 
 call s:profile(s:denite_options)
 catch
-  echo "Denite not installed. It should work after running :PlugInstall"
+  echo 'Denite not installed. It should work after running :PlugInstall'
 endtry
 
 " === Deoplete === "
@@ -136,8 +136,8 @@ inoremap <expr><tab> pumvisible() ? "\<C-n>" :
 \ deoplete#mappings#manual_complete()
 
 function! s:check_back_space() abort "{{{
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
+  let l:col = col('.') - 1
+  return !l:col || getline('.')[l:col - 1]  =~ '\s'
 endfunction"}}}
 
 " === Deoplete-ternjs ==="
@@ -194,7 +194,7 @@ let g:NERDTreeDirArrowExpandable = '⬏'
 let g:NERDTreeDirArrowCollapsible = '⬎'
 
 " Hide certain files and directories from NERDTree
-let NERDTreeIgnore = ['^\.DS_Store$', '^tags$', '\.git$[[dir]]', '\.idea$[[dir]]', '\.sass-cache$']
+let g:NERDTreeIgnore = ['^\.DS_Store$', '^tags$', '\.git$[[dir]]', '\.idea$[[dir]]', '\.sass-cache$', '.tern-port']
 
 " Hide NERDTREE statusline
 let g:NERDTreeStatusline = '%#NonText#'
@@ -217,14 +217,14 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:NerdTreeStatusline = ''
 
 catch
-  echo "Airline not installed. It should work after running :PlugInstall"
+  echo 'Airline not installed. It should work after running :PlugInstall'
 endtry
 
 " === Ale === "
-" Enable language-specif linters
+" Enable language-specific linters
 let g:ale_linters = {
 \ 'vim' : ['vint'],
-\ 'javascript' : ['standard']
+\ 'javascript' : ['eslint']
 \ }
 
 " Customize warning/error signs
@@ -389,12 +389,6 @@ nmap <leader>dd :TernDoc<CR>
 " ============================================================================ "
 " ===                                 MISC.                                === "
 " ============================================================================ "
-
-" Refresh vim-devicons to ensure they render properly (fixes render issues
-" after sourcing config file)
-if exists("g:loaded_webdevicons")
-  call webdevicons#refresh()
-endif
 
 " Automaticaly close nvim if NERDTree is only thing left open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
