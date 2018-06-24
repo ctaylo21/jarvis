@@ -41,7 +41,9 @@ The following are features provided by Jarvis. They all have quick keybindings t
 
     Open files with simple keystrokes with fuzzy matching via command line and inside NeoVim.
 
-    <img src="https://media.giphy.com/media/xUOxeZpELYRSECCZR6/giphy.gif"/>
+	<video loop>
+		<source src="http://i.imgur.com/RZnXGiT.mp4" type="video/mp4">
+	</video>
 
 2. **Buffer management** - *NeoVim*
 
