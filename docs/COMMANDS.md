@@ -37,8 +37,8 @@ file is carefully documented to make it easy to understand. Many default command
 | `<leader>dn` | normal          | tern\_for\_vim        | Rename word under cursor                 |
 | `<leader>dd` | normal          | tern\_for\_vim        | Look up documentation of word under cursor |
 | `<c-k>`      | insert    *AWV* | NeoSnippet            | Activates first valid snippet that matches |
-| `<TAB>`      | insert     *SP* | NeoSnippet            | Move to next available field of snippet  |
-| `<TAB>`      | select     *SP* | NeoSnippet            | Move to next available field of snippet  |
+| `<c-k>`      | insert     *SP* | NeoSnippet            | Move to next available field of snippet  |
+| `<c-k>`      | select     *SP* | NeoSnippet            | Move to next available field of snippet  |
 
 <br />
 

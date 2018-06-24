@@ -108,8 +108,12 @@ endtry
 
 " Custom options for Deoplete
 "   auto_copmlete - Disable automatic completion
+"   ignore_sources - Don't use buffer or around sources
+"   max_list - Max amount of auto-complete items to show
 call deoplete#custom#option({
 \ 'auto_complete': v:false,
+\ 'ignore_sources': {'_': ['around', 'buffer']},
+\ 'max_list': 10
 \ })
 
 " Enable deoplete at startup
@@ -163,24 +167,8 @@ autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 " === NeoSnippet === "
 " Map <C-k> as shortcut to activate snippet if available
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
-
-" INSERT MODE:
-" <TAB> will jump into autocomplete menu if it is visible
-" OR, it will move to next available snippet field if available
-" imap <expr><TAB>
-"\ pumvisible() ? "\<C-n>" :
-"\ neosnippet#expandable_or_jumpable() ?
-"\   "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-"
-"" Expand the snippet trigger from autocomplete menu with <CR>
-"imap <expr><CR>
-"\ (pumvisible() && neosnippet#expandable()) ?
-"\   "\<Plug>(neosnippet_expand)" : "\<CR>"
-"
-"" SELECT MODE:
-"" Use <TAB> to move to next snippet field if available
-"smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-"\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
 
 " === NERDTree === "
 " Show hidden files/directories
