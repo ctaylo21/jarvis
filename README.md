@@ -41,21 +41,26 @@ The following are features provided by Jarvis. They all have quick keybindings t
 
     Open files with simple keystrokes with fuzzy matching via command line and inside NeoVim.
     
-    <img src="https://media.giphy.com/media/1RzGptJErZkk9sxI9V/giphy.gif"/>
+    <img src="https://media.giphy.com/media/8FGMkL3Mg29Ef3vA8I/giphy.gif"/>
 
 2. **Buffer management** - *NeoVim*
 
     Manage buffers inside NeoVim and add/delete/search your open files.
 
-    <img src="https://media.giphy.com/media/xT0xejSMJ76K68Nf0c/giphy.gif"/>
+    <img src="https://media.giphy.com/media/8OSeY1pXEw370jZaoM/giphy.gif"/>
 
 3. **Project searching** - *NeoVim*
 
     Quickly search for simple terms or complex regular expressions in your project.
 
-    <img src="https://media.giphy.com/media/3oxHQpx3kxuUk2oa40/giphy.gif"/>
+    <img src="https://media.giphy.com/media/1n92fKs0Vs9nS3dhWM/giphy.gif"/>
 
 4. **Asynchronous linting** - *NeoVim*
+
+	Code is linted asynchronously with [ale](https://github.com/w0rp/ale) each time you save with the linter of your choice.
+
+	<img src="https://media.giphy.com/media/4VW2csp5qvwO4ieCqc/giphy.gif" />
+	
 5. **Session management** - *Tmux*
 
     Create sessions for each project with a custom layout. Quickly browse, create, and delete sessions. Tmux even keeps sessions alive if the terminal is closed.
