@@ -41,37 +41,37 @@ The following are features provided by Jarvis. They all have quick keybindings t
 
     Open files with simple keystrokes with fuzzy matching via command line and inside NeoVim.
     
-    <img src="https://i.imgur.com/QgtsoRL.gif"/>
+    <img src="https://i.imgur.com/QgtsoRL.gif" height="400px"/>
 
 2. **Buffer management** - *NeoVim*
 
     Manage buffers inside NeoVim and add/delete/search your open files.
 
-    <img src="https://i.imgur.com/iUlxM8x.gif"/>
+    <img src="https://i.imgur.com/iUlxM8x.gif" height="400px"/>
 
 3. **Project searching** - *NeoVim*
 
     Quickly search for simple terms or complex regular expressions in your project.
 
-    <img src="https://i.imgur.com/1RPPM78.gif"/>
+    <img src="https://i.imgur.com/1RPPM78.gif" height="400px"/>
 
 4. **Asynchronous linting** - *NeoVim*
 
 	Code is linted asynchronously with [ale](https://github.com/w0rp/ale) each time you save with the linter of your choice.
 
-	<img src="https://i.imgur.com/SqNS7Us.gif"/>
+	<img src="https://i.imgur.com/SqNS7Us.gif" height="400px"/>
 	
 5. **Session management** - *Tmux* and *zsh/fzf*
 
 	Create sessions for each project with a custom layout. Quickly browse, create, and delete sessions. Tmux even keeps sessions alive if the terminal is closed. Using `fzf` and `zsh`, you can create or switch to sessions easily, as well as delete session by name or fuzzy-search.
 
-	<img src="https://i.imgur.com/r9rXyeL.gif"/>
+	<img src="https://i.imgur.com/r9rXyeL.gif" height="400px"/>
 
 6. **Keyword auto-complete** - *NeoVim* and *zsh*
 
     Neovim - Automatic, asynchronous keyword completion available in the current buffer via [deoplete](https://github.com/Shougo/deoplete.nvim).
     
-    <img src="https://i.imgur.com/munYQhB.gif"/>
+    <img src="https://i.imgur.com/munYQhB.gif" height="400px"/>
 
     **Supported Languages**
     * Javascript - support provided by [deoplete-ternjs](https://github.com/carlitux/deoplete-ternjs), [TernJS](http://ternjs.net/), and [tern-for-vim](https://github.com/ternjs/tern_for_vim).
@@ -82,13 +82,13 @@ The following are features provided by Jarvis. They all have quick keybindings t
 
     Commonly used code snippets made available with a few keystrokes to reduce time and effort via [deoplete](https://github.com/Shougo/deoplete.nvim). Snippets available via auto-complete window removes need to memorize commands. Quickly hop to relevant pieces of snippet as needed.
     
-    <img src="https://i.imgur.com/bz7A7CM.gif"/>
+    <img src="https://i.imgur.com/bz7A7CM.gif" height="400px"/>
 
 8. **Improved Vim motion** - *NeoVim*
 
 	Using [vim-easymotion](https://github.com/easymotion/vim-easymotion), quickly jump to precise locations with minimal keystrokes.
 
-	<img src="https://i.imgur.com/sTRBOa4.gif"/>
+	<img src="https://i.imgur.com/sTRBOa4.gif" height="400px"/>
 
 ## Installation
 
