@@ -62,6 +62,7 @@ Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
 
 " === Vim Plugins === "
+" Vim source complete for deoplete
 Plug 'Shougo/neco-vim'
 
 " === Syntax Highlighting === "
