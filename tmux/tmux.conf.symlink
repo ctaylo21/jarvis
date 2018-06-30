@@ -83,8 +83,6 @@ set -g visual-activity on
 # ***  STATUS BAR   *** #
 #########################
 
-set status-bg default
-
 # Enable status bar
 set-option -g status on
 
@@ -92,7 +90,7 @@ set-option -g status on
 set -g status-justify centre
 
 # Set default bg/fg settings for status bar
-set-option -g status-bg colour237
+set-option -g status-bg colour0
 set-option -g status-fg default
 set-option -g status-attr dim
 
