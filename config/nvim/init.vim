@@ -35,6 +35,19 @@ set nowrap
 " Don't highlight current cursor line
 set nocursorline
 
+" Disable line/column number in status line
+" Shows up in preview window when airline is disabled if not
+set noruler
+
+" === Completion Settings === "
+
+" Don't give completion messages like 'match 1 of 2'
+" or 'The only match'
+set shortmess+=c
+
+" Disable preview window
+" set completeopt-=preview
+
 " ============================================================================ "
 " ===                           PLUGIN SETUP                               === "
 " ============================================================================ "
@@ -135,7 +148,7 @@ call deoplete#custom#source('_',
 \ 'disabled_syntaxes', ['Comment', 'String'])
 
 " Use <tab> for autocomplete
-inoremap <expr><tab> pumvisible() ? "\<C-n>" :
+inoremap <silent><expr><tab> pumvisible() ? "\<C-n>" :
 \ <SID>check_back_space() ? "\<TAB>" :
 \ deoplete#mappings#manual_complete()
 
@@ -202,7 +215,11 @@ let g:airline_section_z = airline#section#create(['linenr'])
 " Smartly uniquify buffers names with similar filename, suppressing common parts of paths.
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
+" Hide the Nerdtree status line to avoid clutter
 let g:NerdTreeStatusline = ''
+
+" Disable vim-airline in preview mode
+let g:airline_exclude_preview = 1
 
 catch
   echo 'Airline not installed. It should work after running :PlugInstall'
@@ -288,8 +305,8 @@ hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE
 hi! LineNr ctermfg=NONE guibg=NONE
 hi! SignColumn ctermfg=NONE guibg=NONE
-hi! StatusLine gui=NONE guifg=#BBBBBB guibg=NONE
-hi! StatusLineNC gui=NONE guifg=#BBBBBB guibg=NONE
+hi! StatusLine guifg=#1B2B34 guibg=#6699CC
+hi! StatusLineNC guifg=#1B2B34 guibg=#6699CC
 
 " Try to hide vertical spit and end of buffer symbol
 hi! VertSplit gui=NONE guifg=#17252c guibg=#17252c
@@ -307,6 +324,19 @@ hi! GitGutterAdd guibg=NONE
 hi! GitGutterChange guibg=NONE
 hi! GitGutterDelete guibg=NONE
 hi! GitGutterChangeDelete guibg=NONE
+
+" Call method on window enter
+augroup WindowManagement
+  autocmd!
+  autocmd WinEnter * call Handle_Win_Enter()
+augroup END
+
+" Change highlight group of preview window when open
+function! Handle_Win_Enter()
+  if &previewwindow
+    setlocal winhighlight=Normal:MarkdownError
+  endif
+endfunction
 
 " ============================================================================ "
 " ===                             KEY MAPPINGS                             === "
