@@ -88,3 +88,29 @@ All the following commands can be run from the command line. Each command can be
 <br />
 
 * `*`  - Indicates optional param
+
+### Tern Configuration
+
+[TernJS](http://ternjs.net) can be used within Neovim to enable auto-complete, method documentation, function argument hints, jump to definition, and more for javascript. See the `tern-for-vim` commands in the [Neovim Commands](#neovim-commands) section above for how to use tern within Neovim.
+
+Here is an example `.tern-project` file that should be placed at the root of your ES6 project:
+
+```
+{
+ "loadEagerly": [
+    "src/index.js" // your main entry point file
+  ],
+  "plugins": {
+    "doc_comment": {
+      "fullDocs": true
+    },
+    "modules": {},
+    "node_resolve": {},
+    "es_modules": {}
+  },
+  "libs": [
+    "browser"
+  ]
+}
+```
+If you want to add more libraries, or use a different module system than `es_modules`, please see the documentation on the [tern website](http://ternjs.net/doc/manual.html).	
