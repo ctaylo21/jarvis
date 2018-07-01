@@ -45,9 +45,6 @@ set noruler
 " or 'The only match'
 set shortmess+=c
 
-" Disable preview window
-" set completeopt-=preview
-
 " ============================================================================ "
 " ===                           PLUGIN SETUP                               === "
 " ============================================================================ "
