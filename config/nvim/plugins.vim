@@ -45,7 +45,7 @@ Plug 'Shougo/neosnippet-snippets'
 
 " === Git Plugins === "
 " Enable git changes to be shown in sign column
-Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 
 " === Javascript Plugins === "

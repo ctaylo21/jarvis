@@ -252,9 +252,6 @@ let g:jsx_ext_required = 0
 " === javascript-libraries-syntax === "
 let g:used_javascript_libs = 'underscore,requirejs,chai,jquery'
 
-" === vim-gitgutter === "
-let g:gitgutter_override_sign_column_highlight = 0
-
 " ============================================================================ "
 " ===                                UI                                    === "
 " ============================================================================ "
@@ -316,11 +313,15 @@ hi! NERDTreeCWD guifg=#99c794
 hi! ALEErrorSign ctermbg=none guibg=NONE
 hi! ALEWarningSign ctermfg=NONE guibg=NONE
 
-" Make background color transparent for git gutter
-hi! GitGutterAdd guibg=NONE
-hi! GitGutterChange guibg=NONE
-hi! GitGutterDelete guibg=NONE
-hi! GitGutterChangeDelete guibg=NONE
+" Make background color transparent for git changes
+hi! SignifySignAdd guibg=NONE
+hi! SignifySignDelete guibg=NONE
+hi! SignifySignChange guibg=NONE
+
+" Highlight git change signs
+hi! SignifySignAdd guifg=#99c794
+hi! SignifySignDelete guifg=#ec5f67
+hi! SignifySignChange guifg=#c594c5
 
 " Call method on window enter
 augroup WindowManagement
