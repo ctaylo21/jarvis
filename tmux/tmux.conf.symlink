@@ -13,8 +13,8 @@ set -g default-terminal    "screen-256color"
 set -ga terminal-overrides ",xterm-256color:Tc"
 
 # Set border colors
-set-option -g pane-border-fg colour232
-set-option -g pane-active-border-fg colour4
+set-option -g pane-border-fg colour8
+set-option -g pane-active-border-fg colour5
 
 # Set status line message style
 set -g message-style "fg=colour5,bg=default"
@@ -83,8 +83,6 @@ set -g visual-activity on
 # ***  STATUS BAR   *** #
 #########################
 
-set status-bg default
-
 # Enable status bar
 set-option -g status on
 
@@ -92,7 +90,7 @@ set-option -g status on
 set -g status-justify centre
 
 # Set default bg/fg settings for status bar
-set-option -g status-bg colour237
+set-option -g status-bg colour0
 set-option -g status-fg default
 set-option -g status-attr dim
 

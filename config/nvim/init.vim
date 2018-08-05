@@ -5,7 +5,7 @@ source ~/.config/nvim/plugins.vim
 " ============================================================================ "
 
 " Remap leader key to ,
-let g:mapleader=','
+let mapleader=','
 
 " Disable line numbers
 set nonumber
@@ -34,6 +34,16 @@ set nowrap
 
 " Don't highlight current cursor line
 set nocursorline
+
+" Disable line/column number in status line
+" Shows up in preview window when airline is disabled if not
+set noruler
+
+" === Completion Settings === "
+
+" Don't give completion messages like 'match 1 of 2'
+" or 'The only match'
+set shortmess+=c
 
 " ============================================================================ "
 " ===                           PLUGIN SETUP                               === "
@@ -92,24 +102,28 @@ let s:denite_options = {'default' : {
 
 " Loop through denite options and enable them
 function! s:profile(opts) abort
-  for fname in keys(a:opts)
-    for dopt in keys(a:opts[fname])
-      call denite#custom#option(fname, dopt, a:opts[fname][dopt])
+  for l:fname in keys(a:opts)
+    for l:dopt in keys(a:opts[l:fname])
+      call denite#custom#option(l:fname, l:dopt, a:opts[l:fname][l:dopt])
     endfor
   endfor
 endfunction
 
 call s:profile(s:denite_options)
 catch
-  echo "Denite not installed. It should work after running :PlugInstall"
+  echo 'Denite not installed. It should work after running :PlugInstall'
 endtry
 
 " === Deoplete === "
 
 " Custom options for Deoplete
 "   auto_copmlete - Disable automatic completion
+"   ignore_sources - Don't use buffer or around sources
+"   max_list - Max amount of auto-complete items to show
 call deoplete#custom#option({
 \ 'auto_complete': v:false,
+\ 'ignore_sources': {'_': ['around', 'buffer']},
+\ 'max_list': 10
 \ })
 
 " Enable deoplete at startup
@@ -131,13 +145,13 @@ call deoplete#custom#source('_',
 \ 'disabled_syntaxes', ['Comment', 'String'])
 
 " Use <tab> for autocomplete
-inoremap <expr><tab> pumvisible() ? "\<C-n>" :
+inoremap <silent><expr><tab> pumvisible() ? "\<C-n>" :
 \ <SID>check_back_space() ? "\<TAB>" :
 \ deoplete#mappings#manual_complete()
 
 function! s:check_back_space() abort "{{{
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
+  let l:col = col('.') - 1
+  return !l:col || getline('.')[l:col - 1]  =~ '\s'
 endfunction"}}}
 
 " === Deoplete-ternjs ==="
@@ -163,24 +177,8 @@ autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 " === NeoSnippet === "
 " Map <C-k> as shortcut to activate snippet if available
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
-
-" INSERT MODE:
-" <TAB> will jump into autocomplete menu if it is visible
-" OR, it will move to next available snippet field if available
-" imap <expr><TAB>
-"\ pumvisible() ? "\<C-n>" :
-"\ neosnippet#expandable_or_jumpable() ?
-"\   "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-"
-"" Expand the snippet trigger from autocomplete menu with <CR>
-"imap <expr><CR>
-"\ (pumvisible() && neosnippet#expandable()) ?
-"\   "\<Plug>(neosnippet_expand)" : "\<CR>"
-"
-"" SELECT MODE:
-"" Use <TAB> to move to next snippet field if available
-"smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-"\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
 
 " === NERDTree === "
 " Show hidden files/directories
@@ -194,7 +192,7 @@ let g:NERDTreeDirArrowExpandable = '⬏'
 let g:NERDTreeDirArrowCollapsible = '⬎'
 
 " Hide certain files and directories from NERDTree
-let NERDTreeIgnore = ['^\.DS_Store$', '^tags$', '\.git$[[dir]]', '\.idea$[[dir]]', '\.sass-cache$']
+let g:NERDTreeIgnore = ['^\.DS_Store$', '^tags$', '\.git$[[dir]]', '\.idea$[[dir]]', '\.sass-cache$', '.tern-port']
 
 " Hide NERDTREE statusline
 let g:NERDTreeStatusline = '%#NonText#'
@@ -214,17 +212,21 @@ let g:airline_section_z = airline#section#create(['linenr'])
 " Smartly uniquify buffers names with similar filename, suppressing common parts of paths.
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
+" Hide the Nerdtree status line to avoid clutter
 let g:NerdTreeStatusline = ''
 
+" Disable vim-airline in preview mode
+let g:airline_exclude_preview = 1
+
 catch
-  echo "Airline not installed. It should work after running :PlugInstall"
+  echo 'Airline not installed. It should work after running :PlugInstall'
 endtry
 
 " === Ale === "
-" Enable language-specif linters
+" Enable language-specific linters
 let g:ale_linters = {
 \ 'vim' : ['vint'],
-\ 'javascript' : ['standard']
+\ 'javascript' : ['eslint']
 \ }
 
 " Customize warning/error signs
@@ -249,9 +251,6 @@ let g:jsx_ext_required = 0
 
 " === javascript-libraries-syntax === "
 let g:used_javascript_libs = 'underscore,requirejs,chai,jquery'
-
-" === vim-gitgutter === "
-let g:gitgutter_override_sign_column_highlight = 0
 
 " ============================================================================ "
 " ===                                UI                                    === "
@@ -300,8 +299,8 @@ hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE
 hi! LineNr ctermfg=NONE guibg=NONE
 hi! SignColumn ctermfg=NONE guibg=NONE
-hi! StatusLine gui=NONE guifg=#BBBBBB guibg=NONE
-hi! StatusLineNC gui=NONE guifg=#BBBBBB guibg=NONE
+hi! StatusLine guifg=#1B2B34 guibg=#6699CC
+hi! StatusLineNC guifg=#1B2B34 guibg=#6699CC
 
 " Try to hide vertical spit and end of buffer symbol
 hi! VertSplit gui=NONE guifg=#17252c guibg=#17252c
@@ -314,11 +313,28 @@ hi! NERDTreeCWD guifg=#99c794
 hi! ALEErrorSign ctermbg=none guibg=NONE
 hi! ALEWarningSign ctermfg=NONE guibg=NONE
 
-" Make background color transparent for git gutter
-hi! GitGutterAdd guibg=NONE
-hi! GitGutterChange guibg=NONE
-hi! GitGutterDelete guibg=NONE
-hi! GitGutterChangeDelete guibg=NONE
+" Make background color transparent for git changes
+hi! SignifySignAdd guibg=NONE
+hi! SignifySignDelete guibg=NONE
+hi! SignifySignChange guibg=NONE
+
+" Highlight git change signs
+hi! SignifySignAdd guifg=#99c794
+hi! SignifySignDelete guifg=#ec5f67
+hi! SignifySignChange guifg=#c594c5
+
+" Call method on window enter
+augroup WindowManagement
+  autocmd!
+  autocmd WinEnter * call Handle_Win_Enter()
+augroup END
+
+" Change highlight group of preview window when open
+function! Handle_Win_Enter()
+  if &previewwindow
+    setlocal winhighlight=Normal:MarkdownError
+  endif
+endfunction
 
 " ============================================================================ "
 " ===                             KEY MAPPINGS                             === "
@@ -389,12 +405,6 @@ nmap <leader>dd :TernDoc<CR>
 " ============================================================================ "
 " ===                                 MISC.                                === "
 " ============================================================================ "
-
-" Refresh vim-devicons to ensure they render properly (fixes render issues
-" after sourcing config file)
-if exists("g:loaded_webdevicons")
-  call webdevicons#refresh()
-endif
 
 " Automaticaly close nvim if NERDTree is only thing left open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif

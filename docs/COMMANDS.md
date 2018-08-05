@@ -37,8 +37,8 @@ file is carefully documented to make it easy to understand. Many default command
 | `<leader>dn` | normal          | tern\_for\_vim        | Rename word under cursor                 |
 | `<leader>dd` | normal          | tern\_for\_vim        | Look up documentation of word under cursor |
 | `<c-k>`      | insert    *AWV* | NeoSnippet            | Activates first valid snippet that matches |
-| `<TAB>`      | insert     *SP* | NeoSnippet            | Move to next available field of snippet  |
-| `<TAB>`      | select     *SP* | NeoSnippet            | Move to next available field of snippet  |
+| `<c-k>`      | insert     *SP* | NeoSnippet            | Move to next available field of snippet  |
+| `<c-k>`      | select     *SP* | NeoSnippet            | Move to next available field of snippet  |
 
 <br />
 
@@ -73,3 +73,44 @@ All of the following command are triggered by `<c-a>:` (Note the colon)
 | `new -s test`          | Create new session named "test"    |
 | `kill-session -t test` | Delete session named "test"        |
 | `kill-session -a`      | Kill all sessions but current one  |
+
+### Zsh Commands
+All the following commands can be run from the command line. Each command can be run by typing command and pressent `<enter>`. Some commands have optional parameters.
+
+| Command                | Description                        |
+| :--------------------- | :------------------------------    |
+| `fo`                   | Fuzzy-find file in current directory and open with Neovim               |
+| `fh`                   | Fuzzy-find in command history                                           |
+| `fgb <*branch_name>`.  | Git checkout local/remote branch by name or fuzzy-find                  |
+| `ftm <*session_name>`  | Switch to session name if given, create if doesn't exist or fuzzy-find  |
+| `ftmk <*session_name>` | Kill given session or fuzzy-find session to kill                        |
+
+<br />
+
+* `*`  - Indicates optional param
+
+### Tern Configuration
+
+[TernJS](http://ternjs.net) can be used within Neovim to enable auto-complete, method documentation, function argument hints, jump to definition, and more for javascript. See the `tern-for-vim` commands in the [Neovim Commands](#neovim-commands) section above for how to use tern within Neovim.
+
+Here is an example `.tern-project` file that should be placed at the root of your ES6 project:
+
+```
+{
+ "loadEagerly": [
+    "src/index.js" // your main entry point file
+  ],
+  "plugins": {
+    "doc_comment": {
+      "fullDocs": true
+    },
+    "modules": {},
+    "node_resolve": {},
+    "es_modules": {}
+  },
+  "libs": [
+    "browser"
+  ]
+}
+```
+If you want to add more libraries, or use a different module system than `es_modules`, please see the documentation on the [tern website](http://ternjs.net/doc/manual.html).	

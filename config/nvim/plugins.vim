@@ -45,7 +45,7 @@ Plug 'Shougo/neosnippet-snippets'
 
 " === Git Plugins === "
 " Enable git changes to be shown in sign column
-Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 
 " === Javascript Plugins === "
@@ -62,6 +62,7 @@ Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
 
 " === Vim Plugins === "
+" Vim source complete for deoplete
 Plug 'Shougo/neco-vim'
 
 " === Syntax Highlighting === "
