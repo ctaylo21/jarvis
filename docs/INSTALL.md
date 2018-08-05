@@ -58,17 +58,19 @@ Follow the [Windows install instructions](https://github.com/neovim/neovim/wiki/
 1. Install [Python 3](https://www.python.org/downloads/windows/)
 2. Ensure the latest version of the [Visual Studio Build Tools](http://landinghub.visualstudio.com/visual-cpp-build-tools) is installed (required by pip)
 3. Install the python client for Neovim with `pip3 install --upgrade neovim`
+4. Set python installation location `let g:python3_host_prog = 'Path\To\Python\Python37\python.exe'`
 
 #### Step 3: Configure Neovim for Windows
 
 *Note:* Cloning this repo probably isn't necessary. You only need to grab the `config/nvim/init.vim` and `config/nvim/plugins.vim` files from this repo and put them in the correct locations on your computer.
 
-1. Copy `config/nvim/init.vim` to `~\AppData\Local\nvim\init.vim ` on your computer.
-2. Copy `jarvis/config/nvim/init.vim` to `~\AppData\Local\nvim\plugins.vim` on your computer.
-3. Open `~\AppData\Local\nvim\init.vim` and replace every instance of `~/.config/nvim/` with `~\AppData\Local\nvim\` 
+1. Copy `config\nvim\init.vim` to `~\AppData\Local\nvim\init.vim ` on your computer.
+2. Copy `jarvis\config\nvim\init.vim` to `~\AppData\Local\nvim\plugins.vim` on your computer.
+3. Open `~\AppData\Local\nvim\init.vim` and replace every instance of `~/.config/nvim/` with `~\AppData\Local\nvim\`
 4. Open Neovim (`C:\tools\neovim\Neovim\bin\nvim-qt.exe`) and run `:PlugInstall` and `:UpdateRemotePlugins`. You might need to close and re-open Neovim.
 5. Install the vim linter [vint](https://github.com/Kuniwak/vint) with `pip install vim-vint`
-6. (Optional) Remove the line `Plug 'ryanoasis/vim-devicons'` from `~\AppData\Local\nvim\plugins.vim` and run `:PlugClean` if you can't get a patched font working in Neovim. I had issues getting it working and ended up just using default font. This means icons weren't supported so I remove that plugin.
+6. Install ripgrep for windows (may need to run as admin) `choco intall ripgrep`
+7. Copy custom vim airline theme: `config\nvim\space.vim\` to `~\AppData\Local\nvim\plugged\vim-airline-themes\autoload\airline\themes\space.vim`
 
 ## Additional Manual Configuration
 
