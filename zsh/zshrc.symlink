@@ -83,7 +83,8 @@ ftmk() {
   session=$(tmux list-sessions -F "#{session_name}" 2>/dev/null | fzf --exit-0) &&  tmux kill-session -t "$session" || echo "No session found to delete."
 }
 
-source $ZSH/oh-my-zsh.sh
+# Enabled zsh-autosuggestions
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Set default editor to nvim
 export EDITOR='nvim'
