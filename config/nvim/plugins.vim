@@ -36,9 +36,6 @@ Plug 'christoomey/vim-tmux-navigator'
 " Denite - Fuzzy finding, buffer management
 Plug 'Shougo/denite.nvim'
 
-" Asychronous keyword completion
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
 " Snippet support
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
@@ -61,9 +58,16 @@ Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern', 'for': ['javascr
 Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
 
+" === Typescript Plugins === "
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
+
 " === Vim Plugins === "
 " Vim source complete for deoplete
 Plug 'Shougo/neco-vim'
+
+" Asychronous keyword completion
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " === Syntax Highlighting === "
 

@@ -50,6 +50,12 @@ echo "---------------------------------------------------------"
 pip3 install neovim
 
 echo "---------------------------------------------------------"
+echo "$(tput setaf 2)JARVIS: Installing node neovim package$(tput sgr 0)"
+echo "---------------------------------------------------------"
+
+npm install -g neovim
+
+echo "---------------------------------------------------------"
 echo "$(tput setaf 2)JARVIS: Installing vim linter (vint)$(tput sgr 0)"
 echo "---------------------------------------------------------"
 

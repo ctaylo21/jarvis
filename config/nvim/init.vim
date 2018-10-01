@@ -226,7 +226,9 @@ endtry
 " Enable language-specific linters
 let g:ale_linters = {
 \ 'vim' : ['vint'],
-\ 'javascript' : ['eslint']
+\ 'javascript' : ['eslint'],
+\ 'typescript' : ['tslint'],
+\ 'typescriptreact' : ['tslint']
 \ }
 
 " Customize warning/error signs
@@ -408,6 +410,11 @@ nmap <leader>dd :TernDoc<CR>
 
 " Automaticaly close nvim if NERDTree is only thing left open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" Manually override some filetypes extensions to specific filetypes
+augroup filetypedetect
+    au BufRead,BufNewFile *.tsx set filetype=typescript
+augroup END
 
 " === Search === "
 " ignore case when searching
