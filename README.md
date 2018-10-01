@@ -74,7 +74,8 @@ The following are features provided by Jarvis. They all have quick keybindings t
     <img src="https://i.imgur.com/munYQhB.gif" height="400px"/>
 
     **Supported Languages**
-    * Javascript - support provided by [deoplete-ternjs](https://github.com/carlitux/deoplete-ternjs), [TernJS](http://ternjs.net/), and [tern-for-vim](https://github.com/ternjs/tern_for_vim).
+    * Javascript - support provided by [deoplete-ternjs](https://github.com/carlitux/deoplete-ternjs), [TernJS](http://ternjs.net/), and [tern-for-vim](https://github.com/ternjs/tern_for_vim)
+    * Typescript - syntax highlighting via [yats.vim](https://github.com/HerringtonDarkholme/yats.vim) and langauge service via [nvim-typescript](https://github.com/mhartington/nvim-typescript)
     * Vimscript - support provided by [neco-vim](https://github.com/Shougo/neco-vim)
     * zsh - Auto-complete/spellcheck for tools like [git](https://git-scm.com/), [node](https://nodejs.org/en/), [brew](https://brew.sh/), and [more](https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins) and history-based auto-complete via [autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 
