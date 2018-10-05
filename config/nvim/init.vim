@@ -192,7 +192,7 @@ let g:NERDTreeDirArrowExpandable = '⬏'
 let g:NERDTreeDirArrowCollapsible = '⬎'
 
 " Hide certain files and directories from NERDTree
-let g:NERDTreeIgnore = ['^\.DS_Store$', '^tags$', '\.git$[[dir]]', '\.idea$[[dir]]', '\.sass-cache$', '.tern-port']
+let g:NERDTreeIgnore = ['^\.DS_Store$', '^tags$', '\.git$[[dir]]', '\.idea$[[dir]]', '\.sass-cache$']
 
 " Hide NERDTREE statusline
 let g:NERDTreeStatusline = '%#NonText#'
@@ -201,7 +201,7 @@ let g:NERDTreeStatusline = '%#NonText#'
 try
 " === Vim airline ==== "
 " Custom setup that removes filetype/whitespace from default vim airline bar
-let g:airline#extensions#default#layout = [[ 'a', 'b', 'c'], ['z', 'warning', 'error']]
+let g:airline#extensions#default#layout = [['a', 'b', 'c'], ['z', 'warning', 'error']]
 
 " Update section b to only have git branch
 let g:airline_section_b = airline#section#create_left(['branch'])
