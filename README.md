@@ -112,6 +112,8 @@ This is a collection of cool tools that you might want to use.
 
 [`pecan`](https://github.com/zzzeyez/Pecan) - Configurable menu bar for OSX.
 
+[`vim-markdown-composer`](https://github.com/euclio/vim-markdown-composer) - Asynchronous markdown preview plugin for Vim/Neovim.
+
 **\*** -  Tool is installed automatically if `install.sh` script is used
 
 ## Support
