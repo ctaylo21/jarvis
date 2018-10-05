@@ -110,11 +110,13 @@ This is a collection of cool tools that you might want to use.
 
 [`vtop`](https://github.com/MrRio/vtop)\* - A nifty graphical activity monitor for the command line
 
+[`taskbook`](https://github.com/klauscfhq/taskbook) - Tasks, boards, & notes for command-line. Think Trello for the terminal.
+
 [`pecan`](https://github.com/zzzeyez/Pecan) - Configurable menu bar for OSX.
 
 [`vim-markdown-composer`](https://github.com/euclio/vim-markdown-composer) - Asynchronous markdown preview plugin for Vim/Neovim.
 
-**\*** -  Tool is installed automatically if `install.sh` script is used
+> **\*** -  Tool is installed automatically if `install.sh` script is used
 
 ## Support
 
