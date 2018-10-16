@@ -116,6 +116,8 @@ This is a collection of cool tools that you might want to use.
 
 [`vim-markdown-composer`](https://github.com/euclio/vim-markdown-composer) - Asynchronous markdown preview plugin for Vim/Neovim.
 
+[`shpotify`](https://github.com/hnarayanan/shpotify) - Control Spotify from the command line (OSX-only)
+
 > **\*** -  Tool is installed automatically if `install.sh` script is used
 
 ## Support
