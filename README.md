@@ -23,7 +23,7 @@
 </div>
 
 <div align="center">
-  <img src="https://i.imgur.com/3TFvjaY.jpg" alt="Jarvis SS"/>
+  <img src="https://i.imgur.com/2rqF24f.png" alt="Jarvis SS"/>
 </div>
 <br/>
 
