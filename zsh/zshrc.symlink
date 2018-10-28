@@ -5,6 +5,13 @@ export ZSH=~/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 ZSH_THEME=""
 
+# TMUX
+# Automatically start tmux
+ZSH_TMUX_AUTOSTART=true
+
+# Automatically connect to a previous session if it exists
+ZSH_TMUX_AUTOCONNECT=true
+
 # Enable command auto-correction.
 ENABLE_CORRECTION="true"
 
@@ -20,7 +27,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git node brew)
+plugins=(git node brew tmux)
 
 # User configuration
 # Hide user@hostname if it's expected default user
