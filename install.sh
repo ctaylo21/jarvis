@@ -68,6 +68,12 @@ echo "---------------------------------------------------------"
 pip3 install vim-vint
 
 echo "---------------------------------------------------------"
+echo "$(tput setaf 2)JARVIS: Installing bash language server$(tput sgr 0)"
+echo "---------------------------------------------------------"
+
+npm i -g bash-language-server
+
+echo "---------------------------------------------------------"
 echo "$(tput setaf 2)JARVIS: Installing system fonts.$(tput sgr 0)"
 echo "---------------------------------------------------------"
 

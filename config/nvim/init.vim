@@ -229,7 +229,9 @@ let g:ale_linters = {
 \ 'vim' : ['vint'],
 \ 'javascript' : ['eslint'],
 \ 'typescript' : ['tslint'],
-\ 'typescriptreact' : ['tslint']
+\ 'typescriptreact' : ['tslint'],
+\ 'sh': ['language_server'],
+\ 'zsh': ['language_server'],
 \ }
 
 " Customize warning/error signs
