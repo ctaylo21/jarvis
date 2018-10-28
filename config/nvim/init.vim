@@ -1,3 +1,4 @@
+scriptencoding utf-8
 source ~/.config/nvim/plugins.vim
 
 " ============================================================================ "
@@ -5,7 +6,7 @@ source ~/.config/nvim/plugins.vim
 " ============================================================================ "
 
 " Remap leader key to ,
-let mapleader=','
+let g:mapleader=','
 
 " Disable line numbers
 set nonumber
@@ -151,7 +152,7 @@ inoremap <silent><expr><tab> pumvisible() ? "\<C-n>" :
 
 function! s:check_back_space() abort "{{{
   let l:col = col('.') - 1
-  return !l:col || getline('.')[l:col - 1]  =~ '\s'
+  return !l:col || getline('.')[l:col - 1]  =~# '\s'
 endfunction"}}}
 
 " === Deoplete-ternjs ==="
