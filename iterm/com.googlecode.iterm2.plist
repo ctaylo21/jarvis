@@ -277,6 +277,8 @@
 	<string>9C5E8059-EA4C-471A-AD1E-D9F8EA8FE095</string>
 	<key>DisableFullscreenTransparency</key>
 	<true/>
+	<key>DisableMetalWhenIdle</key>
+	<true/>
 	<key>EnableDivisionView</key>
 	<false/>
 	<key>GlobalKeyMap</key>
@@ -445,14 +447,16 @@
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>660 395 522 94 0 0 1440 900 </string>
+	<key>NSWindow Frame SUStatusFrame</key>
+	<string>520 579 400 129 0 0 1440 900 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>410 395 620 392 0 0 1440 900 </string>
+	<string>2410 786 620 392 1440 0 2560 1440 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 126 606 469 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>2182 440 1018 447 1440 -540 2560 1440 </string>
+	<string>2097 2197 796 486 1355 1260 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 173 670 435 0 0 1440 900 </string>
+	<string>2305 1760 670 435 1355 1260 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>656 -130 650 429 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -1061,7 +1065,7 @@
 				<real>0.0</real>
 			</dict>
 			<key>Minimum Contrast</key>
-			<real>0.035400390625</real>
+			<real>0.0</real>
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
@@ -1113,7 +1117,7 @@
 			<key>Shortcut</key>
 			<string></string>
 			<key>Silence Bell</key>
-			<false/>
+			<true/>
 			<key>Smart Cursor Color</key>
 			<true/>
 			<key>Sync Title</key>
@@ -1144,12 +1148,18 @@
 			<string>/Users/ctay20</string>
 		</dict>
 	</array>
+	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
+	<true/>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>80912C02-4EDB-459F-B04A-8C48F4599139</string>
 	<key>NoSyncLastTipTime</key>
 	<real>548541954.73485506</real>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
+	<true/>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
+	<integer>0</integer>
 	<key>NoSyncPermissionToShowTip</key>
 	<true/>
 	<key>NoSyncRecordedVariableNames</key>
@@ -1344,6 +1354,8 @@
 	<true/>
 	<key>QuitWhenAllWindowsClosed</key>
 	<true/>
+	<key>SUAutomaticallyUpdate</key>
+	<true/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
@@ -1353,11 +1365,11 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-08-13T20:33:11Z</date>
+	<date>2018-10-22T21:07:26Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<false/>
+	<true/>
 	<key>ShowMetalFPSmeter</key>
 	<false/>
 	<key>ShowPaneTitles</key>
@@ -1380,13 +1392,17 @@
 	<false/>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
+	<key>disableMetalWhenUnplugged</key>
+	<false/>
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.2.20180802-nightly</string>
+	<string>3.2.3</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
+	<false/>
+	<key>metalMaximizeThroughput</key>
 	<false/>
 </dict>
 </plist>
