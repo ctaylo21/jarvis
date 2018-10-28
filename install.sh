@@ -56,6 +56,12 @@ echo "---------------------------------------------------------"
 npm install -g neovim
 
 echo "---------------------------------------------------------"
+echo "$(tput setaf 2)JARVIS: Installing spaceship prompt$(tput sgr 0)"
+echo "---------------------------------------------------------"
+
+npm install -g spaceship-prompt
+
+echo "---------------------------------------------------------"
 echo "$(tput setaf 2)JARVIS: Installing vim linter (vint)$(tput sgr 0)"
 echo "---------------------------------------------------------"
 
