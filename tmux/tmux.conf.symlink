@@ -13,8 +13,8 @@ set -g default-terminal    "screen-256color"
 set -ga terminal-overrides ",xterm-256color:Tc"
 
 # Set border colors
-set-option -g pane-border-fg colour8
-set-option -g pane-active-border-fg colour5
+set-option -g pane-border-style 'fg=#343D46,bg=colour0'
+set-option -g pane-active-border-style 'fg=colour3,bg=colour0'
 
 # Set status line message style
 set -g message-style "fg=colour5,bg=default"
@@ -90,7 +90,7 @@ set-option -g status on
 set -g status-justify centre
 
 # Set default bg/fg settings for status bar
-set-option -g status-bg colour0
+set-option -g status-bg '#343D46'
 set-option -g status-fg default
 set-option -g status-attr dim
 
@@ -110,10 +110,11 @@ set -g @cpu_medium_bg_color "#[bg=default]"
 set -g @cpu_high_bg_color "#[bg=default]"
 
 # Left Status Bar: [CPU Usage]
-set -g status-left "#{cpu_bg_color}#{cpu_fg_color} #{cpu_icon}#{cpu_percentage} "
+set -g status-left "#{cpu_bg_color}#{cpu_fg_color} #{cpu_icon}#{cpu_percentage} #[fg=colour8]"
+set -g status-left-length 85
 
-# Right Status Bar: [Date][Time][Battery Usage]
-set -g status-right "#[fg=yellow]#[fg=yellow,bold,bg=default] %b %d %Y #[fg=green,bg=default]#[bg=default,fg=green,bold] %l:%M %p #[fg=blue]"
+# Right Status Bar: [Session Name][Date][Time]
+set -g status-right "#[fg=magenta]#S #[fg=colour8]|#[fg=yellow]#[fg=yellow,bold,bg=default] %b %d %Y #[fg=colour8]|#[fg=green,bg=default]#[bg=default,fg=green,bold]%l:%M %p #[fg=blue]"
 
 # Initialize TMUX plugin manager
 run '~/.tmux/plugins/tpm/tpm'
