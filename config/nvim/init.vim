@@ -223,6 +223,10 @@ catch
   echo 'Airline not installed. It should work after running :PlugInstall'
 endtry
 
+" === echodoc === "
+" Enable echodoc on startup
+let g:echodoc#enable_at_startup = 1
+
 " === Ale === "
 " Enable language-specific linters
 let g:ale_linters = {
