@@ -432,6 +432,9 @@ set smartcase
 " Automatically re-read file if a change was detected outside of vim
 set autoread
 
+" Enable line numbers
+set number
+
 " Set backups
 if has('persistent_undo')
   set undofile
