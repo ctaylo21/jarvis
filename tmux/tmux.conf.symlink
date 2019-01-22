@@ -110,7 +110,7 @@ set -g @cpu_medium_bg_color "#[bg=default]"
 set -g @cpu_high_bg_color "#[bg=default]"
 
 # Left Status Bar: [CPU Usage]
-set -g status-left "#{cpu_bg_color}#{cpu_fg_color} #{cpu_icon}#{cpu_percentage} #[fg=colour8]"
+set -g status-left "#{cpu_bg_color}#{cpu_fg_color} #{cpu_icon}#{cpu_percentage}"
 set -g status-left-length 85
 
 # Right Status Bar: [Session Name][Date][Time]
