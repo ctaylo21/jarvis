@@ -11,34 +11,34 @@ file is carefully documented to make it easy to understand. Many default command
 >
 > Either open Neovim from the directory you want to work in, or set the directory once Neovim is open via the `:cd /path/to/directory` command.
 
-| Command      | Mode            | Tool                  | Description                              |
-| :----------- | :-------------- | :-------------------- | :--------------------------------------- |
-| `<Space>`    | normal          | NeoVim                | Page down                                |
-| `-`          | normal          | NeoVim                | Page up                                  |
-| `<c>hjkl`    | normal          | NeoVim                | Switch windows and Tmux panes (left/down/up/right) |
-| `<leader>h`  | normal          | NeoVim                | Find and replace                         |
-| `<leader>/`  | normal          | NeoVim                | Clear highlighted search terms           |
-| `<leader>f`  | normal          | NERDTree              | Find current file in tree hiearchy       |
-| `<leader>n`  | normal          | NERDTree              | Toggle NERDTree window                   |
-| `C`          | normal     *NT* | NERDTree              | Switch NERDTree root to be directory under cursor |
-| `;`          | normal          | Denite                | Browse currently open buffers            |
-| `<leader>t`  | normal          | Denite                | Browse files in current directory        |
-| `<leader>g`  | normal          | Denite                | Search current directory for occurences of term |
-| `<leader>j`  | normal          | Denite                | Search current directory for word under cursor |
-| `<c-o>`      | insert          | Denite                | Switch to normal mode (useful inside *DW*) |
-| `d`          | normal     *DW* | Denite                | Delete item (can delete open buffer inside *DW*) |
-| `<leader>y`  | normal          | vim-better-whitespace | Remove trailing whitespace in file       |
-| `<leader>w`  | normal          | EasyMotion            | Highlight first letter of file words for quick move |
-| `<TAB>`      | insert    *AWV* | Deoplete              | Moves inside of auto-complete window if it's open |
-| `<c-n>`      | normal    *AWV* | Deoplete              | Moves to next suggested auto-complete term |
-| `<c-p>`      | normal    *AWV* | Deoplete              | Moves to previous suggested auto-complete term |
-| `<leader>dj` | normal          | tern\_for\_vim        | Jump to definition of word under cursor  |
-| `<leader>dr` | normal          | tern\_for\_vim        | Show references of word under cursor.    |
-| `<leader>dn` | normal          | tern\_for\_vim        | Rename word under cursor                 |
-| `<leader>dd` | normal          | tern\_for\_vim        | Look up documentation of word under cursor |
-| `<c-k>`      | insert    *AWV* | NeoSnippet            | Activates first valid snippet that matches |
-| `<c-k>`      | insert     *SP* | NeoSnippet            | Move to next available field of snippet  |
-| `<c-k>`      | select     *SP* | NeoSnippet            | Move to next available field of snippet  |
+| Command      | Mode            | Tool                            | Description                              |
+| :----------- | :-------------- | :------------------------------ | :--------------------------------------- |
+| `<Space>`    | normal          | NeoVim                          | Page down                                |
+| `-`          | normal          | NeoVim                          | Page up                                  |
+| `<c>hjkl`    | normal          | NeoVim                          | Switch windows and Tmux panes (left/down/up/right) |
+| `<leader>h`  | normal          | NeoVim                          | Find and replace                         |
+| `<leader>/`  | normal          | NeoVim                          | Clear highlighted search terms           |
+| `<leader>f`  | normal          | NERDTree                        | Find current file in tree hiearchy       |
+| `<leader>n`  | normal          | NERDTree                        | Toggle NERDTree window                   |
+| `C`          | normal     *NT* | NERDTree                        | Switch NERDTree root to be directory under cursor |
+| `;`          | normal          | Denite                          | Browse currently open buffers            |
+| `<leader>t`  | normal          | Denite                          | Browse files in current directory        |
+| `<leader>g`  | normal          | Denite                          | Search current directory for occurences of term |
+| `<leader>j`  | normal          | Denite                          | Search current directory for word under cursor |
+| `<c-o>`      | insert          | Denite                          | Switch to normal mode (useful inside *DW*) |
+| `d`          | normal     *DW* | Denite                          | Delete item (can delete open buffer inside *DW*) |
+| `<leader>y`  | normal          | vim-better-whitespace           | Remove trailing whitespace in file       |
+| `<leader>w`  | normal          | EasyMotion                      | Highlight first letter of file words for quick move |
+| `<TAB>`      | insert    *AWV* | Deoplete                        | Moves inside of auto-complete window if it's open |
+| `<c-n>`      | normal    *AWV* | Deoplete                        | Moves to next suggested auto-complete term |
+| `<c-p>`      | normal    *AWV* | Deoplete                        | Moves to previous suggested auto-complete term |
+| `<leader>dj` | normal          | tern\_for\_vim/nvim-typescript  | Jump to definition of word under cursor  |
+| `<leader>dr` | normal          | tern\_for\_vim/nvim-typescript  | Show references of word under cursor.    |
+| `<leader>dn` | normal          | tern\_for\_vim/nvim-typescript  | Rename word under cursor                 |
+| `<leader>dd` | normal          | tern\_for\_vim/nvim-typescript  | Look up documentation of word under cursor |
+| `<c-k>`      | insert    *AWV* | NeoSnippet                      | Activates first valid snippet that matches |
+| `<c-k>`      | insert     *SP* | NeoSnippet                      | Move to next available field of snippet  |
+| `<c-k>`      | select     *SP* | NeoSnippet                      | Move to next available field of snippet  |
 
 <br />
 

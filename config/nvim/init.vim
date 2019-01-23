@@ -307,8 +307,8 @@ function! MyHighlights() abort
 endfunction
 
 augroup MyColors
-    autocmd!
-    autocmd ColorScheme * call MyHighlights()
+  autocmd!
+  autocmd ColorScheme * call MyHighlights()
 augroup END
 
 " Change vertical split character to be a space (essentially hide it)
@@ -415,18 +415,26 @@ nmap <leader>z :JsDoc<CR>
 " Vim's default buffer
 vnoremap <leader>p "_dP
 
-" === tern_for_vim === "
-" Jump to the definition of the thing under cursor
-nmap <leader>dj :TernDef<CR>
+" === tern_for_vim/nvim-typescript === "
+"
+augroup JSTooling
+  autocmd!
+  " Jump to the definition of the thing under cursor
+  autocmd FileType typescript nnoremap <leader>dj :TSTypeDef<CR>
+  autocmd FileType javascript nnoremap <leader>dj :TernDef<CR>
 
-" Show all references to the variable or property under the cursor
-nmap <leader>dr :TernRefs<CR>
+  " Show all references to the variable or property under the cursor
+  autocmd FileType typescript nnoremap <leader>dr :TSRefs<CR>
+  autocmd FileType javascript nnoremap <leader>dr :TernRefs<CR>
 
-" Rename the variable under cursor
-nmap <leader>dn :TernRename<CR>
+  " Rename the variable under cursor
+  autocmd FileType typescript nnoremap <leader>dn :TSRename<CR>
+  autocmd FileType javascript nnoremap <leader>dn :TernRename<CR>
 
-" Look up documentation of thing under cursor
-nmap <leader>dd :TernDoc<CR>
+  " Look up documentation of thing under cursor
+  autocmd FileType typescript nnoremap <leader>dd :TSDefPreview<CR>
+  autocmd FileType javascript nnoremap <leader>dd :TernDoc<CR>
+augroup END
 
 " ============================================================================ "
 " ===                                 MISC.                                === "
@@ -437,8 +445,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " Manually override some filetypes extensions to specific filetypes
 augroup filetypedetect
-    au BufRead,BufNewFile *.tsx set filetype=typescript
-    au BufRead,BufNewFile *.jsx set filetype=javascript.jsx
+  au BufRead,BufNewFile *.tsx set filetype=typescript
+  au BufRead,BufNewFile *.jsx set filetype=javascript.jsx
 augroup END
 
 " === Search === "
