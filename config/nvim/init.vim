@@ -122,9 +122,8 @@ endtry
 "   ignore_sources - Don't use buffer or around sources
 "   max_list - Max amount of auto-complete items to show
 call deoplete#custom#option({
-\ 'auto_complete': v:false,
-\ 'ignore_sources': {'_': ['around', 'buffer']},
-\ 'max_list': 10
+\ 'auto_complete': v:true,
+\ 'max_list': 15
 \ })
 
 " Enable deoplete at startup
@@ -137,8 +136,8 @@ let g:deoplete#enable_smart_case = 1
 let g:deoplete#sources#syntax#min_keyword_length = 2
 
 " Set deoplete sources for javascript
-call deoplete#custom#source('omni', 'functions', {
-\ 'javascript': ['tern#Complete', 'jspc#omni']
+call deoplete#custom#source('sources', {
+\ '_': ['omni', 'around', 'buffer', 'tag', 'member', 'file', 'neosnippet'],
 \})
 
 " Disable autocomplete inside of comments
@@ -155,6 +154,9 @@ function! s:check_back_space() abort "{{{
   return !l:col || getline('.')[l:col - 1]  =~# '\s'
 endfunction"}}}
 
+" Don't show the doc window
+set completeopt-=preview
+
 " === Deoplete-ternjs ==="
 
 " Use same tern command as tern_for_vim
@@ -165,6 +167,10 @@ let g:tern#arguments = ['--persistent']
 
 " Include the types of completions in result data
 let g:deoplete#sources#ternjs#types = 1
+
+" Whether to include the distance (in scopes for variables, in prototypes for
+" properties) between the completions and the origin position in the result data.
+let g:deoplete#sources#ternjs#depths = 1
 
 " Include documentation strings (if found) in the result data
 let g:deoplete#sources#ternjs#docs = 1
@@ -223,6 +229,9 @@ catch
   echo 'Airline not installed. It should work after running :PlugInstall'
 endtry
 
+" === nvim-typescript === "
+let g:nvim_typescript#max_completion_detail = 25
+
 " === echodoc === "
 " Enable echodoc on startup
 let g:echodoc#enable_at_startup = 1
@@ -233,7 +242,6 @@ let g:ale_linters = {
 \ 'vim' : ['vint'],
 \ 'javascript' : ['eslint'],
 \ 'typescript' : ['tslint'],
-\ 'typescriptreact' : ['tslint'],
 \ 'sh': ['language_server'],
 \ 'zsh': ['language_server'],
 \ }
