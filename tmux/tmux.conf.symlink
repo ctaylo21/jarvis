@@ -116,5 +116,8 @@ set -g status-left-length 85
 # Right Status Bar: [Session Name][Date][Time]
 set -g status-right "#[fg=magenta]#S #[fg=colour8]|#[fg=yellow]#[fg=yellow,bold,bg=default] %b %d %Y #[fg=colour8]|#[fg=green,bg=default]#[bg=default,fg=green,bold]%l:%M %p #[fg=blue]"
 
+# Auto-hide status bar if pane is maximized
+set-hook -g 'after-resize-pane' 'run-shell "if [ \#{window_zoomed_flag} -eq 1 ]; then tmux set status off; else tmux set status on; fi"'
+
 # Initialize TMUX plugin manager
 run '~/.tmux/plugins/tpm/tpm'
