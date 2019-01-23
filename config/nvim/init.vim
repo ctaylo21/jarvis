@@ -187,6 +187,12 @@ imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
 
+" Load custom snippets from snippets folder
+let g:neosnippet#snippets_directory='~/.config/nvim/snippets'
+
+" Hide conceal markers
+let g:neosnippet#enable_conceal_markers = 0
+
 " === NERDTree === "
 " Show hidden files/directories
 let g:NERDTreeShowHidden = 1
@@ -432,6 +438,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " Manually override some filetypes extensions to specific filetypes
 augroup filetypedetect
     au BufRead,BufNewFile *.tsx set filetype=typescript
+    au BufRead,BufNewFile *.jsx set filetype=javascript.jsx
 augroup END
 
 " === Search === "

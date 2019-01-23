@@ -1,0 +1,18 @@
+snippet    react-stateless-component
+alias      rsc
+abbr       function StatelessComponent() {...}
+options    head
+  import React from 'react';
+  import PropTypes from 'prop-types';
+
+  function ${1:component-name}(${2:#:props}) {
+    return (
+      ${3}
+    );
+  }
+
+  $1.propTypes = {
+    ${4}
+  };
+
+  export default $1;
