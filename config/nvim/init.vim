@@ -40,6 +40,9 @@ set nocursorline
 " Shows up in preview window when airline is disabled if not
 set noruler
 
+" Only one line for command line
+set cmdheight=1
+
 " === Completion Settings === "
 
 " Don't give completion messages like 'match 1 of 2'
@@ -207,17 +210,13 @@ let g:NERDTreeDirArrowCollapsible = '⬎'
 " Hide certain files and directories from NERDTree
 let g:NERDTreeIgnore = ['^\.DS_Store$', '^tags$', '\.git$[[dir]]', '\.idea$[[dir]]', '\.sass-cache$']
 
-" Hide NERDTREE statusline
-let g:NERDTreeStatusline = '%#NonText#'
-
 " Wrap in try/catch to avoid errors on initial install before plugin is available
 try
+
 " === Vim airline ==== "
-" Custom setup that removes filetype/whitespace from default vim airline bar
-let g:airline#extensions#default#layout = [['a', 'b', 'c'], ['z', 'warning', 'error']]
 
 " Update section b to only have git branch
-let g:airline_section_b = airline#section#create_left(['branch'])
+" let g:airline_section_b = airline#section#create_left(['branch'])
 
 " Update section z to just have line number
 let g:airline_section_z = airline#section#create(['linenr'])
@@ -225,11 +224,31 @@ let g:airline_section_z = airline#section#create(['linenr'])
 " Smartly uniquify buffers names with similar filename, suppressing common parts of paths.
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
+" Custom setup that removes filetype/whitespace from default vim airline bar
+let g:airline#extensions#default#layout = [['a', 'b', 'c'], ['x', 'z', 'warning', 'error']]
+
 " Hide the Nerdtree status line to avoid clutter
-let g:NerdTreeStatusline = ''
+" let g:NerdTreeStatusline = ''
 
 " Disable vim-airline in preview mode
 let g:airline_exclude_preview = 1
+
+" Enable powerline fonts
+let g:airline_powerline_fonts = 1
+
+" Enable caching of syntax highlighting groups
+let g:airline_highlighting_cache = 1
+
+" Define custom airline symbols
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+" unicode symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
 
 catch
   echo 'Airline not installed. It should work after running :PlugInstall'
@@ -294,7 +313,7 @@ catch
 endtry
 
 " Vim airline theme
-let g:airline_theme='space'
+let g:airline_theme='oceanicnext'
 
 " Add custom highlights in method that is executed every time a
 " colorscheme is sourced
@@ -471,3 +490,8 @@ endif
 set backupdir=~/.local/share/nvim/backup " Don't put backups in current dir
 set backup
 set noswapfile
+
+" Reload icons after init source
+if exists('g:loaded_webdevicons')
+  call webdevicons#refresh()
+endif
