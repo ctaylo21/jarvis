@@ -117,7 +117,11 @@ set -g status-left-length 85
 set -g status-right "#[fg=magenta]#S #[fg=colour8]|#[fg=yellow]#[fg=yellow,bold,bg=default] %b %d %Y #[fg=colour8]|#[fg=green,bg=default]#[bg=default,fg=green,bold]%l:%M %p #[fg=blue]"
 
 # Auto-hide status bar if pane is maximized
-set-hook -g 'after-resize-pane' 'run-shell "if [ \#{window_zoomed_flag} -eq 1 ]; then tmux set status off; else tmux set status on; fi"'
+set-hook -g 'after-resize-pane'  'run-shell -b "if [ \#{window_zoomed_flag} -eq 1 ]; then tmux set status off; else tmux set status on; fi"'
+set-hook -g 'after-new-window'   'run-shell -b "if [ \#{window_zoomed_flag} -eq 1 ]; then tmux set status off; else tmux set status on; fi"'
+set-hook -g 'after-kill-pane'    'run-shell -b "if [ \#{window_zoomed_flag} -eq 1 ]; then tmux set status off; else tmux set status on; fi"'
+set-hook -g 'pane-exited'        'run-shell -b "if [ \#{window_zoomed_flag} -eq 1 ]; then tmux set status off; else tmux set status on; fi"'
+set-hook -g 'after-split-window' 'run-shell -b "if [ \#{window_zoomed_flag} -gt 1 ]; then tmux set status off; else tmux set status on; fi"'
 
 # Initialize TMUX plugin manager
 run '~/.tmux/plugins/tpm/tpm'
