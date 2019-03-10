@@ -24,6 +24,9 @@ call plug#begin('~/.config/nvim/plugged')
 " Trailing whitespace highlighting & automatic fixing
 Plug 'ntpeters/vim-better-whitespace'
 
+" auto-close plugin
+Plug 'jiangmiao/auto-pairs'
+
 " Improved motion in Vim
 Plug 'easymotion/vim-easymotion'
 
