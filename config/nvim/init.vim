@@ -264,16 +264,24 @@ let g:echodoc#enable_at_startup = 1
 " === Ale === "
 " Enable language-specific linters
 let g:ale_linters = {
-\ 'vim' : ['vint'],
-\ 'javascript' : ['eslint'],
-\ 'typescript' : ['tslint'],
+\ 'vim': ['vint'],
+\ 'javascript': ['eslint'],
+\ 'typescript': ['eslint'],
 \ 'sh': ['language_server'],
 \ 'zsh': ['language_server'],
+\ }
+
+let g:ale_fixers = {
+\ 'javascript' : ['prettier'],
+\ 'typescript' : ['prettier'],
 \ }
 
 " Customize warning/error signs
 let g:ale_sign_error = '⁉'
 let g:ale_sign_warning = '•'
+
+" Enable fixing on save
+let g:ale_fix_on_save = 1
 
 " Disable checks for virtual environments
 let g:ale_virtualenv_dir_names = []
@@ -465,7 +473,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " Manually override some filetypes extensions to specific filetypes
 augroup filetypedetect
   au BufRead,BufNewFile *.tsx set filetype=typescript
-  au BufRead,BufNewFile *.jsx set filetype=javascript.jsx
+  au BufRead,BufNewFile *.jsx set filetype=javascript
 augroup END
 
 " === Search === "
