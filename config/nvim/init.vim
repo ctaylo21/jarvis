@@ -118,71 +118,30 @@ catch
   echo 'Denite not installed. It should work after running :PlugInstall'
 endtry
 
-" === Deoplete === "
+" === Coc.nvim === "
+" use <tab> for trigger completion and navigate to next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
 
-" Custom options for Deoplete
-"   auto_copmlete - Disable automatic completion
-"   ignore_sources - Don't use buffer or around sources
-"   max_list - Max amount of auto-complete items to show
-call deoplete#custom#option({
-\ 'auto_complete': v:true,
-\ 'max_list': 15
-\ })
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
 
-" Enable deoplete at startup
-let g:deoplete#enable_at_startup = 1
+" Use <Tab> and <S-Tab> for navigate completion list:
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-" Use smartcase
-let g:deoplete#enable_smart_case = 1
+" Use <cr> to confirm complete
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
-" Set minimum syntax keyword length.
-let g:deoplete#sources#syntax#min_keyword_length = 2
+" Make <cr> select the first completion item and confirm completion when no item have selected
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
 
-" Set deoplete sources for javascript
-call deoplete#custom#source('sources', {
-\ '_': ['omni', 'around', 'buffer', 'tag', 'member', 'file', 'neosnippet'],
-\})
-
-" Disable autocomplete inside of comments
-call deoplete#custom#source('_',
-\ 'disabled_syntaxes', ['Comment', 'String'])
-
-" Use <tab> for autocomplete
-inoremap <silent><expr><tab> pumvisible() ? "\<C-n>" :
-\ <SID>check_back_space() ? "\<TAB>" :
-\ deoplete#mappings#manual_complete()
-
-function! s:check_back_space() abort "{{{
-  let l:col = col('.') - 1
-  return !l:col || getline('.')[l:col - 1]  =~# '\s'
-endfunction"}}}
-
-" Don't show the doc window
-set completeopt-=preview
-
-" === Deoplete-ternjs ==="
-
-" Use same tern command as tern_for_vim
-let g:tern#command = ['tern']
-
-" Ensure tern server doesn't shut off after 5 minutes for performance
-let g:tern#arguments = ['--persistent']
-
-" Include the types of completions in result data
-let g:deoplete#sources#ternjs#types = 1
-
-" Whether to include the distance (in scopes for variables, in prototypes for
-" properties) between the completions and the origin position in the result data.
-let g:deoplete#sources#ternjs#depths = 1
-
-" Include documentation strings (if found) in the result data
-let g:deoplete#sources#ternjs#docs = 1
-
-" Stop ternjs from guessing at matches if it doesn't know
-let g:deoplete#sources#ternjs#guess = 0
-
-" Close preview window after completion is made
-autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+"Close preview window when completion is done.
+autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " === NeoSnippet === "
 " Map <C-k> as shortcut to activate snippet if available
@@ -215,11 +174,11 @@ try
 
 " === Vim airline ==== "
 
-" Update section b to only have git branch
-" let g:airline_section_b = airline#section#create_left(['branch'])
-
 " Update section z to just have line number
 let g:airline_section_z = airline#section#create(['linenr'])
+
+" Do not draw separators for empty sections (only for the active window) >
+let g:airline_skip_empty_sections = 1
 
 " Smartly uniquify buffers names with similar filename, suppressing common parts of paths.
 let g:airline#extensions#tabline#formatter = 'unique_tail'
@@ -228,7 +187,7 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#default#layout = [['a', 'b', 'c'], ['x', 'z', 'warning', 'error']]
 
 " Hide the Nerdtree status line to avoid clutter
-" let g:NerdTreeStatusline = ''
+let g:NERDTreeStatusline = ''
 
 " Disable vim-airline in preview mode
 let g:airline_exclude_preview = 1
@@ -245,17 +204,15 @@ if !exists('g:airline_symbols')
 endif
 
 " unicode symbols
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+
+" Don't show git changes to current file in airline
+let g:airline#extensions#hunks#enabled=0
 
 catch
   echo 'Airline not installed. It should work after running :PlugInstall'
 endtry
-
-" === nvim-typescript === "
-let g:nvim_typescript#max_completion_detail = 25
 
 " === echodoc === "
 " Enable echodoc on startup
@@ -305,6 +262,9 @@ let g:jsx_ext_required = 0
 " === javascript-libraries-syntax === "
 let g:used_javascript_libs = 'underscore,requirejs,chai,jquery'
 
+" === Signify === "
+let g:signify_sign_delete = '-'
+
 " ============================================================================ "
 " ===                                UI                                    === "
 " ============================================================================ "
@@ -321,7 +281,7 @@ catch
 endtry
 
 " Vim airline theme
-let g:airline_theme='oceanicnext'
+let g:airline_theme='space'
 
 " Add custom highlights in method that is executed every time a
 " colorscheme is sourced
@@ -442,39 +402,12 @@ nmap <leader>z :JsDoc<CR>
 " Vim's default buffer
 vnoremap <leader>p "_dP
 
-" === tern_for_vim/nvim-typescript === "
-"
-augroup JSTooling
-  autocmd!
-  " Jump to the definition of the thing under cursor
-  autocmd FileType typescript nnoremap <leader>dj :TSTypeDef<CR>
-  autocmd FileType javascript nnoremap <leader>dj :TernDef<CR>
-
-  " Show all references to the variable or property under the cursor
-  autocmd FileType typescript nnoremap <leader>dr :TSRefs<CR>
-  autocmd FileType javascript nnoremap <leader>dr :TernRefs<CR>
-
-  " Rename the variable under cursor
-  autocmd FileType typescript nnoremap <leader>dn :TSRename<CR>
-  autocmd FileType javascript nnoremap <leader>dn :TernRename<CR>
-
-  " Look up documentation of thing under cursor
-  autocmd FileType typescript nnoremap <leader>dd :TSDefPreview<CR>
-  autocmd FileType javascript nnoremap <leader>dd :TernDoc<CR>
-augroup END
-
 " ============================================================================ "
 " ===                                 MISC.                                === "
 " ============================================================================ "
 
 " Automaticaly close nvim if NERDTree is only thing left open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-" Manually override some filetypes extensions to specific filetypes
-augroup filetypedetect
-  au BufRead,BufNewFile *.tsx set filetype=typescript
-  au BufRead,BufNewFile *.jsx set filetype=javascript
-augroup END
 
 " === Search === "
 " ignore case when searching

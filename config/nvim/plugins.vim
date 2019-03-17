@@ -33,6 +33,9 @@ Plug 'easymotion/vim-easymotion'
 " Asynchronous linting
 Plug 'w0rp/ale'
 
+" Intellisense Engine
+Plug 'neoclide/coc.nvim', { 'do': 'yarn install' }
+
 " Tmux/Neovim movement integration
 Plug 'christoomey/vim-tmux-navigator'
 
@@ -52,28 +55,14 @@ Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 
 " === Javascript Plugins === "
+" Typescript syntax highlighting
+Plug 'HerringtonDarkholme/yats.vim'
 
 " ReactJS JSX syntax highlighting
 Plug 'mxw/vim-jsx'
 
 " Generate JSDoc commands based on function signature
 Plug 'heavenshell/vim-jsdoc'
-
-" Deoplete source for javascript
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern', 'for': ['javascript', 'javascript.jsx']  }
-Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
-Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
-
-" === Typescript Plugins === "
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
-
-" === Vim Plugins === "
-" Vim source complete for deoplete
-Plug 'Shougo/neco-vim'
-
-" Asychronous keyword completion
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " === Syntax Highlighting === "
 
