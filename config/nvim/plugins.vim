@@ -25,16 +25,14 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'ntpeters/vim-better-whitespace'
 
 " auto-close plugin
-Plug 'jiangmiao/auto-pairs'
+Plug 'rstacruz/vim-closer'
 
 " Improved motion in Vim
 Plug 'easymotion/vim-easymotion'
 
-" Asynchronous linting
-Plug 'w0rp/ale'
-
 " Intellisense Engine
-Plug 'neoclide/coc.nvim', { 'do': 'yarn install' }
+" Plug 'neoclide/coc.nvim', { 'do': 'yarn install' }
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 
 " Tmux/Neovim movement integration
 Plug 'christoomey/vim-tmux-navigator'

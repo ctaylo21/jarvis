@@ -446,7 +446,7 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>286 933 522 77 -719 900 1920 1080 </string>
+	<string>-284 1740 522 77 -719 900 1920 1080 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>41 1613 400 129 -719 900 1920 1080 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
@@ -454,9 +454,9 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 126 606 469 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>-246 1576 918 394 -719 900 1920 1080 </string>
+	<string>-246 1577 918 394 -719 900 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-717 1173 590 385 -719 900 1920 1080 </string>
+	<string>-551 1005 1003 580 -719 900 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>656 -130 650 429 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -1077,7 +1077,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>FiraCode-Regular 12</string>
+			<string>FuraCodeNerdFontCompleteM-Regular 12</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<false/>
 			<key>Option Key Sends</key>
@@ -1379,7 +1379,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-03-15T20:42:16Z</date>
+	<date>2019-03-15T20:44:15Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>

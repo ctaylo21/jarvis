@@ -62,7 +62,7 @@ try
 "   --glob:  Include or exclues files for searching that match the given glob
 "            (aka ignore .git files)
 "
-call denite#custom#var('file_rec', 'command', ['rg', '--files', '--glob', '!.git'])
+call denite#custom#var('file/rec', 'command', ['rg', '--files', '--glob', '!.git'])
 
 " Use ripgrep in place of "grep"
 call denite#custom#var('grep', 'command', ['rg'])
@@ -130,16 +130,6 @@ inoremap <silent><expr> <TAB>
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 
-" Use <Tab> and <S-Tab> for navigate completion list:
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-" Use <cr> to confirm complete
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-
-" Make <cr> select the first completion item and confirm completion when no item have selected
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
-
 "Close preview window when completion is done.
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
@@ -173,6 +163,8 @@ let g:NERDTreeIgnore = ['^\.DS_Store$', '^tags$', '\.git$[[dir]]', '\.idea$[[dir
 try
 
 " === Vim airline ==== "
+" Enable extensions
+let g:airline_extensions = ['branch', 'hunks', 'coc']
 
 " Update section z to just have line number
 let g:airline_section_z = airline#section#create(['linenr'])
@@ -185,6 +177,14 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 " Custom setup that removes filetype/whitespace from default vim airline bar
 let g:airline#extensions#default#layout = [['a', 'b', 'c'], ['x', 'z', 'warning', 'error']]
+
+let airline#extensions#coc#stl_format_err = '%E{[%e(#%fe)]}'
+
+let airline#extensions#coc#stl_format_warn = '%W{[%w(#%fw)]}'
+
+" Configure error/warning section to use coc.nvim
+let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_error(),0)}'
+let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
 
 " Hide the Nerdtree status line to avoid clutter
 let g:NERDTreeStatusline = ''
@@ -204,8 +204,8 @@ if !exists('g:airline_symbols')
 endif
 
 " unicode symbols
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
+let g:airline_left_sep = '❮'
+let g:airline_right_sep = '❯'
 
 " Don't show git changes to current file in airline
 let g:airline#extensions#hunks#enabled=0
@@ -217,39 +217,6 @@ endtry
 " === echodoc === "
 " Enable echodoc on startup
 let g:echodoc#enable_at_startup = 1
-
-" === Ale === "
-" Enable language-specific linters
-let g:ale_linters = {
-\ 'vim': ['vint'],
-\ 'javascript': ['eslint'],
-\ 'typescript': ['eslint'],
-\ 'sh': ['language_server'],
-\ 'zsh': ['language_server'],
-\ }
-
-let g:ale_fixers = {
-\ 'javascript' : ['prettier'],
-\ 'typescript' : ['prettier'],
-\ }
-
-" Customize warning/error signs
-let g:ale_sign_error = '⁉'
-let g:ale_sign_warning = '•'
-
-" Enable fixing on save
-let g:ale_fix_on_save = 1
-
-" Disable checks for virtual environments
-let g:ale_virtualenv_dir_names = []
-
-" Custom error format
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-
-" Don't lint on text change, only on save
-let g:ale_lint_on_text_changed = 0
-let g:ale_lint_on_save = 1
-let g:ale_lint_on_enter = 1
 
 " === vim-javascript === "
 " Enable syntax highlighting for JSDoc
@@ -307,6 +274,11 @@ set splitbelow
 " Don't dispay mode in command line (airilne already shows it)
 set noshowmode
 
+" coc.nvim color changes
+hi! link CocErrorSign ErrorMsg
+hi! link CocWarningSign Number
+hi! link CocInfoSign Type
+
 " Make background transparent for many things
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE
@@ -321,10 +293,6 @@ hi! EndOfBuffer ctermbg=NONE ctermfg=NONE guibg=#17252c guifg=#17252c
 
 " Customize NERDTree directory
 hi! NERDTreeCWD guifg=#99c794
-
-" Remove background colors for warnings/errors in gutter from Ale
-hi! ALEErrorSign ctermbg=none guibg=NONE
-hi! ALEWarningSign ctermfg=NONE guibg=NONE
 
 " Make background color transparent for git changes
 hi! SignifySignAdd guibg=NONE
@@ -361,7 +329,7 @@ endfunction
 "   <leader>j - Search current directory for occurences of word under cursor
 "   <leader>d - Delete item under cursor (useful for delete buffers in normal mode)
 nmap ; :Denite buffer<CR>
-nmap <leader>t :Denite file_rec<CR>
+nmap <leader>t :Denite file/rec<CR>
 nnoremap <leader>g :<C-u>Denite grep:. -no-empty -mode=normal<CR>
 nnoremap <leader>j :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
 
@@ -375,6 +343,11 @@ nmap <leader>f :NERDTreeFind<CR>
 "   -       - PageUp
 noremap <Space> <PageDown>
 noremap - <PageUp>
+
+" === coc.nvim === "
+nmap <silent> <leader>dd <Plug>(coc-definition)
+nmap <silent> <leader>dr <Plug>(coc-references)
+nmap <silent> <leader>dj <Plug>(coc-implementation)
 
 " === vim-better-whitespace === "
 "   <leader>y - Automatically remove trailing whitespace
