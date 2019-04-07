@@ -26,7 +26,12 @@ The following tools are the only ones that are (currently) required to be instal
 
 3. Manually update your iTerm profile to use a new font (*Knack Regular Nerd Font Complete* is added by the installation script) and colorscheme.
 
-4. (Optional) Depending on your autocomplete needs with [coc.nvim](https://github.com/neoclide/coc.nvim), you will want to install the appropriate langague servers. For example, running `:CocInstall coc-tsserver` will install the [Typescript langauge server extensnion](https://github.com/neoclide/coc-tsserver).
+4. (Optional) Depending on your autocomplete needs with [coc.nvim](https://github.com/neoclide/coc.nvim), you will want to install the appropriate langague servers. For example, I use the following extensions:
+  - [Typescript/Javascript](https://github.com/neoclide/coc-tsserver): `:CocInstall coc-tsserver`
+  - [Eslint](https://github.com/neoclide/coc-eslint): `:CocInstall coc-eslint`
+  - [Prettier](https://github.com/neoclide/coc-prettier): `:CocInstall coc-prettier`
+  - [CSS](https://github.com/neoclide/coc-css): `:CocInstall coc-css`
+  - [json](https://github.com/neoclide/coc-json): `:CocInstall coc-json`
 
 5. (Optional) Install [Pecan](https://github.com/zzzeyez/Pecan) for customizable OSX header. Follow install instructions on page. For Oceanic theme, copy `jarvis/config/Pecan/style.css` into `~/Library/Application Support/Übersicht/widgets/Pecan/style.css` and refresh widget by using `Übersicht` -> `Refresh All Widgets` from native OSX menu bar.
 
