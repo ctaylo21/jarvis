@@ -61,6 +61,13 @@ The following are features provided by Jarvis. They all have quick keybindings t
 
 	<img src="https://i.imgur.com/Tnh6e0z.gif" height="400px"/>
 
+	A variety of languages are supported by coc.nvim. I currently use a pretty standard set for web development that I will continue to tweak as needed.
+	  - [Typescript/Javascript](https://github.com/neoclide/coc-tsserver): `:CocInstall coc-tsserver`
+	  - [Eslint](https://github.com/neoclide/coc-eslint): `:CocInstall coc-eslint`
+	  - [Prettier](https://github.com/neoclide/coc-prettier): `:CocInstall coc-prettier`
+	  - [CSS](https://github.com/neoclide/coc-css): `:CocInstall coc-css`
+	  - [json](https://github.com/neoclide/coc-json): `:CocInstall coc-json`
+
 5. **Session management** - *Tmux* and *zsh/fzf*
 
 	Create sessions for each project with a custom layout. Quickly browse, create, and delete sessions. Tmux even keeps sessions alive if the terminal is closed. Using `fzf` and `zsh`, you can create or switch to sessions easily, as well as delete session by name or fuzzy-search.
