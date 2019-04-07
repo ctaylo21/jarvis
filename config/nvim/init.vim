@@ -62,7 +62,7 @@ try
 "   --glob:  Include or exclues files for searching that match the given glob
 "            (aka ignore .git files)
 "
-call denite#custom#var('file_rec', 'command', ['rg', '--files', '--glob', '!.git'])
+call denite#custom#var('file/rec', 'command', ['rg', '--files', '--glob', '!.git'])
 
 " Use ripgrep in place of "grep"
 call denite#custom#var('grep', 'command', ['rg'])
@@ -118,71 +118,20 @@ catch
   echo 'Denite not installed. It should work after running :PlugInstall'
 endtry
 
-" === Deoplete === "
+" === Coc.nvim === "
+" use <tab> for trigger completion and navigate to next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
 
-" Custom options for Deoplete
-"   auto_copmlete - Disable automatic completion
-"   ignore_sources - Don't use buffer or around sources
-"   max_list - Max amount of auto-complete items to show
-call deoplete#custom#option({
-\ 'auto_complete': v:true,
-\ 'max_list': 15
-\ })
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
 
-" Enable deoplete at startup
-let g:deoplete#enable_at_startup = 1
-
-" Use smartcase
-let g:deoplete#enable_smart_case = 1
-
-" Set minimum syntax keyword length.
-let g:deoplete#sources#syntax#min_keyword_length = 2
-
-" Set deoplete sources for javascript
-call deoplete#custom#source('sources', {
-\ '_': ['omni', 'around', 'buffer', 'tag', 'member', 'file', 'neosnippet'],
-\})
-
-" Disable autocomplete inside of comments
-call deoplete#custom#source('_',
-\ 'disabled_syntaxes', ['Comment', 'String'])
-
-" Use <tab> for autocomplete
-inoremap <silent><expr><tab> pumvisible() ? "\<C-n>" :
-\ <SID>check_back_space() ? "\<TAB>" :
-\ deoplete#mappings#manual_complete()
-
-function! s:check_back_space() abort "{{{
-  let l:col = col('.') - 1
-  return !l:col || getline('.')[l:col - 1]  =~# '\s'
-endfunction"}}}
-
-" Don't show the doc window
-set completeopt-=preview
-
-" === Deoplete-ternjs ==="
-
-" Use same tern command as tern_for_vim
-let g:tern#command = ['tern']
-
-" Ensure tern server doesn't shut off after 5 minutes for performance
-let g:tern#arguments = ['--persistent']
-
-" Include the types of completions in result data
-let g:deoplete#sources#ternjs#types = 1
-
-" Whether to include the distance (in scopes for variables, in prototypes for
-" properties) between the completions and the origin position in the result data.
-let g:deoplete#sources#ternjs#depths = 1
-
-" Include documentation strings (if found) in the result data
-let g:deoplete#sources#ternjs#docs = 1
-
-" Stop ternjs from guessing at matches if it doesn't know
-let g:deoplete#sources#ternjs#guess = 0
-
-" Close preview window after completion is made
-autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+"Close preview window when completion is done.
+autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " === NeoSnippet === "
 " Map <C-k> as shortcut to activate snippet if available
@@ -214,12 +163,14 @@ let g:NERDTreeIgnore = ['^\.DS_Store$', '^tags$', '\.git$[[dir]]', '\.idea$[[dir
 try
 
 " === Vim airline ==== "
-
-" Update section b to only have git branch
-" let g:airline_section_b = airline#section#create_left(['branch'])
+" Enable extensions
+let g:airline_extensions = ['branch', 'hunks', 'coc']
 
 " Update section z to just have line number
 let g:airline_section_z = airline#section#create(['linenr'])
+
+" Do not draw separators for empty sections (only for the active window) >
+let g:airline_skip_empty_sections = 1
 
 " Smartly uniquify buffers names with similar filename, suppressing common parts of paths.
 let g:airline#extensions#tabline#formatter = 'unique_tail'
@@ -227,8 +178,16 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 " Custom setup that removes filetype/whitespace from default vim airline bar
 let g:airline#extensions#default#layout = [['a', 'b', 'c'], ['x', 'z', 'warning', 'error']]
 
+let airline#extensions#coc#stl_format_err = '%E{[%e(#%fe)]}'
+
+let airline#extensions#coc#stl_format_warn = '%W{[%w(#%fw)]}'
+
+" Configure error/warning section to use coc.nvim
+let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_error(),0)}'
+let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
+
 " Hide the Nerdtree status line to avoid clutter
-" let g:NerdTreeStatusline = ''
+let g:NERDTreeStatusline = ''
 
 " Disable vim-airline in preview mode
 let g:airline_exclude_preview = 1
@@ -245,54 +204,19 @@ if !exists('g:airline_symbols')
 endif
 
 " unicode symbols
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
+let g:airline_left_sep = '❮'
+let g:airline_right_sep = '❯'
+
+" Don't show git changes to current file in airline
+let g:airline#extensions#hunks#enabled=0
 
 catch
   echo 'Airline not installed. It should work after running :PlugInstall'
 endtry
 
-" === nvim-typescript === "
-let g:nvim_typescript#max_completion_detail = 25
-
 " === echodoc === "
 " Enable echodoc on startup
 let g:echodoc#enable_at_startup = 1
-
-" === Ale === "
-" Enable language-specific linters
-let g:ale_linters = {
-\ 'vim': ['vint'],
-\ 'javascript': ['eslint'],
-\ 'typescript': ['eslint'],
-\ 'sh': ['language_server'],
-\ 'zsh': ['language_server'],
-\ }
-
-let g:ale_fixers = {
-\ 'javascript' : ['prettier'],
-\ 'typescript' : ['prettier'],
-\ }
-
-" Customize warning/error signs
-let g:ale_sign_error = '⁉'
-let g:ale_sign_warning = '•'
-
-" Enable fixing on save
-let g:ale_fix_on_save = 1
-
-" Disable checks for virtual environments
-let g:ale_virtualenv_dir_names = []
-
-" Custom error format
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-
-" Don't lint on text change, only on save
-let g:ale_lint_on_text_changed = 0
-let g:ale_lint_on_save = 1
-let g:ale_lint_on_enter = 1
 
 " === vim-javascript === "
 " Enable syntax highlighting for JSDoc
@@ -304,6 +228,9 @@ let g:jsx_ext_required = 0
 
 " === javascript-libraries-syntax === "
 let g:used_javascript_libs = 'underscore,requirejs,chai,jquery'
+
+" === Signify === "
+let g:signify_sign_delete = '-'
 
 " ============================================================================ "
 " ===                                UI                                    === "
@@ -321,7 +248,7 @@ catch
 endtry
 
 " Vim airline theme
-let g:airline_theme='oceanicnext'
+let g:airline_theme='space'
 
 " Add custom highlights in method that is executed every time a
 " colorscheme is sourced
@@ -347,6 +274,11 @@ set splitbelow
 " Don't dispay mode in command line (airilne already shows it)
 set noshowmode
 
+" coc.nvim color changes
+hi! link CocErrorSign ErrorMsg
+hi! link CocWarningSign Number
+hi! link CocInfoSign Type
+
 " Make background transparent for many things
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE
@@ -361,10 +293,6 @@ hi! EndOfBuffer ctermbg=NONE ctermfg=NONE guibg=#17252c guifg=#17252c
 
 " Customize NERDTree directory
 hi! NERDTreeCWD guifg=#99c794
-
-" Remove background colors for warnings/errors in gutter from Ale
-hi! ALEErrorSign ctermbg=none guibg=NONE
-hi! ALEWarningSign ctermfg=NONE guibg=NONE
 
 " Make background color transparent for git changes
 hi! SignifySignAdd guibg=NONE
@@ -401,7 +329,7 @@ endfunction
 "   <leader>j - Search current directory for occurences of word under cursor
 "   <leader>d - Delete item under cursor (useful for delete buffers in normal mode)
 nmap ; :Denite buffer<CR>
-nmap <leader>t :Denite file_rec<CR>
+nmap <leader>t :Denite file/rec<CR>
 nnoremap <leader>g :<C-u>Denite grep:. -no-empty -mode=normal<CR>
 nnoremap <leader>j :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
 
@@ -415,6 +343,11 @@ nmap <leader>f :NERDTreeFind<CR>
 "   -       - PageUp
 noremap <Space> <PageDown>
 noremap - <PageUp>
+
+" === coc.nvim === "
+nmap <silent> <leader>dd <Plug>(coc-definition)
+nmap <silent> <leader>dr <Plug>(coc-references)
+nmap <silent> <leader>dj <Plug>(coc-implementation)
 
 " === vim-better-whitespace === "
 "   <leader>y - Automatically remove trailing whitespace
@@ -442,39 +375,12 @@ nmap <leader>z :JsDoc<CR>
 " Vim's default buffer
 vnoremap <leader>p "_dP
 
-" === tern_for_vim/nvim-typescript === "
-"
-augroup JSTooling
-  autocmd!
-  " Jump to the definition of the thing under cursor
-  autocmd FileType typescript nnoremap <leader>dj :TSTypeDef<CR>
-  autocmd FileType javascript nnoremap <leader>dj :TernDef<CR>
-
-  " Show all references to the variable or property under the cursor
-  autocmd FileType typescript nnoremap <leader>dr :TSRefs<CR>
-  autocmd FileType javascript nnoremap <leader>dr :TernRefs<CR>
-
-  " Rename the variable under cursor
-  autocmd FileType typescript nnoremap <leader>dn :TSRename<CR>
-  autocmd FileType javascript nnoremap <leader>dn :TernRename<CR>
-
-  " Look up documentation of thing under cursor
-  autocmd FileType typescript nnoremap <leader>dd :TSDefPreview<CR>
-  autocmd FileType javascript nnoremap <leader>dd :TernDoc<CR>
-augroup END
-
 " ============================================================================ "
 " ===                                 MISC.                                === "
 " ============================================================================ "
 
 " Automaticaly close nvim if NERDTree is only thing left open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-" Manually override some filetypes extensions to specific filetypes
-augroup filetypedetect
-  au BufRead,BufNewFile *.tsx set filetype=typescript
-  au BufRead,BufNewFile *.jsx set filetype=javascript
-augroup END
 
 " === Search === "
 " ignore case when searching

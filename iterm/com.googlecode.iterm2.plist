@@ -446,17 +446,17 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>660 395 522 94 0 0 1440 900 </string>
+	<string>-284 1740 522 77 -719 900 1920 1080 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>520 579 400 129 0 0 1440 900 </string>
+	<string>41 1613 400 129 -719 900 1920 1080 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>2410 786 620 392 1440 0 2560 1440 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 126 606 469 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>2097 2197 796 486 1355 1260 2560 1440 </string>
+	<string>-246 1577 918 394 -719 900 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>2305 1760 670 435 1355 1260 2560 1440 </string>
+	<string>-551 1005 1003 580 -719 900 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>656 -130 650 429 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -465,6 +465,8 @@
 	<array>
 		<dict>
 			<key>ASCII Anti Aliased</key>
+			<true/>
+			<key>ASCII Ligatures</key>
 			<true/>
 			<key>Ambiguous Double Width</key>
 			<false/>
@@ -1075,7 +1077,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>KnackNerdFontC-Regular 14</string>
+			<string>FuraCodeNerdFontCompleteM-Regular 12</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<false/>
 			<key>Option Key Sends</key>
@@ -1206,19 +1208,26 @@
 			<string>currentTab.currentSession.session.presentationName</string>
 			<string>currentTab.currentSession.session.name</string>
 			<string>currentTab.currentSession.session.tty</string>
+			<string>currentTab.currentSession.session.username</string>
 			<string>currentTab.currentSession.session.jobName</string>
 			<string>currentTab.currentSession.session.rows</string>
 			<string>iterm2</string>
+			<string>currentTab.currentSession.session.hostname</string>
 			<string>currentTab.currentSession.session.jobPid</string>
+			<string>currentTab.currentSession.session.path</string>
+			<string>currentTab.currentSession.session.lastCommand</string>
 		</array>
 		<key>2</key>
 		<array>
 			<string>currentSession</string>
 			<string>titleOverride</string>
+			<string>currentSession.session.username</string>
+			<string>currentSession.session.lastCommand</string>
 			<string>currentSession.session.termid</string>
 			<string>currentSession.session.pid</string>
 			<string>currentSession.session.autoName</string>
 			<string>currentSession.session.name</string>
+			<string>currentSession.session.path</string>
 			<string>currentSession.session.terminalWindowName</string>
 			<string>currentSession.session.tty</string>
 			<string>currentSession.session.jobName</string>
@@ -1228,6 +1237,7 @@
 			<string>currentSession.session.presentationName</string>
 			<string>currentSession.session.terminalIconName</string>
 			<string>currentSession.session.jobPid</string>
+			<string>currentSession.session.hostname</string>
 			<string>currentSession.session.columns</string>
 		</array>
 		<key>4</key>
@@ -1313,6 +1323,10 @@
 		<string>0070</string>
 		<string>0071</string>
 	</array>
+	<key>NoSyncVeryOldNightlyBuildWarning_SilenceUntil</key>
+	<real>576967331.90302598</real>
+	<key>NoSyncVeryOldNightlyBuildWarning_selection</key>
+	<integer>1</integer>
 	<key>PMPrintingExpandedStateForPrint2</key>
 	<false/>
 	<key>PointerActions</key>
@@ -1365,7 +1379,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-10-22T21:07:26Z</date>
+	<date>2019-03-15T20:44:15Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
@@ -1388,6 +1402,8 @@
 	<false/>
 	<key>UseLionStyleFullscreen</key>
 	<true/>
+	<key>UseMetal</key>
+	<false/>
 	<key>WindowNumber</key>
 	<false/>
 	<key>WordCharacters</key>
@@ -1397,7 +1413,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.2.3</string>
+	<string>3.2.20180802-nightly</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
