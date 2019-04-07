@@ -57,7 +57,7 @@ The following are features provided by Jarvis. They all have quick keybindings t
 
 4. **Asynchronous linting** - *NeoVim*
 
-	For Typescript/Javascript development, code is linted asynchronously with [coc-eslint](https://github.com/neoclide/coc-eslint) and automatically formatted via (coc-prettier)[https://github.com/neoclide/coc-prettier] on save.
+	For Typescript/Javascript development, code is linted asynchronously with [coc-eslint](https://github.com/neoclide/coc-eslint) and automatically formatted via [coc-prettier](https://github.com/neoclide/coc-prettier) on file save to conform to [prettier](https://prettier.io/) standards.
 
 	<img src="https://i.imgur.com/Tnh6e0z.gif" height="400px"/>
 
