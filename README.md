@@ -71,7 +71,7 @@ The following are features provided by Jarvis. They all have quick keybindings t
 
     Neovim - Automatic, asynchronous keyword completion available in the current buffer via [coc.nvim](https://github.com/neoclide/coc.nvim).
 
-    <img src="https://i.imgur.com/oyqgcYV.gif" height="400px"/>
+    <img src="https://i.imgur.com/ncqVgg3.gif" height="400px"/>
 
 7. **Code Snippets** - *NeoVim*
 
