@@ -69,19 +69,13 @@ The following are features provided by Jarvis. They all have quick keybindings t
 
 6. **Keyword auto-complete** - *NeoVim* and *zsh*
 
-    Neovim - Automatic, asynchronous keyword completion available in the current buffer via [deoplete](https://github.com/Shougo/deoplete.nvim).
+    Neovim - Automatic, asynchronous keyword completion available in the current buffer via [coc.nvim](https://github.com/neoclide/coc.nvim).
 
-    <img src="https://i.imgur.com/munYQhB.gif" height="400px"/>
-
-    **Supported Languages**
-    * Javascript - support provided by [deoplete-ternjs](https://github.com/carlitux/deoplete-ternjs), [TernJS](http://ternjs.net/), and [tern-for-vim](https://github.com/ternjs/tern_for_vim)
-    * Typescript - syntax highlighting via [yats.vim](https://github.com/HerringtonDarkholme/yats.vim) and langauge service via [nvim-typescript](https://github.com/mhartington/nvim-typescript)
-    * Vimscript - support provided by [neco-vim](https://github.com/Shougo/neco-vim)
-    * zsh - Auto-complete/spellcheck for tools like [git](https://git-scm.com/), [node](https://nodejs.org/en/), [brew](https://brew.sh/), and [more](https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins) and history-based auto-complete via [autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+    <img src="https://i.imgur.com/ZhZiadA.gif" height="400px"/>
 
 7. **Code Snippets** - *NeoVim*
 
-    Commonly used code snippets made available with a few keystrokes to reduce time and effort via [deoplete](https://github.com/Shougo/deoplete.nvim). Snippets available via auto-complete window removes need to memorize commands. Quickly hop to relevant pieces of snippet as needed.
+    Commonly used code snippets made available with a few keystrokes to reduce time and effort via [neosnippet](https://github.com/Shougo/neosnippet.vim). Snippets available via auto-complete window removes need to memorize commands. Quickly hop to relevant pieces of snippet as needed.
 
     <img src="https://i.imgur.com/bz7A7CM.gif" height="400px"/>
 
