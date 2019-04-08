@@ -275,7 +275,7 @@ set splitbelow
 set noshowmode
 
 " coc.nvim color changes
-hi! link CocErrorSign ErrorMsg
+hi! link CocErrorSign WarningMsg
 hi! link CocWarningSign Number
 hi! link CocInfoSign Type
 
