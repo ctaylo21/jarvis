@@ -4,6 +4,7 @@
   "coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript", "typescriptreact", "json", "javascriptreact"],
   "eslint.filetypes": ["javascript", "typescript", "typescriptreact", "javascriptreact"],
   "diagnostic.errorSign": "•",
-  "diagnostic.warningSign": "•"
+  "diagnostic.warningSign": "•",
+  "diagnostic.infoSign": "•"
 }
 
