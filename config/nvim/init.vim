@@ -328,8 +328,8 @@ endfunction
 "   close window if no results
 "   <leader>j - Search current directory for occurences of word under cursor
 "   <leader>d - Delete item under cursor (useful for delete buffers in normal mode)
-nmap ; :Denite buffer<CR>
-nmap <leader>t :Denite file/rec<CR>
+nmap ; :Denite buffer -split=floating -winrow=1<CR>
+nmap <leader>t :Denite file/rec -split=floating -winrow=1<CR>
 nnoremap <leader>g :<C-u>Denite grep:. -no-empty -mode=normal<CR>
 nnoremap <leader>j :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
 
