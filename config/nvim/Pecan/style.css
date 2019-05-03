@@ -1,6 +1,6 @@
 /* Custom CSS file for Pecan header */
 /* Tweaked to match Oceanic-next theme */
-/* Place in ~/Library/Application Support/Übersicht/widgets/Pecan/style.css */
+/* Place in ~/Library/Application Support/Übersicht/widgets/Pecan/style.css */
 
 /* Pecan is a bar for Ubersicht */
 /* Written by Daniel Neemann */
@@ -75,7 +75,7 @@
 }
 
 /* Bar background */
-.background {
+.pecanbackground {
   background-color: var(--pecan-bg);
   display: block;
   position: absolute;
@@ -98,7 +98,7 @@
 }
 
 /* Workspace indicator -- far left */
-.left {
+.pecanworkspace {
   font: var(--pecan-font-size) var(--pecan-font);
   font-style: var(--pecan-font-style);
   color: var(--pecan-fg-left);
@@ -124,7 +124,7 @@
 }
 
 /* Network bandwidth -- 2nd to left */
-.left2 {
+.pecannetwork {
   font: var(--pecan-font-size) var(--pecan-font);
   font-style: var(--pecan-font-style);
   background-color: var(--pecan-bg-left2);
@@ -149,7 +149,7 @@
 }
 
 /* Date -- third to left -- set --pecan-opacity-center to 0 to hide */
-.center {
+.pecandate {
   font: var(--pecan-font-size) var(--pecan-font);
   font-style: var(--pecan-font-style);
   color: var(--pecan-fg-center);
@@ -190,7 +190,7 @@
 }
 
 /* Battery percentage -- 4th to left */
-.right2 {
+.pecanbattery {
   font: var(--pecan-font-size) var(--pecan-font);
   font-style: var(--pecan-font-style);
   color: var(--pecan-fg-right2);
@@ -215,7 +215,7 @@
 }
 
 /* Clock -- 5th to left */
-.right {
+.pecanclock {
   font: var(--pecan-font-size) var(--pecan-font);
   font-style: var(--pecan-font-style);
   color: var(--pecan-fg-right);
