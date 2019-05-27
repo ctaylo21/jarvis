@@ -84,9 +84,9 @@ call denite#custom#var('grep', 'final_opts', [])
 call denite#custom#var('buffer', 'date_format', '')
 
 " Open file commands
-call denite#custom#map('insert', "<C-t>", '<denite:do_action:tabopen>')
-call denite#custom#map('insert', "<C-v>", '<denite:do_action:vsplit>')
-call denite#custom#map('insert', "<C-h>", '<denite:do_action:split>')
+call denite#custom#map('insert,normal', "<C-t>", '<denite:do_action:tabopen>')
+call denite#custom#map('insert,normal', "<C-v>", '<denite:do_action:vsplit>')
+call denite#custom#map('insert,normal', "<C-h>", '<denite:do_action:split>')
 
 " Custom options for Denite
 "   auto_resize             - Auto resize the Denite window height automatically.
