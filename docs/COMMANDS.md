@@ -27,6 +27,9 @@ file is carefully documented to make it easy to understand. Many default command
 | `<leader>j`  | normal          | Denite                          | Search current directory for word under cursor |
 | `<c-o>`      | insert          | Denite                          | Switch to normal mode (useful inside *DW*) |
 | `d`          | normal     *DW* | Denite                          | Delete item (can delete open buffer inside *DW*) |
+| `<c-t>`      | insert/normal     *DW* | Denite                   | Open file in new tab (useful inside *DW*) |
+| `<c-v>`      | insert/normal     *DW* | Denite                   | Open file in a vertical split  (useful inside *DW*) |
+| `<c-h>`      | insert/normal     *DW* | Denite                   | Open file in a horizontal split  (useful inside *DW*) |
 | `<leader>y`  | normal          | vim-better-whitespace           | Remove trailing whitespace in file       |
 | `<leader>w`  | normal          | EasyMotion                      | Highlight first letter of file words for quick move |
 | `<TAB>`      | insert    *AWV* | Deoplete                        | Moves inside of auto-complete window if it's open |
