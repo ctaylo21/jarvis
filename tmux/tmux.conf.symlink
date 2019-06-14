@@ -92,13 +92,11 @@ set -g status-justify centre
 # Set default bg/fg settings for status bar
 set-option -g status-bg '#343D46'
 set-option -g status-fg default
-set-option -g status-attr dim
+set-option -g status-style dim
 
 set-window-option -g window-status-current-format ''
 set-window-option -g window-status-current-format ''
-set-window-option -g window-status-current-fg colour114
-set-window-option -g window-status-current-bg default
-set-window-option -g window-status-current-attr bright
+set-window-option -g window-status-current-style fg=colour114,bg=default,bright
 
 # Configure CPU plugin colors for statusline
 set -g @cpu_low_fg_color "#[fg=green]"
