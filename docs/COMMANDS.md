@@ -2,12 +2,12 @@
 
 ## Commands
 
-The following are the custom commands in Jarvis and some of the most useful default ones. Each configuration 
+The following are the custom commands in Jarvis and some of the most useful default ones. Each configuration
 file is carefully documented to make it easy to understand. Many default commands for each tool may not be listed.
 
 ### Neovim Commands
 
-> Note: Several of the commands expect you to be in the directory you are working in. Fuzzy finding, for example, won't work as expected unless Neovim's current directory is correct. You can check that via `:pwd` inside of Neovim. 
+> Note: Several of the commands expect you to be in the directory you are working in. Fuzzy finding, for example, won't work as expected unless Neovim's current directory is correct. You can check that via `:pwd` inside of Neovim.
 >
 > Either open Neovim from the directory you want to work in, or set the directory once Neovim is open via the `:cd /path/to/directory` command.
 
@@ -25,20 +25,17 @@ file is carefully documented to make it easy to understand. Many default command
 | `<leader>t`  | normal          | Denite                          | Browse files in current directory        |
 | `<leader>g`  | normal          | Denite                          | Search current directory for occurences of term |
 | `<leader>j`  | normal          | Denite                          | Search current directory for word under cursor |
-| `<c-o>`      | insert          | Denite                          | Switch to normal mode (useful inside *DW*) |
+| `<Esc>`      | insert/normal *DW* | Denite                       | Close Denite window                       |
+| `<c-o>`      | insert/normal *DW* | Denite                       | Switch between fuzzy-find insert mode and normal mode (useful inside *DW*) |
 | `d`          | normal     *DW* | Denite                          | Delete item (can delete open buffer inside *DW*) |
 | `<c-t>`      | insert/normal     *DW* | Denite                   | Open file in new tab (useful inside *DW*) |
 | `<c-v>`      | insert/normal     *DW* | Denite                   | Open file in a vertical split  (useful inside *DW*) |
 | `<c-h>`      | insert/normal     *DW* | Denite                   | Open file in a horizontal split  (useful inside *DW*) |
 | `<leader>y`  | normal          | vim-better-whitespace           | Remove trailing whitespace in file       |
 | `<leader>w`  | normal          | EasyMotion                      | Highlight first letter of file words for quick move |
-| `<TAB>`      | insert    *AWV* | Deoplete                        | Moves inside of auto-complete window if it's open |
-| `<c-n>`      | normal    *AWV* | Deoplete                        | Moves to next suggested auto-complete term |
-| `<c-p>`      | normal    *AWV* | Deoplete                        | Moves to previous suggested auto-complete term |
-| `<leader>dj` | normal          | tern\_for\_vim/nvim-typescript  | Jump to definition of word under cursor  |
-| `<leader>dr` | normal          | tern\_for\_vim/nvim-typescript  | Show references of word under cursor.    |
-| `<leader>dn` | normal          | tern\_for\_vim/nvim-typescript  | Rename word under cursor                 |
-| `<leader>dd` | normal          | tern\_for\_vim/nvim-typescript  | Look up documentation of word under cursor |
+| `<leader>dj` | normal          | Coc.nvim                        | Jump to implementation(s) of symbol under cursor  |
+| `<leader>dr` | normal          | Coc.nvim                        | Show references of symbol under cursor.    |
+| `<leader>dd` | normal          | Coc.nvim                        | Look up definition of word under cursor |
 | `<c-k>`      | insert    *AWV* | NeoSnippet                      | Activates first valid snippet that matches |
 | `<c-k>`      | insert     *SP* | NeoSnippet                      | Move to next available field of snippet  |
 | `<c-k>`      | select     *SP* | NeoSnippet                      | Move to next available field of snippet  |
@@ -91,29 +88,3 @@ All the following commands can be run from the command line. Each command can be
 <br />
 
 * `*`  - Indicates optional param
-
-### Tern Configuration
-
-[TernJS](http://ternjs.net) can be used within Neovim to enable auto-complete, method documentation, function argument hints, jump to definition, and more for javascript. See the `tern-for-vim` commands in the [Neovim Commands](#neovim-commands) section above for how to use tern within Neovim.
-
-Here is an example `.tern-project` file that should be placed at the root of your ES6 project:
-
-```
-{
- "loadEagerly": [
-    "src/index.js" // your main entry point file
-  ],
-  "plugins": {
-    "doc_comment": {
-      "fullDocs": true
-    },
-    "modules": {},
-    "node_resolve": {},
-    "es_modules": {}
-  },
-  "libs": [
-    "browser"
-  ]
-}
-```
-If you want to add more libraries, or use a different module system than `es_modules`, please see the documentation on the [tern website](http://ternjs.net/doc/manual.html).	
