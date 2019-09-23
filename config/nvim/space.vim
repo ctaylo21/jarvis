@@ -47,34 +47,34 @@ else
   let s:cterm0F = 14
 endif
 
-let s:N1   = [ s:gui0B, 'NONE', s:cterm0B, 'NONE']
-let s:N2   = [ s:gui0C, 'NONE', s:cterm02, 'NONE']
-let s:N3   = [ s:gui05, 'NONE', s:cterm01, 'NONE']
+let s:N1   = [ s:gui0B, s:gui00, s:cterm0B, s:cterm0B]
+let s:N2   = [ s:gui0C, s:gui00, s:cterm02, s:cterm02]
+let s:N3   = [ s:gui05, s:gui00, s:cterm01, s:cterm01]
 let g:airline#themes#space#palette.normal = airline#themes#generate_color_map(s:N1, s:N2, s:N3)
 
-let s:I1   = [ s:gui0D, 'NONE', s:cterm0D, 'NONE' ]
-let s:I2   = [ s:gui0C, 'NONE', s:cterm02, 'NONE' ]
-let s:I3   = [ s:gui05, 'NONE', s:cterm01, 'NONE' ]
+let s:I1   = [ s:gui0D, s:gui00, s:cterm0D, 'NONE' ]
+let s:I2   = [ s:gui0C, s:gui00, s:cterm02, 'NONE' ]
+let s:I3   = [ s:gui05, s:gui00, s:cterm01, 'NONE' ]
 let g:airline#themes#space#palette.insert = airline#themes#generate_color_map(s:I1, s:I2, s:I3)
 
-let s:R1   = [ s:gui08, 'NONE', s:cterm08, 'NONE' ]
-let s:R2   = [ s:gui0C, 'NONE', s:cterm02, 'NONE' ]
-let s:R3   = [ s:gui05, 'NONE', s:cterm01, 'NONE' ]
+let s:R1   = [ s:gui08, s:gui00, s:cterm08, 'NONE' ]
+let s:R2   = [ s:gui0C, s:gui00, s:cterm02, 'NONE' ]
+let s:R3   = [ s:gui05, s:gui00, s:cterm01, 'NONE' ]
 let g:airline#themes#space#palette.replace = airline#themes#generate_color_map(s:R1, s:R2, s:R3)
 
-let s:V1   = [ s:gui0E, 'NONE', s:cterm0E, 'NONE' ]
-let s:V2   = [ s:gui0C, 'NONE', s:cterm02, 'NONE' ]
-let s:V3   = [ s:gui05, 'NONE', s:cterm01, 'NONE' ]
+let s:V1   = [ s:gui0E, s:gui00, s:cterm0E, 'NONE' ]
+let s:V2   = [ s:gui0C, s:gui00, s:cterm02, 'NONE' ]
+let s:V3   = [ s:gui05, s:gui00, s:cterm01, 'NONE' ]
 let g:airline#themes#space#palette.visual = airline#themes#generate_color_map(s:V1, s:V2, s:V3)
 
-let s:IA1   = [ s:gui04, 'NONE', s:cterm01, 'NONE' ]
-let s:IA2   = [ s:gui04, 'NONE', s:cterm01, 'NONE' ]
-let s:IA3   = [ s:gui0D, 'NONE', s:cterm01, 'NONE' ]
+let s:IA1   = [ s:gui04, s:gui00, s:cterm01, 'NONE' ]
+let s:IA2   = [ s:gui04, s:gui00, s:cterm01, 'NONE' ]
+let s:IA3   = [ s:gui0D, s:gui00, s:cterm01, 'NONE' ]
 let g:airline#themes#space#palette.inactive = airline#themes#generate_color_map(s:IA1, s:IA2, s:IA3)
 
 " Warning Section
 let g:airline#themes#space#palette.normal.airline_warning = [
-     \ s:gui0A, 'NONE', s:cterm0A, 'NONE'
+     \ s:gui0A, s:gui00, s:cterm0A, 'NONE'
      \ ]
 
 let g:airline#themes#space#palette.insert.airline_warning =
@@ -88,7 +88,7 @@ let g:airline#themes#space#palette.replace.airline_warning =
 
 " Error Section
 let g:airline#themes#space#palette.normal.airline_error = [
-     \ s:gui08, 'NONE', s:cterm08, 'NONE'
+     \ s:gui08, s:gui00, s:cterm08, 'NONE'
      \ ]
 
 let g:airline#themes#space#palette.insert.airline_error =

@@ -212,10 +212,6 @@ if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
 
-" unicode symbols
-let g:airline_left_sep = '❮'
-let g:airline_right_sep = '❯'
-
 " Don't show git changes to current file in airline
 let g:airline#extensions#hunks#enabled=0
 
@@ -259,10 +255,8 @@ endtry
 " Vim airline theme
 let g:airline_theme='space'
 
-" Add custom highlights in method that is executed every time a
-" colorscheme is sourced
-" See https://gist.github.com/romainl/379904f91fa40533175dfaec4c833f2f for
-" details
+" Add custom highlights in method that is executed every time a colorscheme is sourced
+" See https://gist.github.com/romainl/379904f91fa40533175dfaec4c833f2f for details
 function! MyHighlights() abort
   " Hightlight trailing whitespace
   highlight Trail ctermbg=red guibg=red
