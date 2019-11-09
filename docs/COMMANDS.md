@@ -56,7 +56,7 @@ just some of the more common ones in my workflow.
 | Command          | Description                              |
 | :--------------- | :--------------------------------------- |
 | `<c-a>I`         | Install tmux plugins                     |
-| `<c>(h/j/k/l)`.  | Switch Tmux panes and Neovim windows (left/down/up/right) |
+| `<c-a>(h/j/k/l)` | Switch Tmux panes and Neovim windows (left/down/up/right) |
 | `<c-a>(H/J/K/L)` | Resize Tmux panes based on current pane (left/down/up/right) |
 | `<c-a>-`         | Create split horizontally                |
 | `<c-a>`&#124;    | Create split vertically                  |

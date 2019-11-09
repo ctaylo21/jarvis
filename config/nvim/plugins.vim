@@ -33,8 +33,6 @@ Plug 'easymotion/vim-easymotion'
 " Intellisense Engine
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 
-" Tmux/Neovim movement integration
-Plug 'christoomey/vim-tmux-navigator'
 
 " Denite - Fuzzy finding, buffer management
 Plug 'Shougo/denite.nvim'

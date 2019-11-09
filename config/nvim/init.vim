@@ -401,6 +401,12 @@ nmap <leader>f :NERDTreeFind<CR>
 noremap <Space> <PageDown>
 noremap - <PageUp>
 
+" Quick window switching
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+
 " === coc.nvim === "
 nmap <silent> <leader>dd <Plug>(coc-definition)
 nmap <silent> <leader>dr <Plug>(coc-references)

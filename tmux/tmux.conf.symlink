@@ -2,7 +2,6 @@
 # ***    PLUGINS   *** #
 ########################
 set -g @plugin 'tmux-plugins/tmux-cpu'
-set -g @plugin 'christoomey/vim-tmux-navigator'
 
 ########################
 # ***    DISPLAY   *** #
