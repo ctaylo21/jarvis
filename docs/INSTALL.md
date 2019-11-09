@@ -2,10 +2,20 @@
 
 ## Installation
 
+**Important**: The instructions were primarily written during the initial installation. It is difficult to keep this script and list of install tools up-to-date, so there may be missing or incorrect steps. Any PR's or issues are welcome if you find something in this section.
+
 ### MacOSX
 
-#### Step 1: Installation script
+#### Step 1: Installation script (or manual installation based off of script)
 
+:warning::warning: THIS SCRIPT IS NO LONGER SUPPORTED :warning::warning:
+
+**This installation script can provide a rough guideline for getting the project set up, but it no longer successfully runs and is difficult to test and support**
+
+<details>
+  <summary>Click to see unsupported install script instructions</summary>
+  
+  
 Clone Jarvis into your directory of choice and run the install script. This script will install [Homebrew](https://brew.sh/) (if it needs to) and then install all of Jarvis' dependencies.
 
 **Warning: This will move existing `zsh`, `tmux`, or `nvim` configurations to a backup folder inside of the installation repo.**
@@ -15,6 +25,9 @@ git clone https://github.com/ctaylo21/jarvis ~/jarvis
 cd ~/jarvis
 ./install.sh
 ```
+</details>
+
+Alternatively, you can use the `install.sh` script as a guide for installing the required libraries/plugins and do it manually yourself (safest option).
 
 #### Step 2: Manually Install Additional Tools
 
@@ -34,13 +47,6 @@ The following tools are the only ones that are (currently) required to be instal
   - [json](https://github.com/neoclide/coc-json): `:CocInstall coc-json`
 
 5. (Optional) Install [Pecan](https://github.com/zzzeyez/Pecan) for customizable OSX header. Follow install instructions on page. For Oceanic theme, copy `jarvis/config/Pecan/style.css` into `~/Library/Application Support/Übersicht/widgets/Pecan/style.css` and refresh widget by using `Übersicht` -> `Refresh All Widgets` from native OSX menu bar.
-
-
-  ```bash
-  cd ~/.config/nvim/plugged/tern_for_vim/
-  npm install
-  ```
-
 
 **Installed Tools**
 
