@@ -28,6 +28,7 @@ echo "---------------------------------------------------------"
 packages=(
   "git"
   "node"
+  "ruby"
   "tmux"
   "neovim"
   "python3"
@@ -72,6 +73,13 @@ echo "$(tput setaf 2)JARVIS: Installing bash language server$(tput sgr 0)"
 echo "---------------------------------------------------------"
 
 npm i -g bash-language-server
+
+
+echo "---------------------------------------------------------"
+echo "$(tput setaf 2)JARVIS: Installing colorls$(tput sgr 0)"
+echo "---------------------------------------------------------"
+
+gem install colorls
 
 echo "---------------------------------------------------------"
 echo "$(tput setaf 2)JARVIS: Installing system fonts.$(tput sgr 0)"
