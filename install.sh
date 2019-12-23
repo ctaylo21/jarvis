@@ -74,7 +74,6 @@ echo "---------------------------------------------------------"
 
 npm i -g bash-language-server
 
-
 echo "---------------------------------------------------------"
 echo "$(tput setaf 2)JARVIS: Installing colorls$(tput sgr 0)"
 echo "---------------------------------------------------------"
@@ -85,7 +84,7 @@ echo "---------------------------------------------------------"
 echo "$(tput setaf 2)JARVIS: Installing system fonts.$(tput sgr 0)"
 echo "---------------------------------------------------------"
 
-brew tap caskroom/fonts
+brew tap homebrew/cask-fonts
 brew cask install font-hack-nerd-font
 
 localGit="/usr/local/bin/git"
