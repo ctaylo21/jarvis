@@ -33,6 +33,7 @@ file is carefully documented to make it easy to understand. Many default command
 | `<c-h>`      | insert/normal     *DW* | Denite                   | Open file in a horizontal split  (useful inside *DW*) |
 | `<leader>y`  | normal          | vim-better-whitespace           | Remove trailing whitespace in file       |
 | `<leader>w`  | normal          | EasyMotion                      | Highlight first letter of file words for quick move |
+| `<leader>ds` | normal          | Coc.nvim                        | Search current project symbols  |
 | `<leader>dj` | normal          | Coc.nvim                        | Jump to implementation(s) of symbol under cursor  |
 | `<leader>dr` | normal          | Coc.nvim                        | Show references of symbol under cursor.    |
 | `<leader>dd` | normal          | Coc.nvim                        | Look up definition of word under cursor |
