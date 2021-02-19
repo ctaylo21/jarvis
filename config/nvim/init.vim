@@ -94,7 +94,7 @@ call denite#custom#var('buffer', 'date_format', '')
 "   highlight_window_background - Change background group in floating window
 "   highlight_filter_background - Change background group in floating filter window
 "   winrow                      - Set Denite filter window to top
-"   vertical_preview             - Open the preview window vertically
+"   vertical_preview            - Open the preview window vertically
 
 let s:denite_options = {'default' : {
 \ 'split': 'floating',
