@@ -84,14 +84,18 @@ call denite#custom#var('grep', 'final_opts', [])
 call denite#custom#var('buffer', 'date_format', '')
 
 " Custom options for Denite
-"   auto_resize             - Auto resize the Denite window height automatically.
-"   prompt                  - Customize denite prompt
-"   direction               - Specify Denite window direction as directly below current pane
-"   winminheight            - Specify min height for Denite window
-"   highlight_mode_insert   - Specify h1-CursorLine in insert mode
-"   prompt_highlight        - Specify color of prompt
-"   highlight_matched_char  - Matched characters highlight
-"   highlight_matched_range - matched range highlight
+"   split                       - Use floating window for Denite
+"   start_filter                - Start filtering on default
+"   auto_resize                 - Auto resize the Denite window height automatically.
+"   source_names                - Use short long names if multiple sources
+"   prompt                      - Customize denite prompt
+"   highlight_matched_char      - Matched characters highlight
+"   highlight_matched_range     - matched range highlight
+"   highlight_window_background - Change background group in floating window
+"   highlight_filter_background - Change background group in floating filter window
+"   winrow                      - Set Denite filter window to top
+"   vertical_preview             - Open the preview window vertically
+
 let s:denite_options = {'default' : {
 \ 'split': 'floating',
 \ 'start_filter': 1,
